@@ -44,6 +44,10 @@ Status: ✅ in POC · 🟡 next · ⚪ later
 - ⚪ Lists of private tutors and volunteers by subject and area, as a static directory.
 - ⚪ Q&A forum, possibly GitHub Discussions via giscus. Minors can't easily have GitHub accounts, so this needs thought.
 
+### Curiosity
+- ✅ Callout boxes in lessons (`> 📜 סיפור`, `> 🛒 בחיים`, `> 💡`).
+- 🟡 Every course: one true story from math history, one everyday problem, ⭐ challenge questions. See [education.md](education.md) §6.
+
 ### Explanations as a graph ("a clearer Wikipedia")
 - 🟡 Concept pages that link to their prerequisites ("to understand this, you need…").
 - 🟡 Each concept: worked example, then animation, then practice.

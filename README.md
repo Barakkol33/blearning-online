@@ -4,7 +4,9 @@ A free, open Hebrew learning site: courses, animated explanations, quizzes and a
 
 Status: proof of concept, with one course (מספרים שליליים, grade 7).
 
-Planning docs: [goals](docs/goals.md) · [research](docs/research.md) · [product](docs/product.md) · [market](docs/market.md)
+Planning docs: [goals](docs/goals.md) · [education](docs/education.md) (how to write courses) · [research](docs/research.md) · [product](docs/product.md) · [market](docs/market.md)
+
+Dev: `dev/scenes.html` renders every scene of every live course as still frames, to catch broken scenes.
 
 ## Run locally
 

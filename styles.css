@@ -139,6 +139,10 @@ a.card:hover { transform: translateY(-3px); }
 .lesson h1 { font-size: 2em; margin: 14px 0 8px; }
 .lesson h2 { margin-top: 1.6em; }
 .lesson-stuck, .quiz, .lesson-nav { max-width: 760px; }
+/* "> 📜 סיפור" / "> 🛒 בחיים" / "> 💡" callout boxes */
+.lesson blockquote { margin: 18px 0; padding: 10px 16px; border-radius: 12px; border-inline-start: 4px solid var(--accent);
+  background: color-mix(in srgb, var(--accent) 8%, var(--panel)); }
+.lesson blockquote p { margin: 6px 0; }
 .lesson-stuck { margin: 18px 0; }
 .lesson-nav { display: flex; justify-content: space-between; gap: 10px; margin-top: 26px; flex-wrap: wrap; }
 .scene-slot { margin: 20px 0; }

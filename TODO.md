@@ -14,13 +14,25 @@ Grouped by area. Rough order inside each group = priority. See [docs/product.md]
 - [ ] Show the 🤔 button on the feed's scene cards too, not only on wrong answers
 - [ ] Accessibility: aria-live for quiz feedback, text alternatives for scenes (step texts), focus order in the dialog
 
+## Learning features (from docs/education.md)
+- [ ] Concept links: `[[id|text]]` in lessons opens a short card (definition, tiny example, "לנושא המלא ←")
+- [ ] `content/concepts/<id>.md`: short card text plus full explanation; a concept page view
+- [ ] `requires` on topics in math-map.json; a "this lesson uses: …" line at the top of lessons
+- [ ] Warm-up prerequisite check (3 questions) at the start of a course, as advice only
+- [ ] End-of-course mix: a few questions from prerequisite topics
+- [ ] Mini-game framework (a `game` block in lessons, like `scene`)
+- [ ] First mini-games: "frog jump" (where does it land?), "build it" (rods and cubes), "make ten"
+- [ ] Encouragement rules in feedback messages (strategy praise; after 2–3 misses, offer help instead)
+- [ ] Narration (text-to-speech) for grade 1–3 lessons
+- [ ] Retrofit existing courses (negative-numbers, numbers-to-20, add-sub-to-20, numbers-to-100): add a 📜 story, a 🛒 real-life box, misconception-based distractors, and one ⭐ stretch question each
+
 ## Math courses — say "next" to build the next one
 
-One course per line, in order. **"next" (one chunk, about 10 minutes of work) = the first unchecked course below**: build it in `content/courses/<id>/`, which means:
-- 2–4 short lessons, each with a worked example and at least one animated scene
-- quizplay-format questions
-- the course added to `content/catalog.json`
-- the box ticked here
+One course per line, in order. **"next" (one chunk, about 10 minutes of work) = the first unchecked course below**: build it in `content/courses/<id>/`, following [docs/education.md](docs/education.md):
+- 2–4 short lessons: hook, scene, worked example, summary plus "where this leads"
+- at least one `> 📜 סיפור` (facts checked) and one `> 🛒 בחיים` box per course
+- quizplay-format questions: easy first, one ⭐ stretch, distractors from real misconceptions
+- the course added to `content/catalog.json`, the box ticked here, the scene check page clean
 
 The ids match `content/math-map.json`, so a finished course lights up automatically on the map page (`#/math`).
 Strands: 🔢 numbers · 🍕 fractions, decimals and percent · 🧮 algebra · 📈 functions and calculus · 📐 geometry · 📏 measurement · 🎲 statistics and probability
