@@ -10,11 +10,11 @@ Dev: `dev/scenes.html` renders every scene of every live course as still frames,
 
 ## Run locally
 
-No build step. Serve the folder with any static server:
+No build step, and no server code: the site is plain HTML, CSS and JavaScript. Locally, serve the folder with any static file server, for example:
 
 ```sh
-python -m http.server 8000
-# open http://localhost:8000
+npx serve .                  # Node
+python -m http.server 8000   # or Python, if you have it
 ```
 
 Opening `index.html` straight from disk won't work, because browsers block `fetch` from `file://`.

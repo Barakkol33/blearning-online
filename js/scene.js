@@ -198,7 +198,100 @@ export function blocks(spec) {
   return { svg, draw };
 }
 
-const KNOWN = { 'number-line': numberLine, blocks };
+// ---------- shapes ----------
+// Polygons as vertex lists around (0,0), roughly 110px across.
+const reg = (k, r = 52, rot = -90) =>
+  Array.from({ length: k }, (_, i) => {
+    const a = ((rot + (360 / k) * i) * Math.PI) / 180;
+    return [r * Math.cos(a), r * Math.sin(a)];
+  });
+export const SHAPES = {
+  triangle: { name: 'משולש', pts: [[0, -50], [56, 44], [-56, 44]] },
+  'triangle-odd': { name: 'משולש', pts: [[-62, 40], [62, 40], [-30, -34]] },
+  square: { name: 'ריבוע', pts: [[-44, -44], [44, -44], [44, 44], [-44, 44]] },
+  'square-tilted': { name: 'ריבוע', pts: reg(4, 58, -90) },
+  rectangle: { name: 'מלבן', pts: [[-62, -34], [62, -34], [62, 34], [-62, 34]] },
+  pentagon: { name: 'מחומש', pts: reg(5) },
+  hexagon: { name: 'משושה', pts: reg(6, 52, 0) },
+  circle: { name: 'עיגול', circle: 50 },
+};
+
+// Draws one shape into `parent` at (cx, cy). show: 'corners' | 'sides'.
+function drawShape(parent, key, cx, cy, sc, show, animateMarks) {
+  const sh = SHAPES[key];
+  if (!sh) return;
+  const g = s('g', {}, parent);
+  if (sh.circle) {
+    s('circle', { cx, cy, r: sh.circle * sc, class: 'shape' }, g);
+    return g;
+  }
+  const P = sh.pts.map(([x, y]) => [cx + x * sc, cy + y * sc]);
+  s('polygon', { points: P.map((p) => p.join(',')).join(' '), class: 'shape' }, g);
+  const mark = (el, k) => {
+    if (animateMarks) el.animate([{ opacity: 0, transform: 'scale(0.3)' }, { opacity: 1, transform: 'none' }], { duration: 300, delay: 250 + k * 380, fill: 'backwards' });
+  };
+  const out = (x, y, d) => { // push a point outward from the shape's center
+    const dx = x - cx, dy = y - cy, L = Math.hypot(dx, dy) || 1;
+    return [x + (dx / L) * d, y + (dy / L) * d];
+  };
+  if (show === 'corners') {
+    P.forEach(([x, y], k) => {
+      const m = s('g', { class: 'mark' }, g);
+      s('circle', { cx: x, cy: y, r: 6, class: 'corner' }, m);
+      const [tx, ty] = out(x, y, 17);
+      s('text', { x: tx, y: ty + 5, 'text-anchor': 'middle', class: 'mark-n' }, m).textContent = k + 1;
+      mark(m, k);
+    });
+  } else if (show === 'sides') {
+    P.forEach(([x, y], k) => {
+      const [x2, y2] = P[(k + 1) % P.length];
+      const m = s('g', { class: 'mark' }, g);
+      s('line', { x1: x, y1: y, x2, y2, class: 'side' }, m);
+      const [tx, ty] = out((x + x2) / 2, (y + y2) / 2, 16);
+      s('text', { x: tx, y: ty + 5, 'text-anchor': 'middle', class: 'mark-n side-n' }, m).textContent = k + 1;
+      mark(m, k);
+    });
+  }
+  return g;
+}
+
+// A standalone figure of one shape (used by exercise generators).
+export function shapeSvg(key) {
+  const svg = s('svg', { viewBox: '0 0 160 150', class: 'fig shape-fig', role: 'img' });
+  drawShape(svg, key, 80, 75, 1, null, false);
+  return svg.outerHTML;
+}
+
+// Scene: a row of shapes. Step keys: shapes (list), show (corners|sides),
+// names (true to write each shape's name under it), label.
+export function shapes(spec) {
+  const W3 = 640, H3 = 215;
+  const svg = s('svg', { viewBox: `0 0 ${W3} ${H3}`, class: 'nl shapes', role: 'img' });
+  const g = s('g', {}, svg);
+  const label = s('text', { x: W3 / 2, y: 28, class: 'nl-label', 'text-anchor': 'middle' }, svg);
+  function draw(st, prev) {
+    const anim = !!prev && !reduceMotion();
+    g.replaceChildren();
+    const list = st.shapes || [];
+    const slot = W3 / Math.max(1, list.length);
+    const sc = Math.min(1, slot / 150);
+    const had = new Set(prev?.shapes || []);
+    list.forEach((key, i) => {
+      const cx = slot * (i + 0.5), cy = 112;
+      const isNew = anim && !had.has(key);
+      const marksNew = anim && (isNew || prev.show !== st.show);
+      const shapeG = drawShape(g, key, cx, cy, sc, st.show, marksNew);
+      if (isNew && shapeG) shapeG.animate([{ opacity: 0, transform: 'translateY(-14px)' }, { opacity: 1, transform: 'none' }], { duration: 380, delay: i * 120, fill: 'backwards' });
+      if (st.names && SHAPES[key]) {
+        s('text', { x: cx, y: H3 - 12, 'text-anchor': 'middle', class: 'tick-label cap shape-name', direction: 'rtl' }, g).textContent = SHAPES[key].name;
+      }
+    });
+    label.textContent = st.label || '';
+  }
+  return { svg, draw };
+}
+
+const KNOWN = { 'number-line': numberLine, blocks, shapes };
 
 // For other views (feed): a fresh scene instance, or null for unknown types.
 export const makeScene = (spec) => (KNOWN[spec?.type] ? KNOWN[spec.type](spec) : null);

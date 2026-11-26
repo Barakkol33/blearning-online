@@ -1,0 +1,22 @@
+{
+  "title": "צורות: משולש, ריבוע, עיגול",
+  "subject": "math",
+  "grade": "כיתה א׳",
+  "emoji": "🔺",
+  "color": "#c2410c",
+  "author": "לומדים",
+  "license": "CC BY-SA 4.0",
+  "description": "מכירים את הצורות שמסביבנו, סופרים צלעות ופינות, ומגלים שריבוע נשאר ריבוע גם כשמסובבים אותו.",
+  "outcomes": [
+    "לזהות משולש, ריבוע, מלבן ועיגול",
+    "לספור צלעות ופינות של צורה",
+    "לדעת שמשולש הוא כל צורה סגורה עם 3 צלעות ישרות",
+    "לזהות צורה גם כשהיא מסובבת או נראית אחרת"
+  ],
+  "exercises": "exercises.json",
+  "lessons": [
+    { "id": "meet", "title": "מכירים צורות", "file": "lessons/01-meet.md", "minutes": 5, "questions": ["questions/01-meet.mcq.json", "questions/01-meet.tf.json"] },
+    { "id": "count", "title": "צלעות ופינות", "file": "lessons/02-count.md", "minutes": 7, "questions": ["questions/02-count.mcq.json", "questions/02-count.tf.json"] },
+    { "id": "turn", "title": "אותה צורה מכל כיוון", "file": "lessons/03-turn.md", "minutes": 7, "questions": ["questions/03-turn.mcq.json", "questions/03-turn.tf.json"] }
+  ]
+}

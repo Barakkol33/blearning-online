@@ -1,0 +1,9 @@
+{
+  "type": "truefalse",
+  "title": "נכון או לא נכון",
+  "questions": [
+    { "id": "rotate", "statement": "ריבוע מסובב הוא עדיין ריבוע.", "answer": true },
+    { "id": "upside", "statement": "משולש הפוך (עם החוד למטה) הוא כבר לא משולש.", "answer": false, "explanation": "גם הפוך יש לו 3 צלעות ישרות, ולכן הוא משולש." },
+    { "id": "any3", "statement": "כל צורה סגורה עם 3 צלעות ישרות היא משולש.", "answer": true }
+  ]
+}

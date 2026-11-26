@@ -1,0 +1,9 @@
+{
+  "type": "truefalse",
+  "title": "נכון או לא נכון",
+  "questions": [
+    { "id": "circle", "statement": "לעיגול יש צלעות ישרות.", "answer": false, "explanation": "העיגול עגול לגמרי, בלי אף צלע ישרה." },
+    { "id": "square", "statement": "לריבוע יש 4 צלעות שוות.", "answer": true },
+    { "id": "pizza", "statement": "פרוסת פיצה נראית כמו משולש.", "answer": true }
+  ]
+}

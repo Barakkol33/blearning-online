@@ -1,0 +1,9 @@
+{
+  "type": "truefalse",
+  "title": "נכון או לא נכון",
+  "questions": [
+    { "id": "same", "statement": "לריבוע יש אותו מספר של פינות ושל צלעות.", "answer": true },
+    { "id": "pent", "statement": "למחומש יש 6 פינות.", "answer": false, "explanation": "למחומש יש 5 פינות. למשושה יש 6." },
+    { "id": "corner", "statement": "פינה היא המקום שבו שתי צלעות נפגשות.", "answer": true }
+  ]
+}

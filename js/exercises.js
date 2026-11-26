@@ -2,7 +2,7 @@
 // Sections are either generated (fresh every time, from a seed in the URL)
 // or written by hand. Every exercise can have a hint and a full solution.
 // Later: "steps" (guided sub-questions) for hard high-school problems.
-import { h, esc, fmt, fmtOpt } from './util.js';
+import { h, esc, fmt, fmtOpt, shuffle } from './util.js';
 import { getJSON } from './content.js';
 import { GENERATORS, rng } from './generators.js';
 import { store } from './store.js';
@@ -120,7 +120,11 @@ function exerciseEl(it, n, onSolved, c) {
 
   if (it.options) {
     const row = h('div', 'q-opts');
-    it.options.forEach((o, i) => {
+    // Shuffle so the right answer isn't always first; "fixed": true keeps the
+    // author's order (e.g. the signs > < =).
+    const idx = it.options.map((_, i) => i);
+    (it.fixed ? idx : shuffle(idx)).forEach((i) => {
+      const o = it.options[i];
       const b = h('button', 'opt', fmtOpt(o));
       b.onclick = () => {
         if (done) return;

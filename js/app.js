@@ -26,50 +26,52 @@ marked.use({
 
 const app = document.getElementById('app');
 let cleanup = null;
-let subjectFilter = 'all';
 
 const minutes = (c) => c.lessons.reduce((t, l) => t + (l.minutes || 0), 0);
 const subjectOf = (cat, id) => cat.subjects.find((s) => s.id === id) || { title: id, emoji: '' };
 
 // ---------- home: course catalog ----------
 async function home() {
-  const cat = await catalog();
+  const [cat, map] = await Promise.all([catalog(), getJSON('content/math-map.json')]);
   const courses = await Promise.all(cat.courses.map((e) => (e.status === 'soon' ? e : loadCourse(e.id))));
+
+  // Group courses by grade, in curriculum order, using the math map.
+  const stageOf = new Map(map.stages.flatMap((st) => st.topics.map((t) => [t.id, st.id])));
+  const groups = map.stages
+    .map((st) => ({ st, list: courses.filter((c) => stageOf.get(c.id) === st.id) }))
+    .filter((g) => g.list.length);
+  const loose = courses.filter((c) => !stageOf.has(c.id));
+  if (loose.length) groups.push({ st: { id: 'other', title: 'עוד' }, list: loose });
 
   app.innerHTML = `
     <section class="hero">
-      <h1>לומדים, בקצב שלכם</h1>
-      <p>קורסים, הסברים מונפשים ומשחקים — חינם, בעברית, בלי הרשמה.</p>
+      <h1>לומדים מתמטיקה, בקצב שלכם</h1>
+      <p>קורסים, הסברים מונפשים, תרגול ומשחקים. חינם, בעברית, בלי הרשמה.</p>
     </section>
     <a class="map-banner" href="#/math">
       <span class="big">🗺️</span>
       <span><b>מפת המתמטיקה</b><br><span class="muted">כל הנושאים מכיתה א׳ ועד י״ב, במקום אחד</span></span>
       <span class="go">←</span>
     </a>
-    <div class="chips"></div>
-    <div class="grid"></div>
+    <div class="jump">${groups.map((g) => `<a href="#/" data-jump="g-${g.st.id}">${esc(g.st.title)}</a>`).join('')}</div>
+    ${groups
+      .map((g) => `<section class="grade" id="g-${g.st.id}">
+        <h2>${esc(g.st.title)} <span class="muted small">· ${g.list.length} קורסים</span></h2>
+        <div class="grid">${g.list.map((c) => card(cat, c)).join('')}</div>
+      </section>`)
+      .join('')}
     <section class="backup">
       <span>💾 ההתקדמות נשמרת בדפדפן הזה בלבד.</span>
       <button class="btn ghost small" data-act="export">ייצוא קוד התקדמות</button>
       <button class="btn ghost small" data-act="import">ייבוא</button>
     </section>`;
 
-  const chips = app.querySelector('.chips');
-  const grid = app.querySelector('.grid');
-  const renderGrid = () => {
-    chips.innerHTML = [{ id: 'all', title: 'הכל', emoji: '✨' }, ...cat.subjects]
-      .map((s) => `<button class="chip ${s.id === subjectFilter ? 'on' : ''}" data-s="${s.id}">${s.emoji} ${esc(s.title)}</button>`)
-      .join('');
-    grid.innerHTML = courses
-      .filter((c) => subjectFilter === 'all' || c.subject === subjectFilter)
-      .map((c) => card(cat, c))
-      .join('');
+  app.querySelector('.jump').onclick = (e) => {
+    const a = e.target.closest('[data-jump]');
+    if (!a) return;
+    e.preventDefault();
+    document.getElementById(a.dataset.jump)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
-  chips.onclick = (e) => {
-    const b = e.target.closest('[data-s]');
-    if (b) { subjectFilter = b.dataset.s; renderGrid(); }
-  };
-  renderGrid();
   const mine = stuckList();
   if (mine) app.querySelector('.backup').before(mine);
 

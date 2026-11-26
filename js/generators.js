@@ -5,6 +5,8 @@
 // Generators are picked from a course's exercises.json:
 //   { "generate": { "type": "add", "max": 20, "count": 10 } }
 
+import { SHAPES, shapeSvg } from './scene.js';
+
 // mulberry32: tiny seeded random number generator.
 export function rng(seed) {
   let a = seed >>> 0 || 1;
@@ -53,6 +55,7 @@ export const GENERATORS = {
     return {
       q: `איזה סימן מתאים? \`${a} ☐ ${b}\``,
       options: SIGNS,
+      fixed: true,
       answer: ans,
       hint: 'המספר שנמצא ימינה יותר על ציר המספרים הוא הגדול. הפה של הסימן פתוח אל הגדול.',
       solution: `\`${a} ${SIGNS[ans]} ${b}\``,
@@ -121,6 +124,36 @@ export const GENERATORS = {
       answer: next,
       hint: 'בדקו בכמה משתנה כל מספר לעומת המספר שלפניו.',
       solution: `כל מספר ${rule}: \`${seq[len - 1]} ${goDown ? '-' : '+'} ${step} = ${next}\`.`,
+    };
+  },
+
+  // Shapes: count corners or sides, or name the shape. { ask: 'count' | 'name' }
+  shape(r, { ask = 'count', include = ['triangle', 'triangle-odd', 'square', 'square-tilted', 'rectangle', 'pentagon', 'hexagon', 'circle'] }) {
+    const key = include[int(r, 0, include.length - 1)];
+    const sh = SHAPES[key];
+    const k = sh.circle ? 0 : sh.pts.length;
+    if (ask === 'name') {
+      const names = ['משולש', 'ריבוע', 'מלבן', 'עיגול', 'מחומש', 'משושה'];
+      const others = names.filter((x) => x !== sh.name);
+      const opts = [sh.name, others[int(r, 0, others.length - 1)]];
+      const third = others.filter((x) => x !== opts[1]);
+      opts.push(third[int(r, 0, third.length - 1)]);
+      return {
+        q: 'איך קוראים לצורה הזו?',
+        figure: shapeSvg(key),
+        options: opts,
+        answer: 0,
+        hint: sh.circle ? 'לצורה הזו אין פינות בכלל.' : 'ספרו את הפינות של הצורה.',
+        solution: `זה ${sh.name}${sh.circle ? ': צורה עגולה בלי פינות ובלי צלעות ישרות.' : `: יש לו ${k} פינות ו־${k} צלעות.`}`,
+      };
+    }
+    const what = r() < 0.5 ? 'פינות' : 'צלעות';
+    return {
+      q: `כמה ${what} יש לצורה?`,
+      figure: shapeSvg(key),
+      answer: k,
+      hint: sh.circle ? 'האם יש לעיגול פינה כלשהי?' : `סמנו באצבע כל ${what === 'פינות' ? 'פינה' : 'צלע'} שספרתם, כדי לא לספור פעמיים.`,
+      solution: sh.circle ? 'לעיגול אין פינות ואין צלעות ישרות: 0.' : `ל${sh.name} יש ${k} ${what}. בכל מצולע מספר הפינות שווה למספר הצלעות.`,
     };
   },
 

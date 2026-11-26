@@ -71,6 +71,8 @@ code { direction: ltr; unicode-bidi: isolate; font-family: ui-monospace, Consola
 .chips { display: flex; gap: 8px; flex-wrap: wrap; margin: 22px 0; }
 .chip { border: 0; font: inherit; cursor: pointer; padding: 6px 14px; border-radius: 999px; background: var(--panel); color: var(--ink); box-shadow: inset 0 0 0 1.5px var(--line); }
 .chip.on { background: var(--ink); color: var(--bg); box-shadow: none; }
+.grade { scroll-margin-top: 16px; }
+.grade h2 { margin: 30px 0 12px; }
 .grid { display: grid; gap: 18px; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); }
 .card { display: flex; flex-direction: column; background: var(--panel); border-radius: var(--radius); overflow: hidden; color: inherit; text-decoration: none; box-shadow: var(--shadow); border: 1px solid var(--line); transition: transform .15s; }
 a.card:hover { transform: translateY(-3px); }
@@ -176,6 +178,12 @@ body.static .frames { display: grid; }
 .blocks .rod-line { stroke: var(--panel); stroke-width: 1; opacity: .7; }
 .blocks .one { fill: #e8a33d; stroke: #b7791f; stroke-width: 1.5; }
 .blocks .one.gone { opacity: .25; }
+.shapes .shape, .shape-fig .shape { fill: color-mix(in srgb, #3b5bdb 16%, var(--panel)); stroke: #3b5bdb; stroke-width: 3; stroke-linejoin: round; }
+.shapes .corner { fill: var(--neg); }
+.shapes .side { stroke: var(--neg); stroke-width: 6; stroke-linecap: round; }
+.shapes .mark { transform-box: fill-box; transform-origin: center; }
+.shapes .mark-n { font: 700 15px Rubik, system-ui, sans-serif; fill: var(--neg); }
+.shapes .shape-name { font-size: 17px; fill: var(--ink); }
 .blocks .cross { stroke: var(--neg); stroke-width: 2.5; stroke-linecap: round; }
 @keyframes pop { from { transform: scale(0); } 70% { transform: scale(1.4); } to { transform: scale(1); } }
 
@@ -214,6 +222,7 @@ body.static .frames { display: grid; }
 .ex-tools { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
 .ex-hint, .ex-sol { margin-top: 10px; padding: 8px 12px; border-radius: 10px; background: color-mix(in srgb, var(--accent) 8%, var(--panel)); }
 .fig { width: min(100%, 320px); height: auto; display: block; margin: 4px 0 10px; }
+.fig.shape-fig { width: 130px; }
 .fig .tri { fill: color-mix(in srgb, var(--accent) 12%, transparent); stroke: var(--ink); stroke-width: 2; stroke-linejoin: round; }
 .fig .ang { font: 600 14px Rubik, system-ui, sans-serif; fill: var(--ink); }
 .fig .ang.q { fill: var(--neg); font-size: 18px; }
