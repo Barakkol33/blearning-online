@@ -46,6 +46,15 @@ export const store = {
     save();
     return f;
   },
+  // Game layer: mode (off | light | full), points, achievements, counters.
+  game() {
+    const s = load();
+    s.game ??= { mode: 'light', xp: 0, ach: {}, n: {} };
+    return s.game;
+  },
+  saveGame() {
+    save();
+  },
   stuck() {
     return load().stuck || [];
   },

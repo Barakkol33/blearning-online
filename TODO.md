@@ -23,6 +23,14 @@ Grouped by area. Rough order inside each group = priority. See [docs/product.md]
 - [ ] Mixed review page across courses (prerequisites plus current)
 - [ ] Teacher answer key page for a given seed
 
+## Game mode
+- [x] Three modes picked by the viewer: off / light / full (`js/game.js`, page `#/me`)
+- [x] Achievements that reward persistence and asking for help, not just speed
+- [ ] Mini-games show only in light/full? Decide (probably always available, but scored only in light/full)
+- [ ] Full mode: optional sounds (off by default)
+- [ ] Full mode: a mascot (the 🐸) that reacts to answers
+- [ ] Per-course "mastery" badge: all lessons, perfect checks, plus 20 exercises
+
 ## Learning features (from docs/education.md)
 - [ ] Concept links: `[[id|text]]` in lessons opens a short card (definition, tiny example, "לנושא המלא ←")
 - [ ] `content/concepts/<id>.md`: short card text plus full explanation; a concept page view
@@ -150,6 +158,18 @@ Strands: 🔢 numbers · 🍕 fractions, decimals and percent · 🧮 algebra ·
 - [ ] `circle-angles` מעגל: מיתרים, זוויות מרכזיות והיקפיות 📐
 - [ ] `solids-pyramid-cone` גופים: פירמידה, חרוט וכדור 📏
 - [ ] `statistics-spread` סטטיסטיקה: פיזור ודיאגרמות 🎲
+
+### תיכון: slow down, plan grade by grade first
+High school is much bigger and is shaped by the bagrut process, so "next" stops here for a **planning chunk** per grade before building courses. Each planning chunk:
+- researches the current Ministry curriculum for that grade at each level (3 / 4 / 5 units), the bagrut questionnaires and when each is usually taken, and what schools typically teach when;
+- writes the insight into `docs/high-school.md`: the process, timeline and exam structure, and what students struggle with;
+- replaces the rough lists below with a grade-by-grade list of **small-bite** courses (a big topic becomes several courses), with ids added to math-map.json.
+
+- [ ] Plan grade 10 (כיתה י׳)
+- [ ] Plan grade 11 (כיתה י״א)
+- [ ] Plan grade 12 (כיתה י״ב)
+
+Rough topic lists (to be replaced by the plans):
 
 ### תיכון: בסיס משותף (3–5 יח״ל)
 - [ ] `functions-properties` פונקציות: תחום, חיתוכים, עלייה וירידה 📈

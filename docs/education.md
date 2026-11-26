@@ -20,7 +20,12 @@ Every lesson follows the same arc. A predictable shape lowers the effort of read
 | Stretch | One harder question, marked ⭐, optional | Questions file |
 | Wrap-up | 2–4 bullet summary plus "where this leads" | `## לסיכום` |
 
-Keep lessons short, 5–10 minutes. Several short lessons beat one long one.
+### Small bites
+
+Math is best learned in small bites:
+- A lesson is 5–10 minutes and teaches **one** idea.
+- A course is a few such lessons, and covers one topic from the map.
+- When a topic is big (most high-school topics are), split it into several courses, not longer lessons.
 
 ## 2. Clarity rules
 
@@ -139,7 +144,24 @@ Geometry is the hard case: figures, many facts at once, and proofs. Approach, fr
 3. **Proofs:** these can't be auto-checked as free text. Instead: "build the proof", where the student orders the given statements and picks the reason for each from a list (quizplay already has `order` and `match` types). Then a model proof to compare against.
 4. **Sources:** teacher-written banks and our own adaptations. Check licensing before using any exam text. Drafts may be machine-assisted, but each one is reviewed and its math checked by a person.
 
-## 8. Feedback and encouragement
+## 8. Game mode: off, light, full
+
+Each viewer picks how game-like the site feels (🏅 chip in the top bar, then "כמה משחק?"):
+
+| Mode | What shows |
+|---|---|
+| 📖 off (בלי משחק) | Just learning: lessons, exercises and ✔ for finished lessons. No points, achievements, goals or streaks |
+| 🏅 light (קצת משחק), the default | Progress bars, scores, daily goal, achievements |
+| 🎮 full (הרבה משחק) | Also ⭐ points, levels, "+5 ⭐" pops and confetti on big moments |
+
+Rules for the game layer (rewards can hurt motivation, see research.md):
+- **Reward what helps learning:** persistence ("לא מוותרים": solved after two misses), asking for help ("שואלים זה חכם"), accuracy, practice. Never just speed.
+- **Points are small and informative.** Nothing is locked behind points.
+- **No leaderboards.**
+- **Celebrate only real moments:** a perfect lesson check, a finished course.
+- **Code:** add an achievement in `js/game.js`, and give UI that should hide in "off" the class `g-light` (or `g-full` for full only).
+
+## 9. Feedback and encouragement
 
 From research (praise and feedback studies):
 - Praise the **strategy** ("you completed to ten, nice"), not the person ("genius").

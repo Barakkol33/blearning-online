@@ -8,6 +8,7 @@ import { makeScene, resolveSteps } from './scene.js';
 import { questionEl } from './quiz.js';
 import { store, FEED_GOAL } from './store.js';
 import { stuckButton } from './help.js';
+import { award } from './game.js';
 
 export async function feedView(root, c) {
   const cards = [];
@@ -27,7 +28,7 @@ export async function feedView(root, c) {
     <div class="feed-top">
       <a class="x" href="#/c/${c.id}" aria-label="סגירה">✕</a>
       <div class="feed-prog"><i></i></div>
-      <span class="goal"></span>
+      <span class="goal g-light"></span>
     </div>
     <div class="feed"></div>`;
   const feed = root.querySelector('.feed');
@@ -77,8 +78,9 @@ export async function feedView(root, c) {
     } else if (cd.kind === 'q') {
       el.append(h('p', 'qtag', cd.again ? '🔁 עוד פעם' : '❓ שאלה'));
       const qEl = questionEl(cd.q, (ok) => {
-        store.bumpFeed();
+        const f = store.bumpFeed();
         updGoal();
+        award('feed', { ok, goalReached: f.count === FEED_GOAL, streak: f.streak });
         if (ok) {
           el.append(h('p', 'hint', 'יופי! החליקו להמשך ↑'));
         } else {

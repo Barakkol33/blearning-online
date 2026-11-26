@@ -5,6 +5,7 @@
 import { h, esc, fmt } from './util.js';
 import { getJSON } from './content.js';
 import { store } from './store.js';
+import { award } from './game.js';
 
 export function stuckButton(ctx) {
   // ctx: { course, lesson, where, text }  — `where` is a short human label.
@@ -15,6 +16,7 @@ export function stuckButton(ctx) {
 
 async function openStuck(ctx) {
   const item = store.addStuck({ ...ctx, url: location.href, at: Date.now() });
+  award('help');
   const help = await getJSON('content/help.json').catch(() => ({ options: [] }));
   const msg = `היי, נתקעתי ב"${ctx.where}" (${ctx.lessonTitle}).\n${ctx.text ? ctx.text + '\n' : ''}אפשר עזרה? ${location.href}`;
 

@@ -7,6 +7,7 @@ import { getJSON } from './content.js';
 import { GENERATORS, rng } from './generators.js';
 import { store } from './store.js';
 import { stuckButton } from './help.js';
+import { award } from './game.js';
 
 const norm = (s) => String(s).replace(/[−–]/g, '-').replace(/,/g, '.').replace(/[\s°%]/g, '');
 
@@ -41,7 +42,7 @@ export async function exercisesPage(app, c, seed) {
         <button class="btn ghost small" data-act="print">🖨 דף עבודה להדפסה</button>
       </div>
     </section>
-    <div class="ex-score"><span class="sc"></span><div class="meter"><i></i></div></div>
+    <div class="ex-score g-light"><span class="sc"></span><div class="meter"><i></i></div></div>
     <div class="ex-list"></div>`;
 
   const list = app.querySelector('.ex-list');
@@ -101,10 +102,14 @@ function exerciseEl(it, n, onSolved, c) {
       fb.hidden = false;
       fb.innerHTML = '<b>✔ נכון!</b>';
       ans.querySelectorAll('input,button').forEach((x) => (x.disabled = true));
-      if (!revealed) onSolved();
+      if (!revealed) {
+        onSolved();
+        award('exercise', { firstTry: misses === 0, misses });
+      }
       return;
     }
     misses++;
+    award('miss');
     fb.hidden = false;
     fb.innerHTML = '<b>✘ לא בדיוק.</b> נסו שוב.' + (misses >= 2 && it.hint && hintBox.hidden ? ' אולי הרמז יעזור.' : '');
     if (misses >= 3 && !stuckShown) {

@@ -5,6 +5,7 @@ import { sceneWidget, sceneFrames } from './scene.js';
 import { questionEl } from './quiz.js';
 import { feedView } from './feed.js';
 import { exercisesPage } from './exercises.js';
+import { award, celebrate, applyMode, mePage } from './game.js';
 import { store } from './store.js';
 import { shuffle } from './util.js';
 import { stuckButton, stuckList } from './help.js';
@@ -289,8 +290,13 @@ function renderQuiz(sec, c, L, qs) {
   function finish() {
     const score = right / list.length;
     const p = store.lesson(c.id, L.id);
-    store.setLesson(c.id, L.id, { done: true, best: Math.max(score, p.best || 0) });
-    res.innerHTML = `<p>ענית נכון על <b>${right}</b> מתוך <b>${list.length}</b> ${score === 1 ? '🏆' : score >= 0.6 ? '👏' : '💪'}</p>`;
+    const perfectNow = score === 1 && !p.perfect;
+    store.setLesson(c.id, L.id, { done: true, best: Math.max(score, p.best || 0), perfect: p.perfect || score === 1 });
+    const courseDone = !p.done && store.doneCount(c) === c.lessons.length;
+    award('lesson', { first: !p.done, perfect: perfectNow, courseDone });
+    if (perfectNow || courseDone) celebrate();
+    const note = score === 1 ? 'כל הכבוד על הדיוק.' : score >= 0.6 ? 'רוב התשובות נכונות. כדאי לעבור שוב על מה שטעיתם.' : 'כדאי לחזור על השיעור ולנסות שוב, זה בסדר.';
+    res.innerHTML = `<p>ענית נכון על <b>${right}</b> מתוך <b>${list.length}</b>. <span class="g-light">${note}</span></p>`;
     const again = h('button', 'btn ghost', '↺ נסו שוב');
     again.onclick = () => renderQuiz(sec, c, L, qs);
     res.append(again);
@@ -321,6 +327,7 @@ async function route() {
     } else if ((m = hash.match(/^#\/c\/([\w-]+)\/l\/([\w-]+)$/))) await lessonPage(m[1], m[2]);
     else if ((m = hash.match(/^#\/c\/([\w-]+)$/))) await coursePage(m[1]);
     else if (hash === '#/math') await mathMap();
+    else if (hash === '#/me') mePage(app);
     else await home();
   } catch (err) {
     console.error(err);
@@ -329,4 +336,5 @@ async function route() {
   window.scrollTo(0, 0);
 }
 addEventListener('hashchange', route);
+applyMode();
 route();
