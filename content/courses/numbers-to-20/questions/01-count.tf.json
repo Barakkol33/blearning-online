@@ -1,0 +1,9 @@
+{
+  "type": "truefalse",
+  "title": "נכון או לא נכון",
+  "questions": [
+    { "id": "after-9", "statement": "אחרי 9 בא 10.", "answer": true },
+    { "id": "before-3", "statement": "לפני 3 בא 4.", "answer": false, "explanation": "לפני 3 בא 2. המספר 4 בא אחרי 3." },
+    { "id": "row", "statement": "בשורה אחת במסגרת יש 5 קוביות.", "answer": true }
+  ]
+}

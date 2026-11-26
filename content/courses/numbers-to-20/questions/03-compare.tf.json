@@ -1,0 +1,9 @@
+{
+  "type": "truefalse",
+  "title": "נכון או לא נכון",
+  "questions": [
+    { "id": "t19-20", "statement": "19 גדול מ־20.", "answer": false, "explanation": "20 בא אחרי 19, ולכן 20 גדול יותר." },
+    { "id": "t-right", "statement": "על ציר המספרים, המספר שמימין גדול יותר.", "answer": true },
+    { "id": "t-sign", "statement": "`8 < 13`", "answer": true, "explanation": "8 קטן מ־13." }
+  ]
+}

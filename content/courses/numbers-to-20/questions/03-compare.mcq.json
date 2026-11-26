@@ -1,0 +1,10 @@
+{
+  "type": "mcq",
+  "title": "מי גדול יותר?",
+  "questions": [
+    { "id": "c12-17", "question": "איזה מספר גדול יותר?", "options": ["17", "12"], "answer": 0, "explanation": "17 נמצא ימינה יותר על ציר המספרים." },
+    { "id": "c-small", "question": "איזה מספר הכי קטן?", "options": ["6", "11", "9", "16"], "answer": 0 },
+    { "id": "c-sign", "question": "איזה סימן מתאים? 15 __ 9", "options": [">", "<", "="], "answer": 0, "explanation": "15 גדול מ־9, והפה של הסימן פתוח אל 15." },
+    { "id": "c-eq", "question": "איזה סימן מתאים? 7 __ 7", "options": ["=", ">", "<"], "answer": 0 }
+  ]
+}

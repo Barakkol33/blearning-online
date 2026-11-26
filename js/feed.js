@@ -4,7 +4,7 @@
 // a few cards later. A small daily goal gives a natural place to stop.
 import { h, esc, fmt, shuffle } from './util.js';
 import { getText, lessonQuestions, scenesIn } from './content.js';
-import { numberLine, resolveSteps } from './scene.js';
+import { makeScene, resolveSteps } from './scene.js';
 import { questionEl } from './quiz.js';
 import { store, FEED_GOAL } from './store.js';
 import { stuckButton } from './help.js';
@@ -15,7 +15,7 @@ export async function feedView(root, c) {
     cards.push({ kind: 'title', n, L });
     const md = await getText(c.base + L.file);
     for (const spec of scenesIn(md)) {
-      if (spec.type !== 'number-line') continue;
+      if (!makeScene(spec)) continue;
       const states = resolveSteps(spec);
       states.forEach((_, i) => cards.push({ kind: 'scene', spec, states, i }));
     }
@@ -66,7 +66,7 @@ export async function feedView(root, c) {
         <h2>${esc(cd.L.title)}</h2>
         <p class="hint">החליקו למעלה ↑</p>`;
     } else if (cd.kind === 'scene') {
-      const nl = numberLine(cd.spec);
+      const nl = makeScene(cd.spec);
       const st = cd.states[cd.i];
       el.append(nl.svg, h('p', 'fcap', fmt(st.text)), h('p', 'muted small', `${cd.i + 1} / ${cd.states.length}`));
       el.onShow = () => {

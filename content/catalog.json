@@ -1,30 +1,71 @@
 {
   "subjects": [
-    { "id": "math", "title": "מתמטיקה", "emoji": "➗" },
-    { "id": "cs", "title": "מחשבים", "emoji": "💻" },
-    { "id": "physics", "title": "פיזיקה", "emoji": "🧲" },
-    { "id": "english", "title": "אנגלית", "emoji": "🔤" }
+    {
+      "id": "math",
+      "title": "מתמטיקה",
+      "emoji": "➗"
+    },
+    {
+      "id": "cs",
+      "title": "מחשבים",
+      "emoji": "💻"
+    },
+    {
+      "id": "physics",
+      "title": "פיזיקה",
+      "emoji": "🧲"
+    },
+    {
+      "id": "english",
+      "title": "אנגלית",
+      "emoji": "🔤"
+    }
   ],
   "courses": [
-    { "id": "negative-numbers" },
     {
-      "id": "fractions", "status": "soon", "subject": "math", "grade": "כיתות ד׳–ה׳",
-      "title": "שברים", "emoji": "🍕", "color": "#a16207",
+      "id": "numbers-to-20"
+    },
+    {
+      "id": "negative-numbers"
+    },
+    {
+      "id": "fractions",
+      "status": "soon",
+      "subject": "math",
+      "grade": "כיתות ד׳–ה׳",
+      "title": "שברים",
+      "emoji": "🍕",
+      "color": "#a16207",
       "description": "חצי, רבע ושליש — עם פיצות, רצועות ציר וקצת סדר בראש."
     },
     {
-      "id": "binary", "status": "soon", "subject": "cs", "grade": "כיתות ו׳–ח׳",
-      "title": "איך מחשב סופר? בסיס 2", "emoji": "💡", "color": "#3b5bdb",
+      "id": "binary",
+      "status": "soon",
+      "subject": "cs",
+      "grade": "כיתות ו׳–ח׳",
+      "title": "איך מחשב סופר? בסיס 2",
+      "emoji": "💡",
+      "color": "#3b5bdb",
       "description": "למה למחשב מספיקים רק 0 ו־1, ואיך כותבים כל מספר בעזרתם."
     },
     {
-      "id": "motion", "status": "soon", "subject": "physics", "grade": "כיתה ט׳",
-      "title": "תנועה ומהירות", "emoji": "🚲", "color": "#b4462a",
+      "id": "motion",
+      "status": "soon",
+      "subject": "physics",
+      "grade": "כיתה ט׳",
+      "title": "תנועה ומהירות",
+      "emoji": "🚲",
+      "color": "#b4462a",
       "description": "מרחק, זמן ומהירות — ולמה גרף של תנועה מספר סיפור."
     },
     {
-      "id": "present-simple", "status": "soon", "subject": "english", "grade": "כיתות ה׳–ז׳",
-      "title": "Present Simple", "emoji": "🗣️", "color": "#9d174d",
+      "id": "present-simple",
+      "status": "soon",
+      "subject": "english",
+      "grade": "כיתות ה׳–ז׳",
+      "title": "Present Simple",
+      "emoji": "🗣️",
+      "color": "#9d174d",
       "description": "איך מדברים באנגלית על דברים שקורים כל יום."
     }
   ]

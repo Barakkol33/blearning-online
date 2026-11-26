@@ -16,7 +16,7 @@ Grouped by area. Rough order inside each group = priority. See [docs/product.md]
 
 ## Math courses — say "next" to build the next one
 
-One course per line, in order. **"next" = the first unchecked course below**: build it in `content/courses/<id>/`, which means:
+One course per line, in order. **"next" (one chunk, about 10 minutes of work) = the first unchecked course below**: build it in `content/courses/<id>/`, which means:
 - 2–4 short lessons, each with a worked example and at least one animated scene
 - quizplay-format questions
 - the course added to `content/catalog.json`
@@ -26,7 +26,7 @@ The ids match `content/math-map.json`, so a finished course lights up automatica
 Strands: 🔢 numbers · 🍕 fractions, decimals and percent · 🧮 algebra · 📈 functions and calculus · 📐 geometry · 📏 measurement · 🎲 statistics and probability
 
 ### כיתה א׳
-- [ ] `numbers-to-20` מספרים עד 20 🔢
+- [x] `numbers-to-20` מספרים עד 20 🔢
 - [ ] `add-sub-to-20` חיבור וחיסור עד 20 🔢
 - [ ] `numbers-to-100` מספרים עד 100: עשרות ויחידות 🔢
 - [ ] `patterns` סדרות ודפוסים 🧮

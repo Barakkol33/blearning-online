@@ -1,0 +1,21 @@
+{
+  "title": "מספרים עד 20",
+  "subject": "math",
+  "grade": "כיתה א׳",
+  "emoji": "🐣",
+  "color": "#2f7d6d",
+  "author": "לומדים",
+  "license": "CC BY-SA 4.0",
+  "description": "סופרים, מכירים את המספרים עד 20 ומגלים שבכל מספר כזה יש עשרת אחת ועוד כמה יחידות.",
+  "outcomes": [
+    "לספור עד 20 קדימה ואחורה",
+    "לדעת מה בא לפני ומה בא אחרי",
+    "לראות ש־`13` הוא עשרת אחת ועוד 3 יחידות",
+    "להשוות בין מספרים: מי גדול יותר"
+  ],
+  "lessons": [
+    { "id": "count", "title": "סופרים עד 10", "file": "lessons/01-count.md", "minutes": 6, "questions": ["questions/01-count.mcq.json", "questions/01-count.tf.json"] },
+    { "id": "teens", "title": "המספרים 11 עד 20", "file": "lessons/02-teens.md", "minutes": 8, "questions": ["questions/02-teens.mcq.json", "questions/02-teens.tf.json"] },
+    { "id": "compare", "title": "מי גדול יותר?", "file": "lessons/03-compare.md", "minutes": 7, "questions": ["questions/03-compare.mcq.json", "questions/03-compare.tf.json"] }
+  ]
+}

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scene check</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { padding: 16px; }
+  .frames { display: grid; }
+  h2 { margin-top: 28px; }
+  h3 { font-size: 1em; color: var(--muted); }
+  .err { background: var(--wrong); padding: 8px 12px; border-radius: 8px; }
+</style>
+</head>
+<body>
+<h1>בדיקת סצנות</h1>
+<p class="muted">כל הסצנות בכל הקורסים הזמינים, כתמונות סטטיות. סצנה שבורה מסומנת באדום. ‎?course=&lt;id&gt; מציג קורס אחד.</p>
+<div id="out"></div>
+<script type="module">
+  // Paths in content files are relative to the site root.
+  const root = new URL('../', location.href).href;
+  const { catalog, loadCourse, getText } = await import(root + 'js/content.js');
+  const { parseScene } = await import(root + 'js/content.js');
+  const { sceneFrames } = await import(root + 'js/scene.js');
+  const out = document.getElementById('out');
+  const only = new URLSearchParams(location.search).get('course');
+  const fix = (p) => root + p;
+  const cat = await (await fetch(fix('content/catalog.json'))).json();
+  let bad = 0;
+  for (const e of cat.courses) {
+    if (e.status === 'soon' || (only && e.id !== only)) continue;
+    const c = await (await fetch(fix(`content/courses/${e.id}/course.json`))).json();
+    out.insertAdjacentHTML('beforeend', `<h2>${c.title} <span class="muted small">${e.id}</span></h2>`);
+    for (const L of c.lessons) {
+      const md = await (await fetch(fix(`content/courses/${e.id}/${L.file}`))).text();
+      const blocks = [...md.matchAll(/```scene\r?\n([\s\S]*?)```/g)];
+      out.insertAdjacentHTML('beforeend', `<h3>${L.title} · ${blocks.length} סצנות</h3>`);
+      for (const b of blocks) {
+        try { out.append(sceneFrames(parseScene(b[1]))); }
+        catch (err) { bad++; out.insertAdjacentHTML('beforeend', `<pre class="err">${err.message}</pre>`); }
+      }
+    }
+  }
+  document.title = bad ? `Scene check: ${bad} broken` : 'Scene check: ok';
+</script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "type": "truefalse",
+  "title": "נכון או לא נכון",
+  "questions": [
+    { "id": "rod", "statement": "עשר קוביות הן עשרת אחת.", "answer": true },
+    { "id": "t18", "statement": "במספר 18 יש 8 עשרות.", "answer": false, "explanation": "ב־18 יש עשרת אחת ו־8 יחידות." },
+    { "id": "t12", "statement": "`12 = 10 + 2`", "answer": true }
+  ]
+}

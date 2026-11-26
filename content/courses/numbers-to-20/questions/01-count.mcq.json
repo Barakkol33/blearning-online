@@ -1,0 +1,10 @@
+{
+  "type": "mcq",
+  "title": "סופרים עד 10",
+  "questions": [
+    { "id": "after-7", "question": "איזה מספר בא אחרי 7?", "options": ["8", "6", "9"], "answer": 0 },
+    { "id": "before-5", "question": "איזה מספר בא לפני 5?", "options": ["4", "6", "3"], "answer": 0 },
+    { "id": "frame", "question": "כמה קוביות יש במסגרת מלאה?", "options": ["10", "5", "8"], "answer": 0 },
+    { "id": "hops", "question": "הצפרדע על 2 וקופצת 3 קפיצות ימינה. איפה היא נוחתת?", "options": ["5", "4", "6"], "answer": 0, "explanation": "3, 4, 5. שלוש קפיצות מ־2 מגיעות ל־5." }
+  ]
+}
