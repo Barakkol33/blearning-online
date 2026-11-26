@@ -1,0 +1,192 @@
+{
+  "_note": "Overview of all school math, grade 1 to 12. Each topic id is the course folder name under content/courses/. Grade placement is approximate — check against the Ministry curriculum before relying on it.",
+  "strands": [
+    { "id": "numbers", "title": "מספרים ופעולות", "emoji": "🔢", "color": "#2f7d6d" },
+    { "id": "fractions", "title": "שברים, עשרוניים ואחוזים", "emoji": "🍕", "color": "#b7791f" },
+    { "id": "algebra", "title": "אלגברה ומשוואות", "emoji": "🧮", "color": "#3b5bdb" },
+    { "id": "functions", "title": "פונקציות וחדו״א", "emoji": "📈", "color": "#7c3aed" },
+    { "id": "geometry", "title": "גיאומטריה וטריגונומטריה", "emoji": "📐", "color": "#c2410c" },
+    { "id": "measurement", "title": "מדידה", "emoji": "📏", "color": "#0e7490" },
+    { "id": "data", "title": "סטטיסטיקה והסתברות", "emoji": "🎲", "color": "#be185d" }
+  ],
+  "stages": [
+    {
+      "id": "g1", "title": "כיתה א׳", "band": "יסודי",
+      "topics": [
+        { "id": "numbers-to-20", "title": "מספרים עד 20", "strand": "numbers" },
+        { "id": "add-sub-to-20", "title": "חיבור וחיסור עד 20", "strand": "numbers" },
+        { "id": "numbers-to-100", "title": "מספרים עד 100: עשרות ויחידות", "strand": "numbers" },
+        { "id": "patterns", "title": "סדרות ודפוסים", "strand": "algebra" },
+        { "id": "shapes-basic", "title": "צורות: משולש, ריבוע, עיגול", "strand": "geometry" },
+        { "id": "compare-measure", "title": "השוואה ומדידה: ארוך, קצר, כבד, קל", "strand": "measurement" }
+      ]
+    },
+    {
+      "id": "g2", "title": "כיתה ב׳", "band": "יסודי",
+      "topics": [
+        { "id": "add-sub-to-100", "title": "חיבור וחיסור עד 100", "strand": "numbers" },
+        { "id": "numbers-to-1000", "title": "מספרים עד 1,000 וערך המקום", "strand": "numbers" },
+        { "id": "multiplication-intro", "title": "מה זה כפל? קבוצות שוות", "strand": "numbers" },
+        { "id": "division-intro", "title": "מה זה חילוק? חלוקה שווה", "strand": "numbers" },
+        { "id": "polygons", "title": "מצולעים: צלעות וקודקודים", "strand": "geometry" },
+        { "id": "length-units", "title": "מדידת אורך: סנטימטר ומטר", "strand": "measurement" },
+        { "id": "time-clock", "title": "שעון וזמן", "strand": "measurement" },
+        { "id": "money", "title": "כסף: שקלים ואגורות", "strand": "measurement" }
+      ]
+    },
+    {
+      "id": "g3", "title": "כיתה ג׳", "band": "יסודי",
+      "topics": [
+        { "id": "multiplication-table", "title": "לוח הכפל", "strand": "numbers" },
+        { "id": "division-remainder", "title": "חילוק עם שארית", "strand": "numbers" },
+        { "id": "numbers-to-10000", "title": "מספרים עד 10,000", "strand": "numbers" },
+        { "id": "column-add-sub", "title": "חיבור וחיסור במאונך", "strand": "numbers" },
+        { "id": "order-of-operations-basic", "title": "סדר פעולות (בסיסי)", "strand": "numbers" },
+        { "id": "fractions-intro", "title": "שברים: חצי, רבע, שליש", "strand": "fractions" },
+        { "id": "triangle-types", "title": "סוגי משולשים", "strand": "geometry" },
+        { "id": "perimeter", "title": "היקף", "strand": "measurement" },
+        { "id": "bar-charts", "title": "טבלאות ודיאגרמות עמודות", "strand": "data" }
+      ]
+    },
+    {
+      "id": "g4", "title": "כיתה ד׳", "band": "יסודי",
+      "topics": [
+        { "id": "large-numbers", "title": "מספרים גדולים: עד מיליון ויותר", "strand": "numbers" },
+        { "id": "long-multiplication", "title": "כפל במאונך", "strand": "numbers" },
+        { "id": "long-division", "title": "חילוק ארוך", "strand": "numbers" },
+        { "id": "divisibility", "title": "סימני התחלקות", "strand": "numbers" },
+        { "id": "fractions-equivalent", "title": "שברים שווים: צמצום והרחבה", "strand": "fractions" },
+        { "id": "mixed-numbers", "title": "מספרים מעורבים", "strand": "fractions" },
+        { "id": "fractions-compare", "title": "השוואת שברים", "strand": "fractions" },
+        { "id": "angles", "title": "זוויות: ישרה, חדה, קהה", "strand": "geometry" },
+        { "id": "parallel-perpendicular", "title": "ישרים מקבילים ומאונכים", "strand": "geometry" },
+        { "id": "quadrilaterals", "title": "מרובעים: מלבן, ריבוע, מקבילית, מעוין, טרפז", "strand": "geometry" },
+        { "id": "area-rectangle", "title": "שטח מלבן וריבוע", "strand": "measurement" }
+      ]
+    },
+    {
+      "id": "g5", "title": "כיתה ה׳", "band": "יסודי",
+      "topics": [
+        { "id": "factors-primes", "title": "מחלקים, כפולות ומספרים ראשוניים", "strand": "numbers" },
+        { "id": "fractions-add-sub", "title": "חיבור וחיסור שברים", "strand": "fractions" },
+        { "id": "fractions-multiply", "title": "כפל שברים", "strand": "fractions" },
+        { "id": "decimals-intro", "title": "שברים עשרוניים", "strand": "fractions" },
+        { "id": "decimals-add-sub", "title": "חיבור וחיסור עשרוניים", "strand": "fractions" },
+        { "id": "area-triangle-parallelogram", "title": "שטח משולש ומקבילית", "strand": "measurement" },
+        { "id": "area-trapezoid", "title": "שטח טרפז ומצולעים", "strand": "measurement" },
+        { "id": "volume-box", "title": "נפח תיבה", "strand": "measurement" },
+        { "id": "mean", "title": "ממוצע", "strand": "data" }
+      ]
+    },
+    {
+      "id": "g6", "title": "כיתה ו׳", "band": "יסודי",
+      "topics": [
+        { "id": "fractions-divide", "title": "חילוק שברים", "strand": "fractions" },
+        { "id": "decimals-mul-div", "title": "כפל וחילוק עשרוניים", "strand": "fractions" },
+        { "id": "percent", "title": "אחוזים", "strand": "fractions" },
+        { "id": "ratio", "title": "יחס ופרופורציה", "strand": "fractions" },
+        { "id": "scale", "title": "קנה מידה", "strand": "measurement" },
+        { "id": "circle", "title": "מעגל: היקף, שטח ו־π", "strand": "geometry" },
+        { "id": "triangle-angle-sum", "title": "סכום הזוויות במשולש ובמצולע", "strand": "geometry" },
+        { "id": "solids-volume", "title": "גופים: תיבה, מנסרה, גליל", "strand": "measurement" },
+        { "id": "statistics-intro", "title": "ממוצע, שכיח, חציון ודיאגרמות", "strand": "data" },
+        { "id": "probability-intro", "title": "הסתברות: מושגים ראשונים", "strand": "data" }
+      ]
+    },
+    {
+      "id": "g7", "title": "כיתה ז׳", "band": "חטיבת ביניים",
+      "topics": [
+        { "id": "negative-numbers", "title": "מספרים שליליים", "strand": "numbers" },
+        { "id": "negative-mul-div", "title": "כפל וחילוק מספרים מכוונים", "strand": "numbers" },
+        { "id": "powers", "title": "חזקות", "strand": "numbers" },
+        { "id": "order-of-operations", "title": "סדר פעולות עם חזקות וסוגריים", "strand": "numbers" },
+        { "id": "percent-applications", "title": "אחוזים: הנחה, התייקרות ושינוי", "strand": "fractions" },
+        { "id": "algebraic-expressions", "title": "ביטויים אלגבריים והצבה", "strand": "algebra" },
+        { "id": "distributive-law", "title": "חוק הפילוג וכינוס איברים דומים", "strand": "algebra" },
+        { "id": "linear-equations", "title": "משוואות ממעלה ראשונה", "strand": "algebra" },
+        { "id": "word-problems-equations", "title": "בעיות מילוליות עם משוואות", "strand": "algebra" },
+        { "id": "coordinate-plane", "title": "מערכת צירים", "strand": "functions" },
+        { "id": "angles-lines", "title": "זוויות בין ישרים: קודקודיות, צמודות, מתאימות, מתחלפות", "strand": "geometry" }
+      ]
+    },
+    {
+      "id": "g8", "title": "כיתה ח׳", "band": "חטיבת ביניים",
+      "topics": [
+        { "id": "scientific-notation", "title": "חזקות עם מעריך שלילי וכתיב מדעי", "strand": "numbers" },
+        { "id": "short-multiplication", "title": "נוסחאות הכפל המקוצר", "strand": "algebra" },
+        { "id": "factoring", "title": "פירוק לגורמים", "strand": "algebra" },
+        { "id": "inequalities", "title": "אי־שוויונות", "strand": "algebra" },
+        { "id": "systems-equations", "title": "מערכת משוואות בשני נעלמים", "strand": "algebra" },
+        { "id": "algebraic-fractions", "title": "שברים אלגבריים", "strand": "algebra" },
+        { "id": "function-concept", "title": "מהי פונקציה?", "strand": "functions" },
+        { "id": "linear-function", "title": "הפונקציה הקווית: שיפוע ונקודת חיתוך", "strand": "functions" },
+        { "id": "pythagoras", "title": "משפט פיתגורס", "strand": "geometry" },
+        { "id": "congruence", "title": "חפיפת משולשים", "strand": "geometry" },
+        { "id": "isosceles-triangle", "title": "משולש שווה שוקיים", "strand": "geometry" },
+        { "id": "quadrilateral-proofs", "title": "תכונות מרובעים והוכחות", "strand": "geometry" },
+        { "id": "probability-events", "title": "הסתברות: מאורעות ושכיחות יחסית", "strand": "data" }
+      ]
+    },
+    {
+      "id": "g9", "title": "כיתה ט׳", "band": "חטיבת ביניים",
+      "topics": [
+        { "id": "roots", "title": "שורשים", "strand": "numbers" },
+        { "id": "quadratic-equations", "title": "משוואות ריבועיות ונוסחת השורשים", "strand": "algebra" },
+        { "id": "word-problems-quadratic", "title": "בעיות מילוליות: משוואות ריבועיות", "strand": "algebra" },
+        { "id": "quadratic-function", "title": "הפונקציה הריבועית: פרבולה", "strand": "functions" },
+        { "id": "similarity", "title": "דמיון משולשים", "strand": "geometry" },
+        { "id": "trig-right-triangle", "title": "טריגונומטריה במשולש ישר זווית", "strand": "geometry" },
+        { "id": "circle-angles", "title": "מעגל: מיתרים, זוויות מרכזיות והיקפיות", "strand": "geometry" },
+        { "id": "solids-pyramid-cone", "title": "גופים: פירמידה, חרוט וכדור", "strand": "measurement" },
+        { "id": "statistics-spread", "title": "סטטיסטיקה: פיזור ודיאגרמות", "strand": "data" }
+      ]
+    },
+    {
+      "id": "hs-core", "title": "תיכון: בסיס משותף (3–5 יח״ל)", "band": "תיכון",
+      "topics": [
+        { "id": "functions-properties", "title": "פונקציות: תחום, חיתוכים, עלייה וירידה", "strand": "functions" },
+        { "id": "lines-parabolas", "title": "ישרים ופרבולות במערכת צירים", "strand": "functions" },
+        { "id": "derivative-intro", "title": "נגזרת: קצב שינוי ושיפוע משיק", "strand": "functions" },
+        { "id": "function-investigation", "title": "חקירת פונקציה (פולינומים)", "strand": "functions" },
+        { "id": "optimization", "title": "בעיות קיצון", "strand": "functions" },
+        { "id": "growth-decay", "title": "גדילה ודעיכה", "strand": "fractions" },
+        { "id": "arithmetic-sequences", "title": "סדרה חשבונית", "strand": "algebra" },
+        { "id": "analytic-basics", "title": "גיאומטריה אנליטית: מרחק, אמצע, ישרים", "strand": "geometry" },
+        { "id": "trig-plane", "title": "טריגונומטריה במישור", "strand": "geometry" },
+        { "id": "probability-tree-table", "title": "הסתברות: דיאגרמת עץ וטבלה דו־ממדית", "strand": "data" },
+        { "id": "normal-distribution", "title": "סטיית תקן והתפלגות נורמלית", "strand": "data" }
+      ]
+    },
+    {
+      "id": "hs-4-5", "title": "תיכון: 4–5 יח״ל", "band": "תיכון",
+      "topics": [
+        { "id": "word-problems-motion-work", "title": "בעיות תנועה והספק", "strand": "algebra" },
+        { "id": "geometric-sequences", "title": "סדרה הנדסית", "strand": "algebra" },
+        { "id": "conditional-probability", "title": "הסתברות מותנית", "strand": "data" },
+        { "id": "bernoulli", "title": "נוסחת ברנולי", "strand": "data" },
+        { "id": "law-of-sines-cosines", "title": "משפט הסינוסים ומשפט הקוסינוסים", "strand": "geometry" },
+        { "id": "euclidean-proofs", "title": "גיאומטריה אוקלידית: הוכחות", "strand": "geometry" },
+        { "id": "circle-theorems", "title": "משפטים במעגל", "strand": "geometry" },
+        { "id": "analytic-circle", "title": "המעגל במערכת צירים", "strand": "geometry" },
+        { "id": "rational-root-functions", "title": "פונקציות רציונליות ופונקציות שורש", "strand": "functions" },
+        { "id": "integrals", "title": "אינטגרלים ושטחים", "strand": "functions" },
+        { "id": "exponents-logs", "title": "חזקות, פונקציה מעריכית ולוגריתמים", "strand": "functions" },
+        { "id": "exp-ln-calculus", "title": "נגזרות ואינטגרלים של e^x ו־ln x", "strand": "functions" }
+      ]
+    },
+    {
+      "id": "hs-5", "title": "תיכון: 5 יח״ל", "band": "תיכון",
+      "topics": [
+        { "id": "induction", "title": "אינדוקציה מתמטית", "strand": "algebra" },
+        { "id": "recursive-sequences", "title": "סדרות רקורסיביות", "strand": "algebra" },
+        { "id": "trig-functions", "title": "פונקציות טריגונומטריות וחקירתן", "strand": "functions" },
+        { "id": "volume-revolution", "title": "נפח גוף סיבוב", "strand": "functions" },
+        { "id": "complex-numbers", "title": "מספרים מרוכבים", "strand": "numbers" },
+        { "id": "vectors", "title": "וקטורים", "strand": "geometry" },
+        { "id": "solid-geometry", "title": "הנדסת המרחב", "strand": "geometry" },
+        { "id": "conics", "title": "פרבולה ואליפסה", "strand": "geometry" },
+        { "id": "loci", "title": "מקומות גיאומטריים", "strand": "geometry" }
+      ]
+    }
+  ]
+}

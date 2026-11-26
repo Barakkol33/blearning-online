@@ -1,0 +1,10 @@
+{
+  "type": "truefalse",
+  "title": "נכון או לא נכון",
+  "questions": [
+    { "id": "zero", "statement": "`0` הוא מספר שלילי.", "answer": false, "explanation": "אפס הוא לא חיובי ולא שלילי." },
+    { "id": "m1-m9", "statement": "`-1` גדול מ־`-9`.", "answer": true, "explanation": "`-1` נמצא מימין ל־`-9`." },
+    { "id": "neg-pos", "statement": "כל מספר שלילי קטן מכל מספר חיובי.", "answer": true, "explanation": "השליליים נמצאים משמאל לאפס, והחיוביים מימין לו." },
+    { "id": "m6-m2", "statement": "`-6` גדול מ־`-2`, כי 6 גדול מ־2.", "answer": false, "explanation": "דווקא הפוך: `-6` נמצא משמאל ל־`-2`, ולכן הוא קטן יותר." }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "type": "truefalse",
+  "title": "נכון או לא נכון",
+  "questions": [
+    { "id": "left", "statement": "כשמוסיפים מספר שלילי, זזים שמאלה על הציר.", "answer": true },
+    { "id": "inverse", "statement": "התרגיל `-7 + 7` שווה ל־`0`.", "answer": true, "explanation": "מספר ועוד המספר הנגדי לו תמיד שווה `0`." },
+    { "id": "two-neg", "statement": "סכום של שני מספרים שליליים יכול לצאת חיובי.", "answer": false, "explanation": "שני מספרים שליליים מזיזים אותנו שמאלה פעמיים, ולכן הסכום תמיד שלילי." }
+  ]
+}

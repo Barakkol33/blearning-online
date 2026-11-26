@@ -1,0 +1,9 @@
+{
+  "_note": "Where a stuck student can get human help. Check every link and program is still active before launch (some details date from 2017-2019).",
+  "options": [
+    { "title": "המורה שלכם", "description": "שלחו לו או לה את הקישור לשאלה — הוא מוביל בדיוק למקום שבו נתקעתם." },
+    { "title": "חבר או חברה מהכיתה", "description": "להסביר למישהו אחר זו גם הדרך הכי טובה ללמוד, כך ששניכם מרוויחים." },
+    { "title": "פר\"ח — חונכות של סטודנטים", "url": "https://www.perach.org.il", "description": "סטודנטים חונכים ילדים ובני נוער, בדרך כלל דרך בית הספר." },
+    { "title": "מורים פרטיים (בקרוב)", "description": "כאן תופיע רשימה של מורים פרטיים לפי מקצוע ואזור." }
+  ]
+}

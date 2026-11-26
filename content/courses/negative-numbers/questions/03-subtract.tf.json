@@ -1,0 +1,9 @@
+{
+  "type": "truefalse",
+  "title": "נכון או לא נכון",
+  "questions": [
+    { "id": "same", "statement": "חיסור של `-3` זהה לחיבור של `3`.", "answer": true },
+    { "id": "m2m3", "statement": "התרגיל `-2 - 3` שווה ל־`-1`.", "answer": false, "explanation": "`-2 - 3 = -5`: מתחילים ב־`-2` וקופצים 3 שמאלה." },
+    { "id": "0m5", "statement": "התרגיל `0 - 5` שווה ל־`-5`.", "answer": true }
+  ]
+}
