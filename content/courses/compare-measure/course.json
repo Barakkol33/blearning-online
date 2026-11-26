@@ -1,0 +1,22 @@
+{
+  "title": "השוואה ומדידה",
+  "subject": "math",
+  "grade": "כיתה א׳",
+  "emoji": "📏",
+  "color": "#0e7490",
+  "author": "לומדים",
+  "license": "CC BY-SA 4.0",
+  "description": "מי ארוך יותר ומי כבד יותר? משווים נכון, מודדים באטבים וגילים שגדול זה לא תמיד כבד.",
+  "outcomes": [
+    "להשוות אורכים כשההתחלות מיושרות",
+    "למדוד אורך ביחידות שוות (אטבים) ולספור אותן",
+    "לחשב בכמה דבר אחד ארוך יותר מאחר",
+    "להשוות משקלים במאזניים"
+  ],
+  "exercises": "exercises.json",
+  "lessons": [
+    { "id": "length", "title": "ארוך וקצר", "file": "lessons/01-length.md", "minutes": 6, "questions": ["questions/01-length.mcq.json", "questions/01-length.tf.json"] },
+    { "id": "units", "title": "מודדים באטבים", "file": "lessons/02-units.md", "minutes": 7, "questions": ["questions/02-units.mcq.json", "questions/02-units.tf.json"] },
+    { "id": "weight", "title": "כבד וקל", "file": "lessons/03-weight.md", "minutes": 6, "questions": ["questions/03-weight.mcq.json", "questions/03-weight.tf.json"] }
+  ]
+}

@@ -5,7 +5,17 @@
 // Generators are picked from a course's exercises.json:
 //   { "generate": { "type": "add", "max": 20, "count": 10 } }
 
-import { SHAPES, shapeSvg } from './scene.js';
+import { SHAPES, shapeSvg, measure } from './scene.js';
+
+const measureFig = (bars, max = 12, units = true) => {
+  const m = measure({ max });
+  m.draw({ bars, units }, null);
+  m.svg.classList.add('fig', 'fig-wide');
+  return m.svg.outerHTML;
+};
+const THINGS = [
+  ['עיפרון', '✏️'], ['מחק', '🧽'], ['מברשת', '🖌️'], ['סרגל', '📏'], ['מזלג', '🍴'], ['מפתח', '🔑'], ['גזר', '🥕'], ['נחש', '🐍'],
+];
 
 // mulberry32: tiny seeded random number generator.
 export function rng(seed) {
@@ -154,6 +164,43 @@ export const GENERATORS = {
       answer: k,
       hint: sh.circle ? 'האם יש לעיגול פינה כלשהי?' : `סמנו באצבע כל ${what === 'פינות' ? 'פינה' : 'צלע'} שספרתם, כדי לא לספור פעמיים.`,
       solution: sh.circle ? 'לעיגול אין פינות ואין צלעות ישרות: 0.' : `ל${sh.name} יש ${k} ${what}. בכל מצולע מספר הפינות שווה למספר הצלעות.`,
+    };
+  },
+
+  // Lengths measured in units (paper clips). { ask: 'length' | 'longer' | 'difference' }
+  length(r, { ask = 'length', max = 12 }) {
+    const pick = [...THINGS].sort(() => r() - 0.5).slice(0, 2);
+    let a = int(r, 2, max), b = int(r, 2, max);
+    if (ask !== 'length') while (a === b) b = int(r, 2, max);
+    const A = { name: pick[0][0], emoji: pick[0][1], len: a };
+    const B = { name: pick[1][0], emoji: pick[1][1], len: b };
+    if (ask === 'length') {
+      return {
+        q: `כמה אטבים אורכו של ה${A.name}?`,
+        figure: measureFig([A], max),
+        answer: a,
+        hint: 'ספרו את היחידות לאורך הפס, מההתחלה ועד הסוף.',
+        solution: `ה${A.name} ארוך ${a} אטבים.`,
+      };
+    }
+    if (ask === 'longer') {
+      return {
+        q: 'מה ארוך יותר?',
+        figure: measureFig([A, B], max, false),
+        options: [A.name, B.name],
+        fixed: true,
+        answer: a > b ? 0 : 1,
+        hint: 'שני הפסים מתחילים באותו מקום. איזה מגיע רחוק יותר?',
+        solution: `ה${a > b ? A.name : B.name} ארוך יותר: ${Math.max(a, b)} אטבים לעומת ${Math.min(a, b)}.`,
+      };
+    }
+    const [L, S] = a > b ? [A, B] : [B, A];
+    return {
+      q: `בכמה אטבים ה${L.name} ארוך יותר מה${S.name}?`,
+      figure: measureFig([A, B], max),
+      answer: L.len - S.len,
+      hint: `מצאו את האורך של כל אחד, ואז חסרו: ${L.len} פחות ${S.len}.`,
+      solution: `\`${L.len} - ${S.len} = ${L.len - S.len}\``,
     };
   },
 

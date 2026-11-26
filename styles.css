@@ -184,6 +184,20 @@ body.static .frames { display: grid; }
 .shapes .mark { transform-box: fill-box; transform-origin: center; }
 .shapes .mark-n { font: 700 15px Rubik, system-ui, sans-serif; fill: var(--neg); }
 .shapes .shape-name { font-size: 17px; fill: var(--ink); }
+.measure .bar { stroke-width: 2; }
+.measure .bar-0 { fill: #f2b84b; stroke: #b7791f; }
+.measure .bar-1 { fill: #7fb7e6; stroke: #2f6fa8; }
+.measure .bar-2 { fill: #9bd3a8; stroke: #2f7d4f; }
+.measure .bar-3 { fill: #e6a0c4; stroke: #a8326e; }
+.measure .unit-tick { stroke: rgb(0 0 0 / 40%); stroke-width: 1.5; }
+.measure .unit-n { font: 700 18px Rubik, system-ui, sans-serif; fill: var(--ink); }
+.measure .bar-name { font-size: 17px; fill: var(--ink); }
+.balance .stand { fill: var(--line); stroke: var(--muted); stroke-width: 2; }
+.balance .beam { stroke: var(--ink); stroke-width: 6; stroke-linecap: round; }
+.balance .string { stroke: var(--muted); stroke-width: 1.5; }
+.balance .pan { fill: color-mix(in srgb, var(--accent) 25%, var(--panel)); stroke: var(--accent); stroke-width: 2; }
+.balance .items { font-size: 30px; }
+.fig.fig-wide { width: min(100%, 460px); }
 .blocks .cross { stroke: var(--neg); stroke-width: 2.5; stroke-linecap: round; }
 @keyframes pop { from { transform: scale(0); } 70% { transform: scale(1.4); } to { transform: scale(1); } }
 

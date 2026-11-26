@@ -1,0 +1,9 @@
+{
+  "type": "truefalse",
+  "title": "נכון או לא נכון",
+  "questions": [
+    { "id": "big", "statement": "דבר גדול תמיד כבד יותר מדבר קטן.", "answer": false, "explanation": "בלון גדול קל יותר מאבן קטנה." },
+    { "id": "scale", "statement": "את המשקל אפשר להשוות בעזרת מאזניים.", "answer": true },
+    { "id": "equal", "statement": "כששמים 2 תפוחים מול 2 תפוחים דומים, המאזניים מאוזנים.", "answer": true }
+  ]
+}

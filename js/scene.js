@@ -291,7 +291,99 @@ export function shapes(spec) {
   return { svg, draw };
 }
 
-const KNOWN = { 'number-line': numberLine, blocks, shapes };
+// ---------- measure: compare lengths, count units ----------
+// Step keys: bars: [{ name, len, offset?, emoji? }], units (true = show unit
+// marks and the count), label. Scene option: max (longest length, default 12).
+export function measure(spec) {
+  const W4 = 640, NAME_W = 120, X0 = 24, ROW = 52, TOP = 50;
+  const max = spec.max || 12;
+  const u = (W4 - NAME_W - X0 - 30) / max;
+  const svg = s('svg', { viewBox: `0 0 ${W4} 200`, class: 'nl measure', role: 'img' });
+  const g = s('g', {}, svg);
+  const label = s('text', { x: W4 / 2, y: 28, class: 'nl-label', 'text-anchor': 'middle' }, svg);
+  function draw(st, prev) {
+    const anim = !!prev && !reduceMotion();
+    g.replaceChildren();
+    const bars = st.bars || [];
+    const H = TOP + bars.length * ROW + 10;
+    svg.setAttribute('viewBox', `0 0 ${W4} ${Math.max(H, 120)}`);
+    bars.forEach((b, i) => {
+      const y = TOP + i * ROW;
+      const x = X0 + (b.offset || 0) * u;
+      const w = b.len * u;
+      const old = prev?.bars?.find((p) => p.name === b.name);
+      const row = s('g', {}, g);
+      const rect = s('rect', { x, y, width: w, height: 26, rx: 6, class: `bar bar-${i % 4}` }, row);
+      if (anim && (!old || old.len !== b.len || (old.offset || 0) !== (b.offset || 0))) {
+        rect.animate([{ width: `${old ? old.len * u : 0}px` }, { width: `${w}px` }], { duration: 600, easing: 'ease-out', fill: 'backwards' });
+      }
+      s('text', { x: W4 - 8, y: y + 19, class: 'tick-label cap bar-name', direction: 'rtl', 'text-anchor': 'start' }, row).textContent =
+        `${b.emoji || ''} ${b.name}`.trim();
+      if (st.units) {
+        for (let k = 1; k <= b.len; k++) {
+          const tick = s('line', { x1: x + k * u, x2: x + k * u, y1: y + 3, y2: y + 23, class: 'unit-tick' }, row);
+          if (anim && !prev.units) tick.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 150, delay: 200 + k * 110, fill: 'backwards' });
+        }
+        s('text', { x: x + w + 8, y: y + 19, class: 'unit-n' }, row).textContent = b.len;
+      }
+    });
+    label.textContent = st.label || '';
+  }
+  return { svg, draw };
+}
+
+// ---------- balance scale ----------
+// Step keys: left, right (emoji strings), tilt: left | right | even, label.
+export function balance() {
+  const W5 = 640, H5 = 230, CX = 320, CY = 110, L = 170, DROP = 46;
+  const svg = s('svg', { viewBox: `0 0 ${W5} ${H5}`, class: 'nl balance', role: 'img' });
+  const label = s('text', { x: W5 / 2, y: 28, class: 'nl-label', 'text-anchor': 'middle' }, svg);
+  s('path', { d: `M${CX - 40},${H5 - 14} L${CX + 40},${H5 - 14} L${CX},${CY} Z`, class: 'stand' }, svg);
+  const beam = s('line', { class: 'beam' }, svg);
+  const side = () => {
+    const str1 = s('line', { class: 'string' }, svg), str2 = s('line', { class: 'string' }, svg);
+    const pan = s('path', { class: 'pan' }, svg);
+    const items = s('text', { 'text-anchor': 'middle', class: 'items' }, svg);
+    return { str1, str2, pan, items };
+  };
+  const sides = [side(), side()];
+  let angle = 0, raf = 0;
+  const ANG = { left: -12, right: 12, even: 0 };
+  function place(a) {
+    const r = (a * Math.PI) / 180;
+    const ends = [[CX - L * Math.cos(r), CY - L * Math.sin(r)], [CX + L * Math.cos(r), CY + L * Math.sin(r)]];
+    beam.setAttribute('x1', ends[0][0]); beam.setAttribute('y1', ends[0][1]);
+    beam.setAttribute('x2', ends[1][0]); beam.setAttribute('y2', ends[1][1]);
+    ends.forEach(([x, y], i) => {
+      const sd = sides[i], py = y + DROP;
+      sd.str1.setAttribute('x1', x); sd.str1.setAttribute('y1', y); sd.str1.setAttribute('x2', x - 50); sd.str1.setAttribute('y2', py);
+      sd.str2.setAttribute('x1', x); sd.str2.setAttribute('y1', y); sd.str2.setAttribute('x2', x + 50); sd.str2.setAttribute('y2', py);
+      sd.pan.setAttribute('d', `M${x - 62},${py} Q${x},${py + 22} ${x + 62},${py} Z`);
+      sd.items.setAttribute('x', x); sd.items.setAttribute('y', py - 6);
+    });
+  }
+  function draw(st, prev) {
+    // SVG coordinates are left-to-right, so "left" here is the left of the picture.
+    sides[0].items.textContent = st.left || '';
+    sides[1].items.textContent = st.right || '';
+    label.textContent = st.label || '';
+    const target = ANG[st.tilt] ?? 0;
+    cancelAnimationFrame(raf);
+    if (!prev || reduceMotion()) { angle = target; place(angle); return; }
+    const from = ANG[prev.tilt] ?? 0, t0 = performance.now();
+    const step = (t) => {
+      const k = Math.min(1, (t - t0) / 700), e = 1 - Math.pow(1 - k, 3);
+      angle = from + (target - from) * e;
+      place(angle);
+      if (k < 1) raf = requestAnimationFrame(step);
+    };
+    place(from);
+    raf = requestAnimationFrame(step);
+  }
+  return { svg, draw };
+}
+
+const KNOWN = { 'number-line': numberLine, blocks, shapes, measure, balance };
 
 // For other views (feed): a fresh scene instance, or null for unknown types.
 export const makeScene = (spec) => (KNOWN[spec?.type] ? KNOWN[spec.type](spec) : null);

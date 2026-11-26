@@ -1,0 +1,9 @@
+{
+  "type": "truefalse",
+  "title": "נכון או לא נכון",
+  "questions": [
+    { "id": "further", "statement": "כשההתחלות מיושרות, מה שמגיע רחוק יותר הוא הארוך יותר.", "answer": true },
+    { "id": "looks", "statement": "מה שמתחיל רחוק יותר הוא תמיד הארוך יותר.", "answer": false, "explanation": "צריך קודם ליישר את ההתחלות, ורק אז להשוות." },
+    { "id": "same", "statement": "שני דברים יכולים להיות באותו אורך בדיוק.", "answer": true }
+  ]
+}
