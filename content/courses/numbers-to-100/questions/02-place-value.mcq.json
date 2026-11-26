@@ -1,0 +1,10 @@
+{
+  "type": "mcq",
+  "title": "עשרות ויחידות",
+  "questions": [
+    { "id": "p58", "question": "כמה עשרות יש במספר 58?", "options": ["5", "8", "58"], "answer": 0 },
+    { "id": "p3t6", "question": "3 עשרות ו־6 יחידות. איזה מספר זה?", "options": ["36", "63", "9"], "answer": 0, "explanation": "`30 + 6 = 36`" },
+    { "id": "p-bigger", "question": "איזה מספר גדול יותר?", "options": ["71", "17"], "answer": 0, "explanation": "ב־71 יש 7 עשרות, וב־17 רק עשרת אחת." },
+    { "id": "p90", "question": "כמה יחידות יש במספר 90?", "options": ["0", "9", "90"], "answer": 0, "explanation": "ב־90 יש 9 עשרות ואף יחידה." }
+  ]
+}

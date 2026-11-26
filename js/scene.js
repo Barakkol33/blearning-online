@@ -146,7 +146,7 @@ export function blocks(spec) {
   const label = s('text', { x: W2 / 2, y: 28, class: 'nl-label', 'text-anchor': 'middle' }, svg);
   const frameW = 5 * (S + G) - G;
   const caption = (x, txt) =>
-    (s('text', { x, y: TOP + 10 * S + 26, class: 'tick-label', 'text-anchor': 'middle', direction: 'rtl', 'unicode-bidi': 'embed' }, g).textContent = txt);
+    (s('text', { x, y: TOP + 10 * S + 26, class: 'tick-label cap', 'text-anchor': 'middle', direction: 'rtl' }, g).textContent = txt);
 
   function draw(st, prev) {
     const anim = !!prev && !reduceMotion();

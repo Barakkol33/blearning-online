@@ -1,0 +1,9 @@
+{
+  "type": "truefalse",
+  "title": "נכון או לא נכון",
+  "questions": [
+    { "id": "same", "statement": "המספרים 34 ו־43 שווים, כי יש בהם אותן ספרות.", "answer": false, "explanation": "ב־34 יש 3 עשרות, וב־43 יש 4 עשרות. אלה מספרים שונים." },
+    { "id": "p25", "statement": "התרגיל `20 + 5` שווה ל־25.", "answer": true },
+    { "id": "p-left", "statement": "במספר דו־ספרתי, הספרה השמאלית סופרת עשרות.", "answer": true }
+  ]
+}

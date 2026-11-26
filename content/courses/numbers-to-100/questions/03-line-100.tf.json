@@ -1,0 +1,9 @@
+{
+  "type": "truefalse",
+  "title": "נכון או לא נכון",
+  "questions": [
+    { "id": "l63-61", "statement": "63 גדול מ־61.", "answer": true, "explanation": "לשניהם 6 עשרות, אבל ל־63 יש יותר יחידות." },
+    { "id": "l-plus10", "statement": "כשמוסיפים 10, ספרת היחידות משתנה.", "answer": false, "explanation": "כשמוסיפים 10, משתנה ספרת העשרות. ספרת היחידות נשארת אותו דבר." },
+    { "id": "l99", "statement": "אחרי 99 בא 100.", "answer": true }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "type": "truefalse",
+  "title": "נכון או לא נכון",
+  "questions": [
+    { "id": "t30", "statement": "שלוש עשרות הן 30.", "answer": true },
+    { "id": "t80", "statement": "אחרי שבעים בא תשעים.", "answer": false, "explanation": "אחרי שבעים בא שמונים (80), ורק אחריו תשעים." },
+    { "id": "t-ten-tens", "statement": "עשר עשרות הן מאה.", "answer": true }
+  ]
+}
