@@ -1,0 +1,9 @@
+{
+  "type": "truefalse",
+  "title": "נכון או לא נכון",
+  "questions": [
+    { "id": "swap", "statement": "התרגיל `2 + 9` שווה ל־`9 + 2`.", "answer": true, "explanation": "בחיבור הסדר לא משנה." },
+    { "id": "right", "statement": "בחיבור קופצים שמאלה על ציר המספרים.", "answer": false, "explanation": "בחיבור קופצים ימינה, והמספר גדל." },
+    { "id": "a7p7", "statement": "התרגיל `7 + 7` שווה ל־14.", "answer": true }
+  ]
+}

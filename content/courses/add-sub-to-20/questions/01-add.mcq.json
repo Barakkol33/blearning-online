@@ -1,0 +1,10 @@
+{
+  "type": "mcq",
+  "title": "חיבור",
+  "questions": [
+    { "id": "a3p4", "question": "כמה זה `3 + 4`?", "options": ["7", "6", "8"], "answer": 0 },
+    { "id": "a9p6", "question": "כמה זה `9 + 6`?", "options": ["15", "14", "16"], "answer": 0, "explanation": "מ־9 קופצים 6 קפיצות ימינה ומגיעים ל־15." },
+    { "id": "a12p5", "question": "כמה זה `12 + 5`?", "options": ["17", "16", "7"], "answer": 0 },
+    { "id": "apples", "question": "בסל יש 6 תפוחים, ושמים בו עוד 5. כמה תפוחים יש בסל?", "options": ["11", "10", "1"], "answer": 0, "explanation": "`6 + 5 = 11`" }
+  ]
+}

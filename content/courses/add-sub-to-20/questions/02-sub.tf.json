@@ -1,0 +1,9 @@
+{
+  "type": "truefalse",
+  "title": "נכון או לא נכון",
+  "questions": [
+    { "id": "left", "statement": "בחיסור קופצים שמאלה על ציר המספרים.", "answer": true },
+    { "id": "check", "statement": "אם `11 - 4 = 7`, אז `7 + 4 = 11`.", "answer": true, "explanation": "חיבור הוא הפעולה ההפוכה לחיסור, ולכן הוא בודק אותו." },
+    { "id": "s10m10", "statement": "התרגיל `10 - 10` שווה ל־10.", "answer": false, "explanation": "כשלוקחים את כל העשר, לא נשאר כלום: `10 - 10 = 0`." }
+  ]
+}

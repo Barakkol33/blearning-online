@@ -1,0 +1,9 @@
+{
+  "type": "truefalse",
+  "title": "נכון או לא נכון",
+  "questions": [
+    { "id": "6p4", "statement": "התרגיל `6 + 4` שווה ל־10.", "answer": true },
+    { "id": "7p6", "statement": "התרגיל `7 + 6` שווה ל־`7 + 3 + 3`.", "answer": true, "explanation": "3 משלים את 7 לעשר, ועוד 3 זה 13." },
+    { "id": "13m5", "statement": "התרגיל `13 - 5` שווה ל־9.", "answer": false, "explanation": "`13 - 3 = 10`, ועוד 2 למטה זה 8." }
+  ]
+}

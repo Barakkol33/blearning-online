@@ -1,0 +1,10 @@
+{
+  "type": "mcq",
+  "title": "חיסור",
+  "questions": [
+    { "id": "s8m3", "question": "כמה זה `8 - 3`?", "options": ["5", "4", "11"], "answer": 0 },
+    { "id": "s14m6", "question": "כמה זה `14 - 6`?", "options": ["8", "7", "9"], "answer": 0, "explanation": "מ־14 קופצים 6 קפיצות שמאלה ומגיעים ל־8." },
+    { "id": "s17m4", "question": "כמה זה `17 - 4`?", "options": ["13", "12", "21"], "answer": 0 },
+    { "id": "cookies", "question": "היו 12 עוגיות, ואכלו 5. כמה עוגיות נשארו?", "options": ["7", "8", "17"], "answer": 0, "explanation": "`12 - 5 = 7`. בודקים: `7 + 5 = 12`." }
+  ]
+}

@@ -27,7 +27,7 @@ Strands: 🔢 numbers · 🍕 fractions, decimals and percent · 🧮 algebra ·
 
 ### כיתה א׳
 - [x] `numbers-to-20` מספרים עד 20 🔢
-- [ ] `add-sub-to-20` חיבור וחיסור עד 20 🔢
+- [x] `add-sub-to-20` חיבור וחיסור עד 20 🔢
 - [ ] `numbers-to-100` מספרים עד 100: עשרות ויחידות 🔢
 - [ ] `patterns` סדרות ודפוסים 🧮
 - [ ] `shapes-basic` צורות: משולש, ריבוע, עיגול 📐

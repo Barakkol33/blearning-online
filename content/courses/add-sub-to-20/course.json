@@ -1,0 +1,21 @@
+{
+  "title": "חיבור וחיסור עד 20",
+  "subject": "math",
+  "grade": "כיתה א׳",
+  "emoji": "🧺",
+  "color": "#0f766e",
+  "author": "לומדים",
+  "license": "CC BY-SA 4.0",
+  "description": "מוסיפים, לוקחים ומשלימים לעשר. שלוש דרכים לראות חיבור וחיסור: בקוביות, על ציר המספרים ובראש.",
+  "outcomes": [
+    "לחבר עד 20 בעזרת קוביות וציר המספרים",
+    "לחסר עד 20 ולהבין חיסור כלקיחה מתוך כמות",
+    "להשלים לעשר: `8 + 5 = 8 + 2 + 3`",
+    "לבדוק חיסור בעזרת חיבור"
+  ],
+  "lessons": [
+    { "id": "add", "title": "חיבור: מוסיפים וסופרים הלאה", "file": "lessons/01-add.md", "minutes": 7, "questions": ["questions/01-add.mcq.json", "questions/01-add.tf.json"] },
+    { "id": "sub", "title": "חיסור: לוקחים מתוך", "file": "lessons/02-sub.md", "minutes": 7, "questions": ["questions/02-sub.mcq.json", "questions/02-sub.tf.json"] },
+    { "id": "make-ten", "title": "משלימים לעשר", "file": "lessons/03-make-ten.md", "minutes": 9, "questions": ["questions/03-make-ten.mcq.json", "questions/03-make-ten.tf.json"] }
+  ]
+}
