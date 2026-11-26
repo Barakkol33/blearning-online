@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="he" dir="rtl"><head><meta charset="utf-8"><title>Solution scenes</title>
+<link rel="stylesheet" href="../styles.css"><style>.frames{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}</style></head>
+<body><main id="app" style="max-width:1200px;margin:auto"></main>
+<script type="module">
+// Dev check: every animated solution of a course's exercises, as still frames.
+// ?course=<id>&seed=N
+import { GENERATORS, rng } from '../js/generators.js';
+import { sceneFrames } from '../js/scene.js';
+const q = new URLSearchParams(location.search);
+const id = q.get('course') || 'triangle-in-circle';
+const ex = await (await fetch(`../content/courses/${id}/exercises.json`)).json();
+const r = rng(Number(q.get('seed')) || 7);
+const app = document.getElementById('app');
+let n = 0, bad = 0;
+for (const sec of ex.sections) {
+  const items = sec.generate ? Array.from({ length: sec.generate.count || 1 }, () => GENERATORS[sec.generate.type](r, sec.generate)) : sec.items;
+  for (const it of items) {
+    if (!it.scene) continue;
+    n++;
+    const h = document.createElement('h3'); h.textContent = `${sec.title}: ${it.q.replace(/`/g, '')}  (answer ${it.answer})`; app.append(h);
+    try { app.append(sceneFrames(it.scene)); } catch (e) { bad++; app.append(String(e)); }
+  }
+}
+document.title = bad ? `${bad} broken` : `Solutions: ${n} ok`;
+</script></body></html>

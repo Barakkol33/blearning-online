@@ -8,6 +8,7 @@ import { GENERATORS, rng } from './generators.js';
 import { store } from './store.js';
 import { stuckButton } from './help.js';
 import { award } from './game.js';
+import { sceneWidget } from './scene.js';
 
 const norm = (s) => String(s).replace(/[−–]/g, '-').replace(/,/g, '.').replace(/[\s°%]/g, '');
 
@@ -163,6 +164,8 @@ function exerciseEl(it, n, onSolved, c) {
     const shown = it.options ? it.options[it.answer] : Array.isArray(it.answer) ? it.answer[0] : it.answer;
     solBox.hidden = false;
     solBox.innerHTML = `<b>התשובה: <bdi dir="ltr">${esc(shown)}${esc(it.unit || '')}</bdi></b>` + (it.solution ? `<br>${fmt(it.solution)}` : '');
+    // A worked solution can be an animated scene: step through the reasoning.
+    if (it.scene) solBox.append(sceneWidget(it.scene));
     s.disabled = true;
   };
   tools.append(s);

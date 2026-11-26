@@ -197,6 +197,26 @@ body.static .frames { display: grid; }
 .balance .string { stroke: var(--muted); stroke-width: 1.5; }
 .balance .pan { fill: color-mix(in srgb, var(--accent) 25%, var(--panel)); stroke: var(--accent); stroke-width: 2; }
 .balance .items { font-size: 30px; }
+svg.circle { max-width: 420px; margin-inline: auto; display: block; }
+.circle .rim { fill: none; stroke: var(--muted); stroke-width: 2; }
+.circle .cseg { stroke: var(--ink); stroke-width: 2.5; stroke-linecap: round; }
+.circle .cseg.hot { stroke: var(--neg); stroke-width: 4.5; }
+.circle .cfill { fill: color-mix(in srgb, #3b5bdb 16%, transparent); stroke: none; }
+.circle .carc { fill: none; stroke: #e8590c; stroke-width: 7; stroke-linecap: round; opacity: .85; }
+.circle .cbis { stroke: #2f9e44; stroke-width: 2; stroke-dasharray: 7 5; }
+.circle .cmid { fill: #2f9e44; }
+.circle .cmark { stroke: #2f9e44; stroke-width: 3; }
+.circle .cang { fill: color-mix(in srgb, #3b5bdb 22%, transparent); stroke: #3b5bdb; stroke-width: 2; }
+.circle .cang.sq { fill: none; }
+.circle .cang.hot { fill: color-mix(in srgb, #e8590c 28%, transparent); stroke: #e8590c; }
+.circle .cang-l { font: 700 16px Rubik, system-ui, sans-serif; fill: #3b5bdb; }
+.circle .cang-l.hot { fill: #e8590c; }
+.circle .cang-l.q { fill: var(--neg); font-size: 19px; }
+.circle .cside { font: 700 16px Rubik, system-ui, sans-serif; fill: var(--ink); }
+.circle .cpt { fill: var(--ink); }
+.circle .cpt-l { font: 700 18px Rubik, system-ui, sans-serif; fill: var(--ink); }
+.fig.circle-fig { width: min(100%, 260px); }
+.ex-sol .scene { margin-top: 10px; }
 .fig.fig-wide { width: min(100%, 460px); }
 .blocks .cross { stroke: var(--neg); stroke-width: 2.5; stroke-linecap: round; }
 @keyframes pop { from { transform: scale(0); } 70% { transform: scale(1.4); } to { transform: scale(1); } }

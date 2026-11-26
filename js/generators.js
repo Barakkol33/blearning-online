@@ -5,7 +5,7 @@
 // Generators are picked from a course's exercises.json:
 //   { "generate": { "type": "add", "max": 20, "count": 10 } }
 
-import { SHAPES, shapeSvg, measure } from './scene.js';
+import { SHAPES, shapeSvg, measure, circle } from './scene.js';
 
 const measureFig = (bars, max = 12, units = true) => {
   const m = measure({ max });
@@ -219,6 +219,88 @@ export const GENERATORS = {
     };
   },
 };
+
+// Angles in a circle. ask: inscribed (given the central angle) | central
+// (given the inscribed) | thales (diameter, find the third angle) |
+// isosceles (given the inscribed angle, find the base angle of OAB).
+// The figure and the animated solution are both drawn from the same numbers.
+GENERATORS['circle-angle'] = (r, { ask = 'inscribed' }) => {
+  const kind = ask === 'mix' ? ['inscribed', 'central', 'thales', 'isosceles'][int(r, 0, 3)] : ask;
+  const off = int(r, -25, 25);
+  if (kind === 'thales') {
+    const a = int(r, 20, 70), rot = int(r, -15, 15);
+    const pts = { A: 180 + rot, B: rot, C: 2 * a + rot };
+    const lines = ['AB', 'BC', 'CA'];
+    const given = { a: 'CAB', label: `${a}°` };
+    return {
+      q: 'במעגל שמרכזו `O`, הצלע `AB` עוברת דרך המרכז. הזווית `CAB` היא ' + `${a}°` + '. כמה מעלות יש בזווית `ABC`?',
+      figure: circleFig({ points: pts, lines }, { angles: [given, { a: 'ABC', label: '?' }] }),
+      answer: 90 - a, unit: '°',
+      hint: 'הצלע `AB` היא קוטר. מה אפשר להגיד על הזווית `ACB`?',
+      solution: `\`ACB = 90°\` (נשענת על קוטר), ולכן \`ABC = 180 - 90 - ${a} = ${90 - a}°\`.`,
+      scene: { type: 'circle', points: pts, lines, steps: [
+        { text: 'מה נתון? הזווית `CAB` היא ' + `${a}°` + ', ומחפשים את `ABC`.', angles: [given, { a: 'ABC', label: '?' }] },
+        { text: 'הצלע `AB` עוברת דרך המרכז `O`, ולכן היא **קוטר**.', hot: ['AB'], angles: [given, { a: 'ABC', label: '?' }] },
+        { text: 'הזווית `ACB` היא זווית היקפית שנשענת על הקוטר, ולכן היא **זווית ישרה**: `90°`.', hot: ['AB'], angles: [given, { a: 'ACB', hot: true }, { a: 'ABC', label: '?' }] },
+        { text: `סכום הזוויות במשולש הוא \`180°\`. נשאר: \`180 - 90 - ${a} = ${90 - a}\`.`, angles: [given, 'ACB', { a: 'ABC', label: `${90 - a}°`, hot: true }], label: `180 − 90 − ${a} = ${90 - a}` },
+      ] },
+    };
+  }
+  const x = int(r, 20, 75); // the inscribed angle; the central one is 2x
+  const A = 270 - x + off, B = 270 + x + off;
+  const room = 180 - x - 50; // keep C well away from A and B, so the triangle isn't a sliver
+  const C = 90 + off + int(r, -room, room);
+  const C2 = 90 + off + (C - 90 - off > 0 ? -1 : 1) * Math.round(room * 0.7);
+  const pts = { A, B, C };
+  const lines = ['AC', 'BC', 'OA', 'OB'];
+  const sc = (steps) => ({ type: 'circle', points: pts, lines, steps });
+  if (kind === 'inscribed' || kind === 'central') {
+    const findIns = kind === 'inscribed';
+    const ins = { a: 'ACB', label: findIns ? '?' : `${x}°` }, cen = { a: 'AOB', label: findIns ? `${2 * x}°` : '?' };
+    return {
+      q: findIns
+        ? 'במעגל שמרכזו `O`, הזווית המרכזית `AOB` היא ' + `${2 * x}°` + '. כמה מעלות יש בזווית ההיקפית `ACB`?'
+        : 'במעגל שמרכזו `O`, הזווית ההיקפית `ACB` היא ' + `${x}°` + '. כמה מעלות יש בזווית המרכזית `AOB`?',
+      figure: circleFig({ points: pts, lines }, { angles: [ins, cen] }),
+      answer: findIns ? x : 2 * x, unit: '°',
+      hint: 'שתי הזוויות נשענות על אותה קשת, `AB`. מה הקשר בין זווית מרכזית לזווית היקפית?',
+      solution: findIns ? `\`${2 * x} ÷ 2 = ${x}\`` : `\`${x} · 2 = ${2 * x}\``,
+      scene: sc([
+        { text: 'שתי הזוויות "נשענות" על אותה קשת, `AB` (בכתום): הזווית המרכזית `AOB` והזווית ההיקפית `ACB`.', arc: ['AB'], angles: [ins, cen] },
+        { text: 'הכלל: **זווית היקפית שווה לחצי מהזווית המרכזית** שנשענת על אותה קשת.', arc: ['AB'], angles: [{ ...ins, hot: true }, { ...cen, hot: true }] },
+        findIns
+          ? { text: `ולכן: \`${2 * x} ÷ 2 = ${x}\`. הזווית \`ACB\` היא ${x}°.`, arc: ['AB'], angles: [{ a: 'ACB', label: `${x}°`, hot: true }, cen], label: `${2 * x} ÷ 2 = ${x}` }
+          : { text: `ולכן: \`${x} · 2 = ${2 * x}\`. הזווית \`AOB\` היא ${2 * x}°.`, arc: ['AB'], angles: [ins, { a: 'AOB', label: `${2 * x}°`, hot: true }], label: `${x} · 2 = ${2 * x}` },
+        { text: 'בדיקה: מזיזים את `C` על המעגל. הזווית ההיקפית לא משתנה, כי היא עדיין נשענת על אותה קשת.', at: { C: C2 }, arc: ['AB'], angles: ['ACB', 'AOB'] },
+      ]),
+    };
+  }
+  // isosceles: OA = OB (radii), so OAB = (180 − 2x) / 2 = 90 − x
+  const all = ['AB', ...lines];
+  const ins = { a: 'ACB', label: `${x}°` };
+  const scIso = (steps) => ({ type: 'circle', points: pts, lines: all, steps });
+  return {
+    q: 'במעגל שמרכזו `O`, הזווית ההיקפית `ACB` היא ' + `${x}°` + '. כמה מעלות יש בזווית `OAB`?',
+    figure: circleFig({ points: pts, lines: all }, { angles: [ins, { a: 'OAB', label: '?' }] }),
+    answer: 90 - x, unit: '°',
+    hint: 'קודם מצאו את הזווית המרכזית `AOB`. ואז: מה אפשר להגיד על המשולש `OAB`? (רמז: `OA` ו־`OB` הם רדיוסים.)',
+    solution: `\`AOB = ${2 * x}°\`, המשולש \`OAB\` שווה שוקיים, ולכן \`OAB = (180 - ${2 * x}) ÷ 2 = ${90 - x}°\`.`,
+    scene: scIso([
+      { text: 'נתונה הזווית ההיקפית `ACB`. מחפשים את `OAB`.', angles: [ins, { a: 'OAB', label: '?' }] },
+      { text: `שלב 1: הזווית המרכזית \`AOB\` נשענת על אותה קשת, ולכן היא כפולה: \`${x} · 2 = ${2 * x}\`.`, arc: ['AB'], angles: [ins, { a: 'AOB', label: `${2 * x}°`, hot: true }] },
+      { text: 'שלב 2: `OA` ו־`OB` הם רדיוסים, ולכן הם שווים. המשולש `OAB` הוא **שווה שוקיים**.', fill: ['OAB'], marks: ['OA', 'OB'], angles: [{ a: 'AOB', label: `${2 * x}°` }] },
+      { text: 'במשולש שווה שוקיים זוויות הבסיס שוות. נקרא לכל אחת מהן `y`.', fill: ['OAB'], marks: ['OA', 'OB'], angles: [{ a: 'AOB', label: `${2 * x}°` }, { a: 'OAB', label: 'y', hot: true }, { a: 'OBA', label: 'y', hot: true }] },
+      { text: `סכום הזוויות במשולש: \`y + y + ${2 * x} = 180\`, ולכן \`y = (180 - ${2 * x}) ÷ 2 = ${90 - x}\`.`, fill: ['OAB'], marks: ['OA', 'OB'], angles: [{ a: 'AOB', label: `${2 * x}°` }, { a: 'OAB', label: `${90 - x}°`, hot: true }, { a: 'OBA', label: `${90 - x}°`, hot: true }], label: `(180 − ${2 * x}) ÷ 2 = ${90 - x}` },
+    ]),
+  };
+};
+
+function circleFig(spec, step) {
+  const c = circle(spec);
+  c.draw(step, null);
+  c.svg.classList.add('fig', 'circle-fig');
+  return c.svg.outerHTML;
+}
 
 function triangleSvg(A, B) {
   const rad = (d) => (d * Math.PI) / 180;

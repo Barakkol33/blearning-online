@@ -191,6 +191,7 @@ Rough topic lists (to be replaced by the plans):
 - [ ] `bernoulli` נוסחת ברנולי 🎲
 - [ ] `law-of-sines-cosines` משפט הסינוסים ומשפט הקוסינוסים 📐
 - [ ] `euclidean-proofs` גיאומטריה אוקלידית: הוכחות 📐
+- [x] `triangle-in-circle` משולש חסום במעגל: מרכזית והיקפית, תאלס, מרכז המעגל החוסם 📐 (built early, as a high-school sample)
 - [ ] `circle-theorems` משפטים במעגל 📐
 - [ ] `analytic-circle` המעגל במערכת צירים 📐
 - [ ] `rational-root-functions` פונקציות רציונליות ופונקציות שורש 📈
@@ -219,7 +220,9 @@ Rough topic lists (to be replaced by the plans):
 - [ ] Scene type: fraction bars and pizza
 - [ ] Scene type: function graph (points, line, slope)
 - [ ] Scene type: balance scale (equations)
-- [ ] Scene type: geometry (points, segments, angles)
+- [x] Scene type: geometry in a circle (`circle`: points, chords, angles, marks, bisectors, sliding points)
+- [ ] Scene type: free geometry (points anywhere, not only on a circle: triangles, parallels, similarity)
+- [ ] Animated solutions for the older generators (sequence, triangle-angle, length)
 - [ ] Scene type: array / variables / code trace (computers)
 - [ ] Scene type: binary counter (computers)
 - [ ] Scene type: motion on an axis and force vectors (physics)

@@ -1,0 +1,9 @@
+{
+  "type": "truefalse",
+  "title": "נכון או לא נכון",
+  "questions": [
+    { "id": "one", "statement": "לכל משולש יש בדיוק מעגל אחד שעובר דרך שלושת הקודקודים שלו.", "answer": true },
+    { "id": "inside", "statement": "מרכז המעגל החוסם תמיד נמצא בתוך המשולש.", "answer": false, "explanation": "במשולש קהה זווית הוא מחוץ למשולש." },
+    { "id": "equal", "statement": "המרחקים ממרכז המעגל החוסם לשלושת הקודקודים שווים.", "answer": true, "explanation": "כולם רדיוסים של אותו מעגל." }
+  ]
+}

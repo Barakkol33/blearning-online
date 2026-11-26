@@ -166,6 +166,7 @@
         { "id": "bernoulli", "title": "נוסחת ברנולי", "strand": "data" },
         { "id": "law-of-sines-cosines", "title": "משפט הסינוסים ומשפט הקוסינוסים", "strand": "geometry" },
         { "id": "euclidean-proofs", "title": "גיאומטריה אוקלידית: הוכחות", "strand": "geometry" },
+        { "id": "triangle-in-circle", "title": "משולש חסום במעגל: זווית מרכזית והיקפית", "strand": "geometry" },
         { "id": "circle-theorems", "title": "משפטים במעגל", "strand": "geometry" },
         { "id": "analytic-circle", "title": "המעגל במערכת צירים", "strand": "geometry" },
         { "id": "rational-root-functions", "title": "פונקציות רציונליות ופונקציות שורש", "strand": "functions" },

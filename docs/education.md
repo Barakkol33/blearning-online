@@ -141,6 +141,7 @@ Geometry is the hard case: figures, many facts at once, and proofs. Approach, fr
 
 1. **Generated numeric problems** (angles, areas, Pythagoras, similarity): pick the numbers first, then *compute the figure from them* (coordinates), so the picture always matches the question. See the `triangle-angle` generator.
 2. **Handwritten problems with a figure** (SVG in the file, or a `scene`): for multi-step bagrut-style problems; checked by the final numeric answer, with a hint and a solution.
+   - **Animated solutions:** the solution can be a `scene`, one reasoning step per frame: what's given → which rule applies (highlight the shapes it talks about) → the computation. End with a check when one exists (e.g. move a point and show the angle doesn't change). The `circle-angle` generator builds its solution scene from the same numbers as the question. See the `triangle-in-circle` course.
 3. **Proofs:** these can't be auto-checked as free text. Instead: "build the proof", where the student orders the given statements and picks the reason for each from a list (quizplay already has `order` and `match` types). Then a model proof to compare against.
 4. **Sources:** teacher-written banks and our own adaptations. Check licensing before using any exam text. Drafts may be machine-assisted, but each one is reviewed and its math checked by a person.
 

@@ -19,10 +19,11 @@ const num = (v) => (v < 0 ? '−' + -v : String(v));
 
 // The marker (the frog) stays where it was unless a step moves it.
 export function resolveSteps(spec) {
-  let marker = null;
+  let marker = null, at = {};
   return (spec.steps || []).map((st) => {
     if ('marker' in st) marker = st.marker;
-    return { ...st, marker };
+    if (st.at) at = { ...at, ...st.at };
+    return { ...st, marker, _at: { ...at } };
   });
 }
 
@@ -383,7 +384,156 @@ export function balance() {
   return { svg, draw };
 }
 
-const KNOWN = { 'number-line': numberLine, blocks, shapes, measure, balance };
+// ---------- circle: geometry inside a circle ----------
+// Scene option `points`: { A: 210, B: 330, C: 90 } — where each point sits on
+// the circle, in degrees (0 = right, 90 = top). O is always the center.
+// Step keys (all optional):
+//   at: { C: 150 }         move points; they slide along the circle. Persists.
+//   lines: [AB, BC, CA]    segments to draw (scene option `lines` = always drawn)
+//   hot: [OA]              segments to emphasize
+//   marks: [OA, OC]        equal-length tick marks
+//   fill: [OAC]            shade a triangle
+//   arc: [AB]              emphasize the shorter arc between two points
+//   angles: [ACB, { a: AOB, label: 2x, hot: true }]  angle at the middle letter;
+//            label "auto" (default) = the measured value, "?" for unknown,
+//            text with {} puts the value in, e.g. "x = {}°". Right angles get a square.
+//   sides: { AC: 6 }       length labels next to segments
+//   bisect: [AB]           perpendicular bisector of a segment
+//   center: false          hide the center point O (scene option or per step)
+//   label: text at the top
+const CW = 400, CCX = 200, CCY = 212, CR = 148;
+export function circle(spec) {
+  const svg = s('svg', { viewBox: `0 0 ${CW} 400`, class: 'nl circle', direction: 'ltr', role: 'img' });
+  s('circle', { cx: CCX, cy: CCY, r: CR, class: 'rim' }, svg);
+  const g = s('g', {}, svg);
+  const label = s('text', { x: CW / 2, y: 26, class: 'nl-label', 'text-anchor': 'middle' }, svg);
+  let raf = 0;
+  const base = { ...(spec.points || {}) };
+  const posOf = (deg) => [CCX + CR * Math.cos((deg * Math.PI) / 180), CCY - CR * Math.sin((deg * Math.PI) / 180)];
+
+  function paint(st, at) {
+    g.replaceChildren();
+    const P = { O: [CCX, CCY] };
+    for (const [k, d] of Object.entries(at)) P[k] = posOf(d);
+    const seg = (n) => [P[n[0]], P[n[1]]];
+    const ok = (n) => [...n].every((ch) => P[ch]);
+    for (const t of list(st.fill).filter(ok)) {
+      s('polygon', { points: [...t].map((k) => P[k].join(',')).join(' '), class: 'cfill' }, g);
+    }
+    for (const a of list(st.arc).filter(ok)) {
+      const [p, q] = seg(a);
+      const t1 = Math.atan2(CCY - p[1], p[0] - CCX), t2 = Math.atan2(CCY - q[1], q[0] - CCX);
+      let d = t2 - t1;
+      while (d <= -Math.PI) d += 2 * Math.PI;
+      while (d > Math.PI) d -= 2 * Math.PI;
+      s('path', { d: `M${p[0]},${p[1]} A${CR},${CR} 0 0 ${d > 0 ? 0 : 1} ${q[0]},${q[1]}`, class: 'carc' }, g);
+    }
+    for (const b of list(st.bisect).filter(ok)) {
+      const [p, q] = seg(b);
+      const mx = (p[0] + q[0]) / 2, my = (p[1] + q[1]) / 2, dx = q[0] - p[0], dy = q[1] - p[1], L = Math.hypot(dx, dy);
+      const nx = -dy / L, ny = dx / L, k = CR * 1.35;
+      s('line', { x1: mx - nx * k, y1: my - ny * k, x2: mx + nx * k, y2: my + ny * k, class: 'cbis' }, g);
+      s('circle', { cx: mx, cy: my, r: 3.5, class: 'cmid' }, g);
+    }
+    const hot = new Set(list(st.hot).flatMap((n) => [n, [...n].reverse().join('')]));
+    const lines = [...list(spec.lines), ...list(st.lines), ...list(st.hot)];
+    for (const n of new Set(lines)) {
+      if (!ok(n)) continue;
+      const [p, q] = seg(n);
+      s('line', { x1: p[0], y1: p[1], x2: q[0], y2: q[1], class: hot.has(n) ? 'cseg hot' : 'cseg' }, g);
+    }
+    // Equal segments: one tick each (`marks`), or two ticks for a second group (`marks2`).
+    list(st.marks).filter(ok).forEach((n) => {
+      const [p, q] = seg(n);
+      const mx = (p[0] + q[0]) / 2, my = (p[1] + q[1]) / 2, dx = q[0] - p[0], dy = q[1] - p[1], L = Math.hypot(dx, dy);
+      const nx = (-dy / L) * 8, ny = (dx / L) * 8;
+      s('line', { x1: mx - nx, y1: my - ny, x2: mx + nx, y2: my + ny, class: 'cmark' }, g);
+    });
+    list(st.marks2).filter(ok).forEach((n) => {
+      const [p, q] = seg(n);
+      const mx = (p[0] + q[0]) / 2, my = (p[1] + q[1]) / 2, dx = q[0] - p[0], dy = q[1] - p[1], L = Math.hypot(dx, dy);
+      const ux = dx / L, uy = dy / L, nx = -uy * 8, ny = ux * 8;
+      for (const o of [-4, 4]) s('line', { x1: mx - nx + ux * o, y1: my - ny + uy * o, x2: mx + nx + ux * o, y2: my + ny + uy * o, class: 'cmark' }, g);
+    });
+    // Side labels sit beside the segment, on the side away from the figure.
+    const rimPts = Object.keys(at).map((k) => P[k]);
+    const gx = rimPts.reduce((t, q) => t + q[0], 0) / (rimPts.length || 1), gy = rimPts.reduce((t, q) => t + q[1], 0) / (rimPts.length || 1);
+    for (const [n, txt] of Object.entries(st.sides || {})) {
+      if (!ok(n)) continue;
+      const [p, q] = seg(n);
+      const mx = (p[0] + q[0]) / 2, my = (p[1] + q[1]) / 2, L = Math.hypot(q[0] - p[0], q[1] - p[1]);
+      let nx = -(q[1] - p[1]) / L, ny = (q[0] - p[0]) / L;
+      if (nx * (mx - gx) + ny * (my - gy) < 0) { nx = -nx; ny = -ny; }
+      s('text', { x: mx + nx * 18, y: my + ny * 18 + 6, class: 'cside', 'text-anchor': 'middle' }, g).textContent = txt;
+    }
+    for (const raw of list(st.angles)) {
+      const a = typeof raw === 'string' ? { a: raw } : raw;
+      if (!ok(a.a)) continue;
+      const [p, v, q] = [P[a.a[0]], P[a.a[1]], P[a.a[2]]];
+      const t1 = Math.atan2(p[1] - v[1], p[0] - v[0]), t2 = Math.atan2(q[1] - v[1], q[0] - v[0]);
+      let d = t2 - t1;
+      while (d <= -Math.PI) d += 2 * Math.PI;
+      while (d > Math.PI) d -= 2 * Math.PI;
+      const deg = Math.abs(d) * 180 / Math.PI, val = Math.round(deg);
+      const r = a.r || (deg < 30 ? 40 : 28), cls = 'cang' + (a.hot ? ' hot' : '');
+      if (Math.abs(deg - 90) < 0.6 && a.square !== false) {
+        const u1 = [Math.cos(t1) * 16, Math.sin(t1) * 16], u2 = [Math.cos(t2) * 16, Math.sin(t2) * 16];
+        s('path', { d: `M${v[0] + u1[0]},${v[1] + u1[1]} l${u2[0]},${u2[1]} l${-u1[0]},${-u1[1]}`, class: cls + ' sq' }, g);
+      } else {
+        const e1 = [v[0] + r * Math.cos(t1), v[1] + r * Math.sin(t1)], e2 = [v[0] + r * Math.cos(t2), v[1] + r * Math.sin(t2)];
+        s('path', { d: `M${v[0]},${v[1]} L${e1[0]},${e1[1]} A${r},${r} 0 0 ${d > 0 ? 1 : 0} ${e2[0]},${e2[1]} Z`, class: cls }, g);
+      }
+      const lab = a.label == null || a.label === 'auto' ? `${val}°` : String(a.label).replace('{}', val);
+      if (lab) {
+        const mid = t1 + d / 2, lr = r + (lab.length > 3 ? 22 : 15);
+        s('text', { x: v[0] + lr * Math.cos(mid), y: v[1] + lr * Math.sin(mid) + 5, class: 'cang-l' + (a.hot ? ' hot' : '') + (lab.includes('?') ? ' q' : ''), 'text-anchor': 'middle' }, g).textContent = lab;
+      }
+    }
+    // Points and their names, pushed outward from the center.
+    const used = new Set([...Object.keys(at)]);
+    if ((st.center ?? spec.center) !== false) used.add('O');
+    for (const k of used) {
+      const [x, y] = P[k];
+      s('circle', { cx: x, cy: y, r: 4.5, class: 'cpt' }, g);
+      let dx = x - CCX, dy = y - CCY, L = Math.hypot(dx, dy);
+      if (k === 'O') {
+        // Put "O" opposite the segments that leave the center, so it never
+        // covers an angle at O.
+        dx = 0; dy = 0;
+        for (const n of new Set(lines)) {
+          const other = n[0] === 'O' ? n[1] : n[1] === 'O' ? n[0] : null;
+          if (other && P[other]) { const v = [P[other][0] - CCX, P[other][1] - CCY], l = Math.hypot(...v); dx -= v[0] / l; dy -= v[1] / l; }
+        }
+        if (Math.hypot(dx, dy) < 0.3) { dx = 0.7; dy = -1; }
+        L = Math.hypot(dx, dy);
+      }
+      s('text', { x: x + (dx / L) * 20, y: y + (dy / L) * 20 + 6, class: 'cpt-l', 'text-anchor': 'middle' }, g).textContent = k;
+    }
+    label.textContent = st.label || '';
+  }
+
+  // Points persist from step to step; frames (no prev) need the full history,
+  // so resolveSteps hands every step its own `at`.
+  function draw(st, prev) {
+    cancelAnimationFrame(raf);
+    const to = { ...base, ...(st._at || st.at || {}) };
+    const from = prev ? { ...base, ...(prev._at || prev.at || {}) } : to;
+    const moving = Object.keys(to).some((k) => from[k] !== to[k]);
+    if (!prev || !moving || reduceMotion()) return paint(st, to);
+    const t0 = performance.now(), dur = 1400;
+    const tick = (t) => {
+      const k = Math.min(1, (t - t0) / dur), e = k < 0.5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
+      const at = {};
+      for (const key of Object.keys(to)) at[key] = (from[key] ?? to[key]) + (to[key] - (from[key] ?? to[key])) * e;
+      paint(st, at);
+      if (k < 1) raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+  }
+  return { svg, draw };
+}
+
+const KNOWN = { 'number-line': numberLine, blocks, shapes, measure, balance, circle };
 
 // For other views (feed): a fresh scene instance, or null for unknown types.
 export const makeScene = (spec) => (KNOWN[spec?.type] ? KNOWN[spec.type](spec) : null);
