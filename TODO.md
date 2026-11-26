@@ -51,7 +51,7 @@ Strands: 🔢 numbers · 🍕 fractions, decimals and percent · 🧮 algebra ·
 - [x] `numbers-to-20` מספרים עד 20 🔢
 - [x] `add-sub-to-20` חיבור וחיסור עד 20 🔢
 - [x] `numbers-to-100` מספרים עד 100: עשרות ויחידות 🔢
-- [ ] `patterns` סדרות ודפוסים 🧮
+- [x] `patterns` סדרות ודפוסים 🧮
 - [ ] `shapes-basic` צורות: משולש, ריבוע, עיגול 📐
 - [ ] `compare-measure` השוואה ומדידה: ארוך, קצר, כבד, קל 📏
 

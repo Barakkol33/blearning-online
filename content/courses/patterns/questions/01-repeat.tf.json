@@ -1,0 +1,9 @@
+{
+  "type": "truefalse",
+  "title": "נכון או לא נכון",
+  "questions": [
+    { "id": "def", "statement": "דפוס הוא סידור שחוזר על עצמו.", "answer": true },
+    { "id": "frog", "statement": "צפרדע שקופצת מ־0 בקפיצות של 2 תנחת על 7.", "answer": false, "explanation": "היא נוחתת על 0, 2, 4, 6, 8. את 7 היא מדלגת." },
+    { "id": "abc", "statement": "בדפוס 🐶 🐱 🐭 🐶 🐱 🐭 החלק שחוזר הוא של שלושה פריטים.", "answer": true }
+  ]
+}

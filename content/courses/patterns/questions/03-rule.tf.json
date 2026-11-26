@@ -1,0 +1,9 @@
+{
+  "type": "truefalse",
+  "title": "נכון או לא נכון",
+  "questions": [
+    { "id": "shrink", "statement": "סדרה יכולה גם לקטון.", "answer": true },
+    { "id": "check", "statement": "בסדרה `4, 8, 12, 16` החוק הוא \"מוסיפים 4\".", "answer": true },
+    { "id": "wrong", "statement": "בסדרה `10, 8, 6, ☐` המספר החסר הוא 5.", "answer": false, "explanation": "כל פעם מורידים 2, ולכן אחרי 6 בא 4." }
+  ]
+}

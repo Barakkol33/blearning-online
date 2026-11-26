@@ -96,6 +96,34 @@ export const GENERATORS = {
     };
   },
 
+  // Number pattern: what comes next, or what is missing in the middle.
+  // { steps: [2, 5, 10], down: true, missing: true, max: 100 }
+  sequence(r, { steps = [1, 2, 5, 10], down = false, missing = false, max = 100 }) {
+    const step = steps[int(r, 0, steps.length - 1)];
+    const goDown = down && r() < 0.5;
+    const len = 5;
+    const start = goDown ? int(r, step * len, max) : int(r, 0, Math.max(0, max - step * len));
+    const seq = Array.from({ length: len }, (_, k) => start + (goDown ? -1 : 1) * step * k);
+    const rule = `${goDown ? 'קטן' : 'גדל'} ב־${step}`;
+    if (missing) {
+      const hole = int(r, 1, len - 2);
+      const shown = seq.map((v, k) => (k === hole ? '☐' : v)).join(', ');
+      return {
+        q: `איזה מספר חסר? \`${shown}\``,
+        answer: seq[hole],
+        hint: 'בדקו בכמה משתנה כל מספר לעומת המספר שלפניו.',
+        solution: `כל מספר ${rule}, ולכן החסר הוא ${seq[hole]}.`,
+      };
+    }
+    const next = start + (goDown ? -1 : 1) * step * len;
+    return {
+      q: `מה המספר הבא? \`${seq.join(', ')}, ☐\``,
+      answer: next,
+      hint: 'בדקו בכמה משתנה כל מספר לעומת המספר שלפניו.',
+      solution: `כל מספר ${rule}: \`${seq[len - 1]} ${goDown ? '-' : '+'} ${step} = ${next}\`.`,
+    };
+  },
+
   // Geometry demo: the figure is drawn FROM the numbers, so it always matches.
   'triangle-angle'(r) {
     let A, B;
