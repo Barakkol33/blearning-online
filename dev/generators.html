@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Generators</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { padding: 16px; max-width: 900px; margin: 0 auto; }
+  .gen { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 10px 14px; margin: 8px 0; }
+  .gen small { color: var(--muted); }
+</style>
+</head>
+<body>
+<h1>מחוללי תרגילים</h1>
+<p class="muted">דוגמה אחת מכל מחולל, עם התשובה, הרמז והפתרון. כך בודקים מחולל חדש. ‎?seed=N משנה את הדוגמאות.</p>
+<div id="out"></div>
+<script type="module">
+  import { GENERATORS, rng } from '../js/generators.js';
+  import { fmt, esc } from '../js/util.js';
+  const seed = Number(new URLSearchParams(location.search).get('seed')) || 7;
+  const r = rng(seed);
+  const out = document.getElementById('out');
+  const only = new URLSearchParams(location.search).get('only');
+  for (const [name, g] of Object.entries(GENERATORS)) {
+    if (only && name !== only) continue;
+    for (let k = 0; k < 2; k++) {
+      const it = g(r, {});
+      const ans = it.options ? it.options[it.answer] : it.answer;
+      out.insertAdjacentHTML('beforeend', `<div class="gen"><small>${name}</small>
+        <p class="q-prompt">${fmt(it.q)}</p>${it.figure || ''}
+        <p>תשובה: <b><bdi dir="ltr">${esc(ans)}${esc(it.unit || '')}</bdi></b></p>
+        <p>💡 ${fmt(it.hint || '—')}</p><p>👁 ${fmt(it.solution || '—')}</p></div>`);
+    }
+  }
+</script>
+</body>
+</html>

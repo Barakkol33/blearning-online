@@ -14,6 +14,15 @@ Grouped by area. Rough order inside each group = priority. See [docs/product.md]
 - [ ] Show the 🤔 button on the feed's scene cards too, not only on wrong answers
 - [ ] Accessibility: aria-live for quiz feedback, text alternatives for scenes (step texts), focus order in the dialog
 
+## Exercises
+- [x] Exercises page per course (`#/c/<id>/ex`): generated plus handwritten, instant check, hint, show solution, shareable seed, printable worksheet
+- [ ] Guided sub-steps for hard (high-school) problems: `steps: [{ q, answer, hint }]` that lead to the final answer
+- [ ] Answer types: fractions (`3/4`), several answers (`x = 2, 3`), expressions (compare by evaluating at random points)
+- [ ] Geometry generators, drawn from coordinates so the figure always matches: angles in parallel lines, Pythagoras, area and perimeter, similar triangles, circle angles
+- [ ] Geometry proofs: "build the proof" (order steps and pick reasons from a list), with self-check against a model proof
+- [ ] Mixed review page across courses (prerequisites plus current)
+- [ ] Teacher answer key page for a given seed
+
 ## Learning features (from docs/education.md)
 - [ ] Concept links: `[[id|text]]` in lessons opens a short card (definition, tiny example, "לנושא המלא ←")
 - [ ] `content/concepts/<id>.md`: short card text plus full explanation; a concept page view
@@ -32,6 +41,7 @@ One course per line, in order. **"next" (one chunk, about 10 minutes of work) = 
 - 2–4 short lessons: hook, scene, worked example, summary plus "where this leads"
 - at least one `> 📜 סיפור` (facts checked) and one `> 🛒 בחיים` box per course
 - quizplay-format questions: easy first, one ⭐ stretch, distractors from real misconceptions
+- `exercises.json`: a long checkable exercise page, with generated sections (add a generator to `js/generators.js` if needed) plus handwritten word problems with hint and solution
 - the course added to `content/catalog.json`, the box ticked here, the scene check page clean
 
 The ids match `content/math-map.json`, so a finished course lights up automatically on the map page (`#/math`).

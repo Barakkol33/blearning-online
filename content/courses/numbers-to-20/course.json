@@ -13,9 +13,37 @@
     "לראות ש־`13` הוא עשרת אחת ועוד 3 יחידות",
     "להשוות בין מספרים: מי גדול יותר"
   ],
+  "exercises": "exercises.json",
   "lessons": [
-    { "id": "count", "title": "סופרים עד 10", "file": "lessons/01-count.md", "minutes": 6, "questions": ["questions/01-count.mcq.json", "questions/01-count.tf.json"] },
-    { "id": "teens", "title": "המספרים 11 עד 20", "file": "lessons/02-teens.md", "minutes": 8, "questions": ["questions/02-teens.mcq.json", "questions/02-teens.tf.json"] },
-    { "id": "compare", "title": "מי גדול יותר?", "file": "lessons/03-compare.md", "minutes": 7, "questions": ["questions/03-compare.mcq.json", "questions/03-compare.tf.json"] }
+    {
+      "id": "count",
+      "title": "סופרים עד 10",
+      "file": "lessons/01-count.md",
+      "minutes": 6,
+      "questions": [
+        "questions/01-count.mcq.json",
+        "questions/01-count.tf.json"
+      ]
+    },
+    {
+      "id": "teens",
+      "title": "המספרים 11 עד 20",
+      "file": "lessons/02-teens.md",
+      "minutes": 8,
+      "questions": [
+        "questions/02-teens.mcq.json",
+        "questions/02-teens.tf.json"
+      ]
+    },
+    {
+      "id": "compare",
+      "title": "מי גדול יותר?",
+      "file": "lessons/03-compare.md",
+      "minutes": 7,
+      "questions": [
+        "questions/03-compare.mcq.json",
+        "questions/03-compare.tf.json"
+      ]
+    }
   ]
 }

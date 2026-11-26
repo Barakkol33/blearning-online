@@ -13,27 +13,37 @@
     "לחבר מספרים שליליים",
     "לחסר מספרים שליליים, כולל `2 - (-3)`"
   ],
+  "exercises": "exercises.json",
   "lessons": [
     {
       "id": "what",
       "title": "מהם מספרים שליליים?",
       "file": "lessons/01-what.md",
       "minutes": 8,
-      "questions": ["questions/01-what.mcq.json", "questions/01-what.tf.json"]
+      "questions": [
+        "questions/01-what.mcq.json",
+        "questions/01-what.tf.json"
+      ]
     },
     {
       "id": "add",
       "title": "חיבור על ציר המספרים",
       "file": "lessons/02-add.md",
       "minutes": 10,
-      "questions": ["questions/02-add.mcq.json", "questions/02-add.tf.json"]
+      "questions": [
+        "questions/02-add.mcq.json",
+        "questions/02-add.tf.json"
+      ]
     },
     {
       "id": "subtract",
       "title": "חיסור מספרים שליליים",
       "file": "lessons/03-subtract.md",
       "minutes": 10,
-      "questions": ["questions/03-subtract.mcq.json", "questions/03-subtract.tf.json"]
+      "questions": [
+        "questions/03-subtract.mcq.json",
+        "questions/03-subtract.tf.json"
+      ]
     }
   ]
 }

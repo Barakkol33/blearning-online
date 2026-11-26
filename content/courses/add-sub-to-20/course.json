@@ -13,9 +13,37 @@
     "להשלים לעשר: `8 + 5 = 8 + 2 + 3`",
     "לבדוק חיסור בעזרת חיבור"
   ],
+  "exercises": "exercises.json",
   "lessons": [
-    { "id": "add", "title": "חיבור: מוסיפים וסופרים הלאה", "file": "lessons/01-add.md", "minutes": 7, "questions": ["questions/01-add.mcq.json", "questions/01-add.tf.json"] },
-    { "id": "sub", "title": "חיסור: לוקחים מתוך", "file": "lessons/02-sub.md", "minutes": 7, "questions": ["questions/02-sub.mcq.json", "questions/02-sub.tf.json"] },
-    { "id": "make-ten", "title": "משלימים לעשר", "file": "lessons/03-make-ten.md", "minutes": 9, "questions": ["questions/03-make-ten.mcq.json", "questions/03-make-ten.tf.json"] }
+    {
+      "id": "add",
+      "title": "חיבור: מוסיפים וסופרים הלאה",
+      "file": "lessons/01-add.md",
+      "minutes": 7,
+      "questions": [
+        "questions/01-add.mcq.json",
+        "questions/01-add.tf.json"
+      ]
+    },
+    {
+      "id": "sub",
+      "title": "חיסור: לוקחים מתוך",
+      "file": "lessons/02-sub.md",
+      "minutes": 7,
+      "questions": [
+        "questions/02-sub.mcq.json",
+        "questions/02-sub.tf.json"
+      ]
+    },
+    {
+      "id": "make-ten",
+      "title": "משלימים לעשר",
+      "file": "lessons/03-make-ten.md",
+      "minutes": 9,
+      "questions": [
+        "questions/03-make-ten.mcq.json",
+        "questions/03-make-ten.tf.json"
+      ]
+    }
   ]
 }

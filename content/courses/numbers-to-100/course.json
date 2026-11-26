@@ -13,9 +13,37 @@
     "להבין למה `34` ו־`43` הם מספרים שונים",
     "למצוא מספר על ציר המספרים ולהשוות בין מספרים"
   ],
+  "exercises": "exercises.json",
   "lessons": [
-    { "id": "tens", "title": "סופרים בעשרות", "file": "lessons/01-tens.md", "minutes": 6, "questions": ["questions/01-tens.mcq.json", "questions/01-tens.tf.json"] },
-    { "id": "place-value", "title": "עשרות ויחידות", "file": "lessons/02-place-value.md", "minutes": 8, "questions": ["questions/02-place-value.mcq.json", "questions/02-place-value.tf.json"] },
-    { "id": "line-100", "title": "ציר המספרים עד 100", "file": "lessons/03-line-100.md", "minutes": 8, "questions": ["questions/03-line-100.mcq.json", "questions/03-line-100.tf.json"] }
+    {
+      "id": "tens",
+      "title": "סופרים בעשרות",
+      "file": "lessons/01-tens.md",
+      "minutes": 6,
+      "questions": [
+        "questions/01-tens.mcq.json",
+        "questions/01-tens.tf.json"
+      ]
+    },
+    {
+      "id": "place-value",
+      "title": "עשרות ויחידות",
+      "file": "lessons/02-place-value.md",
+      "minutes": 8,
+      "questions": [
+        "questions/02-place-value.mcq.json",
+        "questions/02-place-value.tf.json"
+      ]
+    },
+    {
+      "id": "line-100",
+      "title": "ציר המספרים עד 100",
+      "file": "lessons/03-line-100.md",
+      "minutes": 8,
+      "questions": [
+        "questions/03-line-100.mcq.json",
+        "questions/03-line-100.tf.json"
+      ]
+    }
   ]
 }

@@ -4,6 +4,7 @@ import { catalog, loadCourse, getJSON, getText, lessonQuestions, parseScene } fr
 import { sceneWidget, sceneFrames } from './scene.js';
 import { questionEl } from './quiz.js';
 import { feedView } from './feed.js';
+import { exercisesPage } from './exercises.js';
 import { store } from './store.js';
 import { shuffle } from './util.js';
 import { stuckButton, stuckList } from './help.js';
@@ -198,6 +199,7 @@ async function coursePage(id) {
         <p>${esc(c.description)}</p>
         <div class="row">
           <a class="btn" href="#/c/${id}/l/${next.id}">${started ? '▶ המשיכו' : '▶ התחילו'}</a>
+          ${c.exercises ? `<a class="btn ghost" href="#/c/${id}/ex">✏️ תרגול${store.lesson(id, '__ex').best ? ` (${store.lesson(id, '__ex').best} ✔)` : ''}</a>` : ''}
           <a class="btn ghost" href="#/c/${id}/feed">📱 מצב פיד</a>
         </div>
       </div>
@@ -243,7 +245,7 @@ async function lessonPage(id, lid) {
     <section class="quiz panel"></section>
     <nav class="lesson-nav">
       ${prev ? `<a class="btn ghost" href="#/c/${id}/l/${prev.id}">→ ${esc(prev.title)}</a>` : '<span></span>'}
-      ${next ? `<a class="btn" href="#/c/${id}/l/${next.id}">${esc(next.title)} ←</a>` : `<a class="btn" href="#/c/${id}">סיום הקורס 🎉</a>`}
+      ${next ? `<a class="btn" href="#/c/${id}/l/${next.id}">${esc(next.title)} ←</a>` : c.exercises ? `<a class="btn" href="#/c/${id}/ex">✏️ לתרגול ←</a>` : `<a class="btn" href="#/c/${id}">סיום הקורס 🎉</a>`}
     </nav>`;
 
   for (const slot of app.querySelectorAll('.scene-slot')) {
@@ -307,6 +309,15 @@ async function route() {
       document.body.classList.add('feed-mode');
       app.innerHTML = '<p class="loading">טוען…</p>';
       cleanup = await feedView(app, await loadCourse(m[1]));
+    } else if ((m = hash.match(/^#\/c\/([\w-]+)\/ex(?:\?s=(\d+))?$/))) {
+      const c = await loadCourse(m[1]);
+      if (!c.exercises) throw new Error('לקורס הזה עוד אין דף תרגול');
+      let seed = Number(m[2]);
+      if (!seed) {
+        seed = (Math.random() * 1e9) | 0;
+        history.replaceState(null, '', `#/c/${m[1]}/ex?s=${seed}`); // shareable: same seed, same exercises
+      }
+      await exercisesPage(app, c, seed);
     } else if ((m = hash.match(/^#\/c\/([\w-]+)\/l\/([\w-]+)$/))) await lessonPage(m[1], m[2]);
     else if ((m = hash.match(/^#\/c\/([\w-]+)$/))) await coursePage(m[1]);
     else if (hash === '#/math') await mathMap();

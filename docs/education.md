@@ -121,7 +121,25 @@ A situation the student actually meets:
 - **"Why does this work?"** boxes for students who want more.
 - **"Where this leads":** each wrap-up names the next topic and why it's cool.
 
-## 7. Feedback and encouragement
+## 7. Exercises
+
+Math is learned by doing. Every course has a long exercises page (`exercises.json`):
+
+- **Generated sections:** fresh exercises every visit, from a seed in the URL, so a teacher can share "the same 30 exercises". Good for skills you practise many times.
+- **Handwritten sections:** word problems, real-life problems and ⭐ challenges. Every one has a `hint` (a nudge, not the answer) and a `solution` (the full reasoning).
+- **Retrying is the default.** A wrong answer says "try again"; after 2 misses it points to the hint, and after 3 to "🤔 still don't get it".
+- **High school:** hard problems get `hint` and `solution` now. Later, `steps`: sub-questions that lead to the answer, each with its own check.
+
+### Geometry exercises
+
+Geometry is the hard case: figures, many facts at once, and proofs. Approach, from easy to hard:
+
+1. **Generated numeric problems** (angles, areas, Pythagoras, similarity): pick the numbers first, then *compute the figure from them* (coordinates), so the picture always matches the question. See the `triangle-angle` generator.
+2. **Handwritten problems with a figure** (SVG in the file, or a `scene`): for multi-step bagrut-style problems; checked by the final numeric answer, with a hint and a solution.
+3. **Proofs:** these can't be auto-checked as free text. Instead: "build the proof", where the student orders the given statements and picks the reason for each from a list (quizplay already has `order` and `match` types). Then a model proof to compare against.
+4. **Sources:** teacher-written banks and our own adaptations. Check licensing before using any exam text. Drafts may be machine-assisted, but each one is reviewed and its math checked by a person.
+
+## 8. Feedback and encouragement
 
 From research (praise and feedback studies):
 - Praise the **strategy** ("you completed to ten, nice"), not the person ("genius").
