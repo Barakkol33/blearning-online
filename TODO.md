@@ -14,7 +14,19 @@ Grouped by area. Rough order inside each group = priority. See [docs/product.md]
 - [ ] Show the 🤔 button on the feed's scene cards too, not only on wrong answers
 - [ ] Accessibility: aria-live for quiz feedback, text alternatives for scenes (step texts), focus order in the dialog
 
+## Structure: modular, so new things plug in (user request 2026-11-27)
+Goal: adding a scene type, a generator, an exercise kind or a course means adding one file in a known place, not hand-building it from scratch.
+- [ ] Scenes: one module per type (`js/scenes/number-line.js`, `circle.js`, …) plus a registry; shared SVG helpers (`js/scenes/svg.js`: points, segments, angle arcs, tick marks, labels)
+- [ ] Generators: one module per topic (`js/generators/arithmetic.js`, `measure.js`, `circle.js`, …) with a registry; shared figure helpers
+- [ ] Exercise kinds as plugins: `number`, `choice`, `proof` (and later `order`, `match`, `steps`), each one file with render plus check
+- [ ] Solution scenes as reusable templates ("rule + compute", "given → rule → compute → check"), so a generator passes values and doesn't hand-write steps
+- [ ] `tools/new-course.mjs`: scaffold a course folder (course.json, 3 lesson stubs, question stubs, exercises.json) and register it; move today's register script into the repo
+- [ ] `tools/check.mjs`: validate every course (JSON shape, answers in range, scenes parse, generator types exist) with clear Hebrew errors; run it before every commit
+- [ ] Lesson snippets: reusable blocks (📜 story, 🛒 everyday, "rule" box, summary) as Markdown conventions with their own styles
+- [ ] One docs page, `docs/architecture.md`: where each kind of thing lives and how to add one
+
 ## Exercises
+- [ ] Proof questions ("build the proof"): the student orders the statements and picks a reason for each from a list, then sees a detailed model proof with an animated scene, one statement per step. First one: in the next geometry course (user request 2026-11-27)
 - [x] Exercises page per course (`#/c/<id>/ex`): generated plus handwritten, instant check, hint, show solution, shareable seed, printable worksheet
 - [ ] Guided sub-steps for hard (high-school) problems: `steps: [{ q, answer, hint }]` that lead to the final answer
 - [ ] Answer types: fractions (`3/4`), several answers (`x = 2, 3`), expressions (compare by evaluating at random points)
