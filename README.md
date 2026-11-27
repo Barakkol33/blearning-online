@@ -75,6 +75,8 @@ Other scene types: `blocks` (tens and ones), `shapes`, `measure` (lengths in uni
 
 Exercise generators live in `js/gen/` (one module per topic, merged into the registry in `js/generators.js`). An exercise can carry a `scene` too: its worked solution, shown step by step under "הצג פתרון". `dev/solutions.html?course=<id>` shows every solution scene of a course's exercises as still frames.
 
+Signed numbers (`js/gen/int-muldiv.js`): `int-mul` (`ask`: `pos-neg`, `neg-neg`, `special`), `int-sign` (sign of 3–5 factors), `int-div`, `int-missing` (`? × b = c`) and `int-chain` (`a × b ÷ c`). Each product and quotient gets a number-line solution of equal jumps from 0, built by `mulScene(x, y)`.
+
 ## License
 
 Content: CC BY-SA 4.0. Code: MIT.

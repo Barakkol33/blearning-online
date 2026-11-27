@@ -1,0 +1,40 @@
+{
+  "title": "כפל וחילוק מספרים מכוונים",
+  "subject": "math",
+  "grade": "כיתה ז׳",
+  "emoji": "✖️",
+  "color": "#7a4fb3",
+  "author": "לומדים",
+  "license": "CC BY-SA 4.0",
+  "description": "למה מינוס כפול מינוס הוא פלוס? קופצים על ציר המספרים, מגלים דפוס, ולומדים לכפול ולחלק מספרים חיוביים ושליליים בלי להתבלבל בסימן.",
+  "outcomes": [
+    "לכפול מספר חיובי במספר שלילי",
+    "להבין למה שלילי כפול שלילי הוא חיובי",
+    "לקבוע את הסימן של מכפלה עם כמה גורמים",
+    "לחלק מספרים מכוונים ולבדוק בכפל"
+  ],
+  "exercises": "exercises.json",
+  "lessons": [
+    {
+      "id": "pos-neg",
+      "title": "כפל במספר שלילי",
+      "file": "lessons/01-pos-neg.md",
+      "minutes": 7,
+      "questions": ["questions/01-pos-neg.mcq.json", "questions/01-pos-neg.tf.json"]
+    },
+    {
+      "id": "neg-neg",
+      "title": "שלילי כפול שלילי",
+      "file": "lessons/02-neg-neg.md",
+      "minutes": 8,
+      "questions": ["questions/02-neg-neg.mcq.json", "questions/02-neg-neg.tf.json"]
+    },
+    {
+      "id": "divide",
+      "title": "חילוק מספרים מכוונים",
+      "file": "lessons/03-divide.md",
+      "minutes": 7,
+      "questions": ["questions/03-divide.mcq.json", "questions/03-divide.tf.json"]
+    }
+  ]
+}

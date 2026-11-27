@@ -43,11 +43,13 @@ Status: ✅ exists · 🟡 next · ⚪ later. Keep this list current; the develo
   - `circle`: geometry in a circle (angles, sides, sliding points, proofs).
 - 🟡 Scene types: fraction bars, function graph, free geometry (triangles, parallel lines), coordinates, force vectors.
 - ✅ Boxes: `> 📜 סיפור`, `> 🛒 בחיים`, `> 💡`.
+- ✅ Small Markdown tables (a sign table, a pattern), styled and printable.
 - ✅ In-lesson questions: `mcq` and `truefalse`, with explanations on wrong answers.
 - 🟡 More question types from quizplay: typein, order, match, cloze. "Build the proof" needs order and match.
 - ⚪ A custom JS widget per lesson, which must ship a still fallback.
 
 ### Exercises page
+- ✅ Signed-number generators: products, quotients, missing factor, sign of several factors, two-step chains; each with a number-line solution of equal jumps.
 - ✅ Generated sections: seeded (a teacher can share the link), "🔄 תרגילים חדשים", no repeated questions. Typed answer or multiple choice, with a unit, a figure, a hint, a written solution and an **animated solution**.
 - ✅ Handwritten items with the same fields; ⭐ for challenges.
 - ✅ Proof questions with an animated model proof (geometry).

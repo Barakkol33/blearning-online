@@ -1,0 +1,9 @@
+{
+  "type": "truefalse",
+  "title": "נכון או לא נכון",
+  "questions": [
+    { "id": "bigger", "statement": "כפל תמיד נותן תוצאה גדולה יותר מהמספרים שכופלים.", "answer": false, "explanation": "‏`3 × (-2) = -6`, ו־`-6` קטן גם מ־3 וגם מ־`-2`." },
+    { "id": "swap", "statement": "התרגיל `(-2) × 6` שווה ל־`6 × (-2)`.", "answer": true, "explanation": "בכפל הסדר לא משנה. שניהם `-12`." },
+    { "id": "zero", "statement": "התרגיל `0 × (-7)` שווה ל־`-7`.", "answer": false, "explanation": "אפס פעמים כל מספר הוא 0: `0 × (-7) = 0`." }
+  ]
+}

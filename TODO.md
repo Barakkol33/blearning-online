@@ -33,6 +33,8 @@ Goal: adding a scene type, a generator, an exercise kind or a course means addin
 - [ ] Geometry generators, drawn from coordinates so the figure always matches: angles in parallel lines, Pythagoras, area and perimeter, similar triangles, circle angles
 - [ ] Geometry proofs: "build the proof" (order steps and pick reasons from a list), with self-check against a model proof
 - [ ] Mixed review page across courses (prerequisites plus current)
+- [ ] Section titles on the exercises page: render `math` with `fmt` (today they are escaped plain text, so a title can't show `-1`)
+- [ ] Typed-answer generators can't use misconception distractors; add a "choice" variant of `int-mul` / `int-div` whose wrong options are the sign-flip and the sum
 - [ ] Teacher answer key page for a given seed
 
 ## Game mode
@@ -134,7 +136,7 @@ Strands: 🔢 numbers · 🍕 fractions, decimals and percent · 🧮 algebra ·
 
 ### כיתה ז׳
 - [x] `negative-numbers` מספרים שליליים 🔢
-- [ ] `negative-mul-div` כפל וחילוק מספרים מכוונים 🔢
+- [x] `negative-mul-div` כפל וחילוק מספרים מכוונים 🔢
 - [ ] `powers` חזקות 🔢
 - [ ] `order-of-operations` סדר פעולות עם חזקות וסוגריים 🔢
 - [ ] `percent-applications` אחוזים: הנחה, התייקרות ושינוי 🍕

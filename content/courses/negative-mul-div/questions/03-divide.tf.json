@@ -1,0 +1,9 @@
+{
+  "type": "truefalse",
+  "title": "נכון או לא נכון",
+  "questions": [
+    { "id": "byzero", "statement": "התרגיל `(-6) ÷ 0` שווה ל־0.", "answer": false, "explanation": "אסור לחלק ב־0. אין מספר שכפול 0 נותן `-6`." },
+    { "id": "zerodiv", "statement": "התרגיל `0 ÷ (-5)` שווה ל־0.", "answer": true, "explanation": "כי `0 × (-5) = 0`." },
+    { "id": "rule", "statement": "בחילוק, כמו בכפל, סימנים שונים נותנים תוצאה שלילית.", "answer": true, "explanation": "לדוגמה, `12 ÷ (-3) = -4`." }
+  ]
+}
