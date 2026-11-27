@@ -73,6 +73,8 @@ The same steps render animated in the lesson, as numbered still frames in the st
 
 Other scene types: `blocks` (tens and ones), `shapes`, `measure` (lengths in units), `balance` (a scale), and `circle` (geometry in a circle: points by angle, chords, angle arcs with live values, equal-length marks, perpendicular bisectors; points slide along the circle between steps). Each type lists its step keys in a comment above it in [js/scene.js](js/scene.js).
 
+The `axes` scene ([js/scenes/axes.js](js/scenes/axes.js)) is a coordinate plane for analytic geometry: a grid in a chosen range (`x: [-1, 8]`, `y: [-1, 6]`), points given in coordinates (`points: { A: [1, 1] }`, labeled `A(1, 1)` unless `coords: false`), and per step `at` (add or move points; they slide), `show`, `lines`, `hot`, `dash`, `fill`, `marks`/`marks2`, `sides`, `legs` (the right triangle under a segment, with the leg lengths), `proj` (dashed lines from a point to both axes) and `right`. `axesFig(spec, step)` (exported from `js/scene.js`) draws a still figure for an exercise.
+
 Exercise generators live in `js/gen/` (one module per topic, merged into the registry in `js/generators.js`). An exercise can carry a `scene` too: its worked solution, shown step by step under "הצג פתרון". `dev/solutions.html?course=<id>` shows every solution scene of a course's exercises as still frames.
 
 Signed numbers (`js/gen/int-muldiv.js`): `int-mul` (`ask`: `pos-neg`, `neg-neg`, `special`), `int-sign` (sign of 3–5 factors), `int-div`, `int-missing` (`? × b = c`) and `int-chain` (`a × b ÷ c`). Each product and quotient gets a number-line solution of equal jumps from 0, built by `mulScene(x, y)`.

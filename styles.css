@@ -226,6 +226,30 @@ svg.circle { max-width: 420px; margin-inline: auto; display: block; }
 .circle .cpt { fill: var(--ink); }
 .circle .cpt-l { font: 700 18px Rubik, system-ui, sans-serif; fill: var(--ink); }
 .fig.circle-fig { width: min(100%, 260px); }
+svg.axes { max-width: 460px; margin-inline: auto; display: block; }
+.axes .agrid { stroke: color-mix(in srgb, var(--muted) 28%, transparent); stroke-width: 1; }
+.axes .aaxis { stroke: var(--ink); stroke-width: 2; }
+.axes .ahead { fill: var(--ink); }
+.axes .aname { font: italic 700 16px Rubik, system-ui, sans-serif; fill: var(--ink); }
+.axes .anum { font: 13px Rubik, system-ui, sans-serif; fill: var(--muted); }
+.axes .aseg { stroke: var(--ink); stroke-width: 2.5; stroke-linecap: round; }
+.axes .aseg.hot { stroke: var(--neg); stroke-width: 4; }
+.axes .aseg.dash { stroke-dasharray: 7 5; stroke-width: 2; }
+.axes .afill { fill: color-mix(in srgb, #3b5bdb 14%, transparent); stroke: none; }
+.axes .aleg { stroke-width: 3; stroke-dasharray: 8 5; stroke-linecap: round; }
+.axes .aleg.h { stroke: #3b5bdb; } .axes .aleg.v { stroke: #2f9e44; }
+.axes .aleg-l { font: 700 16px Rubik, system-ui, sans-serif; }
+.axes .aleg-l.h { fill: #3b5bdb; } .axes .aleg-l.v { fill: #2f9e44; }
+.axes .aright { fill: none; stroke: var(--ink); stroke-width: 1.5; }
+.axes .aproj { stroke: #e8590c; stroke-width: 1.8; stroke-dasharray: 5 4; }
+.axes .aproj-pt { fill: #e8590c; }
+.axes .aproj-l { font: 700 14px Rubik, system-ui, sans-serif; fill: #e8590c; }
+.axes .amark { stroke: #2f9e44; stroke-width: 3; }
+.axes .aside { font: 700 15px Rubik, system-ui, sans-serif; fill: var(--neg); }
+.axes .apt { fill: var(--ink); transform-box: fill-box; transform-origin: center; }
+.axes .apt.pop { animation: pop .45s ease-out both; }
+.axes .apt-l { font: 700 15px Rubik, system-ui, sans-serif; fill: var(--ink); paint-order: stroke; stroke: var(--bg, #fff); stroke-width: 4px; stroke-linejoin: round; }
+.fig.axes-fig { width: min(100%, 320px); }
 .ex-sol .scene { margin-top: 10px; }
 .fig.fig-wide { width: min(100%, 460px); }
 .blocks .cross { stroke: var(--neg); stroke-width: 2.5; stroke-linecap: round; }

@@ -4,7 +4,8 @@
 // (static view / print), and one step per card (feed).
 import { h, esc, fmt, reduceMotion } from './util.js';
 import { groups } from './scenes/groups.js';
-export { groups };
+import { axes, axesFig } from './scenes/axes.js';
+export { groups, axes, axesFig };
 
 const NS = 'http://www.w3.org/2000/svg';
 const W = 640, H = 150, PAD = 28, Y = 96, MY = Y - 8, HOP = 380;
@@ -572,7 +573,7 @@ export function circle(spec) {
 }
 
 // New scene types live in their own module under js/scenes/ and are listed here.
-const KNOWN = { 'number-line': numberLine, blocks, shapes, measure, balance, circle, groups };
+const KNOWN = { 'number-line': numberLine, blocks, shapes, measure, balance, circle, groups, axes };
 
 // For other views (feed): a fresh scene instance, or null for unknown types.
 export const makeScene = (spec) => (KNOWN[spec?.type] ? KNOWN[spec.type](spec) : null);
