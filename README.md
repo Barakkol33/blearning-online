@@ -2,7 +2,9 @@
 
 A free, open Hebrew learning site: courses, animated explanations, quizzes and a swipe "feed", built from plain text files. Static: runs on GitHub Pages and stores progress in the browser.
 
-Status: proof of concept, with one course (מספרים שליליים, grade 7).
+**Live site: https://barakkol33.github.io/blearning-online/**
+
+Status: proof of concept. Math only: all of grade 1, the start of grade 2, negative numbers (grade 7), and one high-school sample (a triangle inscribed in a circle). See the course list in [TODO.md](TODO.md).
 
 Planning docs: [goals](docs/goals.md) · [education](docs/education.md) (how to write courses) · [research](docs/research.md) · [product](docs/product.md) · [market](docs/market.md)
 
@@ -71,7 +73,7 @@ The same steps render animated in the lesson, as numbered still frames in the st
 
 Other scene types: `blocks` (tens and ones), `shapes`, `measure` (lengths in units), `balance` (a scale), and `circle` (geometry in a circle: points by angle, chords, angle arcs with live values, equal-length marks, perpendicular bisectors; points slide along the circle between steps). Each type lists its step keys in a comment above it in [js/scene.js](js/scene.js).
 
-An exercise can carry a `scene` too: its worked solution, shown step by step under "הצג פתרון". `dev/solutions.html?course=<id>` shows every solution scene of a course's exercises as still frames.
+Exercise generators live in `js/gen/` (one module per topic, merged into the registry in `js/generators.js`). An exercise can carry a `scene` too: its worked solution, shown step by step under "הצג פתרון". `dev/solutions.html?course=<id>` shows every solution scene of a course's exercises as still frames.
 
 ## License
 

@@ -76,7 +76,7 @@ Strands: 🔢 numbers · 🍕 fractions, decimals and percent · 🧮 algebra ·
 - [x] `compare-measure` השוואה ומדידה: ארוך, קצר, כבד, קל 📏
 
 ### כיתה ב׳
-- [ ] `add-sub-to-100` חיבור וחיסור עד 100 🔢
+- [x] `add-sub-to-100` חיבור וחיסור עד 100 🔢
 - [ ] `numbers-to-1000` מספרים עד 1,000 וערך המקום 🔢
 - [ ] `multiplication-intro` מה זה כפל? קבוצות שוות 🔢
 - [ ] `division-intro` מה זה חילוק? חלוקה שווה 🔢

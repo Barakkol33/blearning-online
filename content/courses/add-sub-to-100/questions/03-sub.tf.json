@@ -1,0 +1,9 @@
+{
+  "type": "truefalse",
+  "title": "נכון או לא נכון",
+  "questions": [
+    { "id": "same", "statement": "אחרי שפורטים עשרת, המספר נשאר אותו מספר.", "answer": true, "explanation": "`52` ו־`40 + 12` הם אותו מספר, רק כתוב אחרת." },
+    { "id": "flip", "statement": "ב־`52 - 17` אפשר לחשב `7 - 2` ביחידות.", "answer": false, "explanation": "בחיסור לא הופכים את הסדר. מ־2 יחידות צריך לקחת 7, ולכן פורטים עשרת." },
+    { "id": "inverse", "statement": "חיבור וחיסור הם פעולות הפוכות.", "answer": true }
+  ]
+}

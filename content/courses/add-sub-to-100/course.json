@@ -1,0 +1,22 @@
+{
+  "title": "חיבור וחיסור עד 100",
+  "subject": "math",
+  "grade": "כיתה ב׳",
+  "emoji": "🧱",
+  "color": "#7048e8",
+  "author": "לומדים",
+  "license": "CC BY-SA 4.0",
+  "description": "עשרות עם עשרות, יחידות עם יחידות. לומדים מה עושים כשיש יותר מ־10 יחידות, ואיך פורטים עשרת כשאין מספיק.",
+  "outcomes": [
+    "לחבר ולחסר עשרות שלמות",
+    "לחבר מספרים דו־ספרתיים, גם עם מעבר עשרת",
+    "לחסר מספרים דו־ספרתיים, גם עם פריטה",
+    "לבדוק חיסור בעזרת חיבור"
+  ],
+  "exercises": "exercises.json",
+  "lessons": [
+    { "id": "add", "title": "חיבור: עשרות עם עשרות", "file": "lessons/01-add.md", "minutes": 7, "questions": ["questions/01-add.mcq.json", "questions/01-add.tf.json"] },
+    { "id": "carry", "title": "חיבור עם מעבר עשרת", "file": "lessons/02-carry.md", "minutes": 8, "questions": ["questions/02-carry.mcq.json", "questions/02-carry.tf.json"] },
+    { "id": "sub", "title": "חיסור ופריטה", "file": "lessons/03-sub.md", "minutes": 8, "questions": ["questions/03-sub.mcq.json", "questions/03-sub.tf.json"] }
+  ]
+}

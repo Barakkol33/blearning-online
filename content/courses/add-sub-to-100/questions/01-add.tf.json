@@ -1,0 +1,9 @@
+{
+  "type": "truefalse",
+  "title": "נכון או לא נכון",
+  "questions": [
+    { "id": "mix", "statement": "ב־`34 + 25` מחברים את ה־3 עם ה־5.", "answer": false, "explanation": "3 הן עשרות ו־5 הן יחידות. מחברים עשרות עם עשרות (3 ו־2), ויחידות עם יחידות (4 ו־5)." },
+    { "id": "same", "statement": "`20 + 60` שווה ל־`60 + 20`.", "answer": true, "explanation": "בחיבור הסדר לא משנה." },
+    { "id": "fact", "statement": "`40 + 50 = 90` כי `4 + 5 = 9`.", "answer": true }
+  ]
+}

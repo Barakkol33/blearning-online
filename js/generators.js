@@ -6,6 +6,9 @@
 //   { "generate": { "type": "add", "max": 20, "count": 10 } }
 
 import { SHAPES, shapeSvg, measure, circle } from './scene.js';
+import { int, p } from './gen/util.js';
+// New generators go in their own module under js/gen/ and are merged here.
+import { arith100 } from './gen/arith100.js';
 
 const measureFig = (bars, max = 12, units = true) => {
   const m = measure({ max });
@@ -27,8 +30,6 @@ export function rng(seed) {
     return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
   };
 }
-const int = (r, lo, hi) => lo + Math.floor(r() * (hi - lo + 1));
-const p = (n) => (n < 0 ? `(${n})` : `${n}`); // wrap negatives: 3 + (-5)
 const SIGNS = ['>', '<', '='];
 
 export const GENERATORS = {
@@ -318,3 +319,5 @@ function triangleSvg(A, B) {
   });
   return `<svg viewBox="0 0 300 190" class="fig" direction="ltr" role="img"><polygon points="${P.map((q) => q.map((v) => v.toFixed(1)).join(',')).join(' ')}" class="tri"/>${labels.join('')}</svg>`;
 }
+
+Object.assign(GENERATORS, arith100);

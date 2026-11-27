@@ -177,7 +177,7 @@ body.static .frames { display: grid; }
 .blocks .rod { fill: color-mix(in srgb, var(--accent) 75%, var(--panel)); stroke: var(--accent); stroke-width: 1.5; }
 .blocks .rod-line { stroke: var(--panel); stroke-width: 1; opacity: .7; }
 .blocks .one { fill: #e8a33d; stroke: #b7791f; stroke-width: 1.5; }
-.blocks .one.gone { opacity: .25; }
+.blocks .one.gone, .blocks g.gone { opacity: .25; }
 .shapes .shape, .shape-fig .shape { fill: color-mix(in srgb, #3b5bdb 16%, var(--panel)); stroke: #3b5bdb; stroke-width: 3; stroke-linejoin: round; }
 .shapes .corner { fill: var(--neg); }
 .shapes .side { stroke: var(--neg); stroke-width: 6; stroke-linecap: round; }

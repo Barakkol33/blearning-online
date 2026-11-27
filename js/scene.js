@@ -139,7 +139,7 @@ export function numberLine(spec) {
 
 // Base-ten blocks: rods of ten and single cubes (ones grouped in frames of 10).
 // Step keys: tens, ones, crossed (how many of the ones, from the end, are
-// crossed out — "taken away"), label.
+// crossed out — "taken away"), crossedTens (the same for the rods), label.
 export function blocks(spec) {
   const S = 18, G = 4, W2 = 640, H2 = 262, TOP = 46, ROD_GAP = 9, FRAME_GAP = 16, MID = 48;
   const svg = s('svg', { viewBox: `0 0 ${W2} ${H2}`, class: 'nl blocks', direction: 'ltr', role: 'img' });
@@ -152,6 +152,7 @@ export function blocks(spec) {
   function draw(st, prev) {
     const anim = !!prev && !reduceMotion();
     const tens = st.tens || 0, ones = st.ones || 0, crossed = Math.min(st.crossed || 0, ones);
+    const crossedT = Math.min(st.crossedTens || 0, tens), pct = anim ? prev.crossedTens || 0 : crossedT;
     const pt = anim ? prev.tens || 0 : tens, po = anim ? prev.ones || 0 : ones, pc = anim ? prev.crossed || 0 : crossed;
     g.replaceChildren();
     const frames = Math.ceil(ones / 10);
@@ -165,6 +166,11 @@ export function blocks(spec) {
       const rod = s('g', {}, g);
       s('rect', { x, y: TOP, width: S, height: 10 * S, rx: 2, class: 'rod' }, rod);
       for (let k = 1; k < 10; k++) s('line', { x1: x, x2: x + S, y1: TOP + k * S, y2: TOP + k * S, class: 'rod-line' }, rod);
+      if (i >= tens - crossedT) {
+        rod.classList.add('gone');
+        s('path', { d: `M${x - 4},${TOP} L${x + S + 4},${TOP + 10 * S} M${x + S + 4},${TOP} L${x - 4},${TOP + 10 * S}`, class: 'cross' }, g);
+        if (anim && i < tens - pct) rod.animate([{ opacity: 1 }, { opacity: 0.25 }], { duration: 300, delay, fill: 'backwards' });
+      }
       if (anim && i >= pt) {
         rod.animate([{ opacity: 0, transform: 'translateY(-24px)' }, { opacity: 1, transform: 'none' }], { duration: 380, delay, fill: 'backwards' });
         delay += 140;
