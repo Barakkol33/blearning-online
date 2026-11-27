@@ -49,3 +49,4 @@ Your job here is to try to **prove the current teaching thesis wrong**. The thes
 - [ ] Which Israeli help programs are still active? Verify the list in `content/help.json`.
 - [ ] Privacy rules for a site used by minors, even with no accounts.
 - [ ] Is an Arabic version worth doing early?
+- [ ] Which analytic-geometry errors (distance, midpoint) are most common among Israeli grade-10 students? A few searches (2026-11-27) found only weak sources; try examiners' reports on 35471/35571 or ask teachers.

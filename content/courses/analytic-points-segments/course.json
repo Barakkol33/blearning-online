@@ -1,0 +1,22 @@
+{
+  "title": "נקודות וקטעים במערכת צירים",
+  "subject": "math",
+  "grade": "תיכון, כיתה י׳, 4–5 יח״ל",
+  "emoji": "📍",
+  "color": "#2b6cb0",
+  "author": "לומדים",
+  "license": "CC BY-SA 4.0",
+  "description": "כמה זה בקו אווירי? מוצאים אורך של קטע בעזרת פיתגורס, את האמצע שלו בעזרת ממוצע, ומשתמשים בהם כדי לקבוע סוג של משולש ולהוכיח שמרובע הוא מקבילית. הנושא הראשון בגאומטריה אנליטית, לשאלונים 35471 ו־35571.",
+  "outcomes": [
+    "למצוא אורך של קטע בנוסחת המרחק, ולהבין שהיא משפט פיתגורס",
+    "למצוא אמצע של קטע, ולמצוא קצה של קטע כשהאמצע נתון",
+    "לקבוע סוג של משולש ולחשב היקף של מצולע לפי שיעורי הקודקודים",
+    "להוכיח שמרובע הוא מקבילית או מעוין בעזרת אמצעים ואורכים, טענה ונימוק בכל צעד"
+  ],
+  "exercises": "exercises.json",
+  "lessons": [
+    { "id": "distance", "title": "אורך קטע: מפיתגורס לנוסחה", "file": "lessons/01-distance.md", "minutes": 8, "questions": ["questions/01-distance.mcq.json", "questions/01-distance.tf.json"] },
+    { "id": "midpoint", "title": "אמצע קטע", "file": "lessons/02-midpoint.md", "minutes": 7, "questions": ["questions/02-midpoint.mcq.json", "questions/02-midpoint.tf.json"] },
+    { "id": "shapes", "title": "משולשים ומרובעים: סוג, היקף והוכחה", "file": "lessons/03-shapes.md", "minutes": 8, "questions": ["questions/03-shapes.mcq.json", "questions/03-shapes.tf.json"] }
+  ]
+}

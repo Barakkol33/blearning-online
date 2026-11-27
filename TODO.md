@@ -36,6 +36,8 @@ Goal: adding a scene type, a generator, an exercise kind or a course means addin
 - [ ] Section titles on the exercises page: render `math` with `fmt` (today they are escaped plain text, so a title can't show `-1`)
 - [ ] Typed-answer generators can't use misconception distractors; add a "choice" variant of `int-mul` / `int-div` whose wrong options are the sign-flip and the sum
 - [ ] Teacher answer key page for a given seed
+- [ ] Point answers: accept a decimal comma (`(2,5; 3)`); today `point: true` reads only `.` decimals
+- [ ] Convert the bagrut-style question in `analytic-points-segments` (items א–ה) to `steps` once it exists
 
 ## Game mode
 - [x] Three modes picked by the viewer: off / light / full (`js/game.js`, page `#/me`)
@@ -197,7 +199,7 @@ The grade 9 PDF was only partly readable. The order up to the line below is the 
 High school follows the Ministry's new program: from תשפ"ז every student sits only the new papers. Order and placement come from the 2026–27 teaching recommendations ([3](https://meyda.education.gov.il/files/Pop/0files/matmatika/Chativa-Elyona/mafmar/3-points-tashpaz.pdf) · [4](https://meyda.education.gov.il/files/Pop/0files/matmatika/Chativa-Elyona/mafmar/4-points-tashpaz.pdf) · [5](https://meyda.education.gov.il/files/Pop/0files/matmatika/Chativa-Elyona/mafmar/5-points-tashpaz.pdf) יח״ל). The process, papers and timeline are in [docs/high-school.md](docs/high-school.md). Each course is a small bite; a course used by several levels is listed once, where it is first taught.
 
 ### כיתה י׳ · 4–5 יח״ל (the first topics are shared by 4 and 5 units; ⁵ = 5 units only in י׳)
-- [ ] `analytic-points-segments` נקודות וקטעים במערכת צירים: מרחק ואמצע קטע 📐
+- [x] `analytic-points-segments` נקודות וקטעים במערכת צירים: מרחק ואמצע קטע 📐
 - [ ] `function-graph-reading` קריאת גרף של פונקציה: חיתוך, חיוביות ושליליות, עלייה וירידה, קיצון 📈
 - [ ] `analytic-lines` משוואת הישר: שיפוע, ישרים מקבילים ומאונכים 📐
 - [ ] `linear-quadratic-functions` פונקציה קווית וריבועית: ייצוג גרפי ואלגברי 📈
@@ -288,6 +290,7 @@ High school follows the Ministry's new program: from תשפ"ז every student sit
 - [ ] Scene type: function graph (points, line, slope)
 - [ ] Scene type: balance scale (equations)
 - [x] Scene type: geometry in a circle (`circle`: points, chords, angles, marks, bisectors, sliding points)
+- [x] Scene type: coordinate plane (`axes`: grid, points by coordinates, segments, legs, projections, sliding points)
 - [ ] Scene type: free geometry (points anywhere, not only on a circle: triangles, parallels, similarity)
 - [ ] Animated solutions for the older generators (sequence, triangle-angle, length)
 - [ ] Scene type: array / variables / code trace (computers)

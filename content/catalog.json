@@ -45,6 +45,9 @@
     },
     {
       "id": "powers"
+    },
+    {
+      "id": "analytic-points-segments"
     }
   ]
 }

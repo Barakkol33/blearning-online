@@ -41,7 +41,8 @@ Status: ✅ exists · 🟡 next · ⚪ later. Keep this list current; the develo
   - `shapes`, and `measure` (bars against a ruler).
   - `balance`: a scale.
   - `circle`: geometry in a circle (angles, sides, sliding points, proofs).
-- 🟡 Scene types: fraction bars, function graph, free geometry (triangles, parallel lines), coordinates, force vectors.
+  - `axes`: a coordinate plane (grid, points by coordinates, segments, fills, equal marks, side labels, the right triangle under a segment, projections to the axes; points slide). For all analytic geometry and, later, function points.
+- 🟡 Scene types: fraction bars, function graph, free geometry (triangles, parallel lines), force vectors.
 - ✅ Boxes: `> 📜 סיפור`, `> 🛒 בחיים`, `> 💡`.
 - ✅ Small Markdown tables (a sign table, a pattern), styled and printable.
 - ✅ In-lesson questions: `mcq` and `truefalse`, with explanations on wrong answers.
@@ -51,6 +52,8 @@ Status: ✅ exists · 🟡 next · ⚪ later. Keep this list current; the develo
 ### Exercises page
 - ✅ Signed-number generators: products, quotients, missing factor, sign of several factors, two-step chains; each with a number-line solution of equal jumps.
 - ✅ Power and square-root generators: powers (positive, special, negative base), missing base or exponent, sign of a power, square root, "between which whole numbers", two steps; with array, plate or number-line solutions.
+- ✅ Analytic-geometry generators (`axes` solutions): segment length (horizontal/vertical, Pythagorean, `√n`), midpoint, endpoint from the midpoint (choice with misconception distractors), triangle type from squared sides, perimeter on axes.
+- ✅ Typed point answers, `(x, y)` (`point: true`).
 - ✅ Generated sections: seeded (a teacher can share the link), "🔄 תרגילים חדשים", no repeated questions. Typed answer or multiple choice, with a unit, a figure, a hint, a written solution and an **animated solution**.
 - ✅ Handwritten items with the same fields; ⭐ for challenges.
 - ✅ Proof questions with an animated model proof (geometry).

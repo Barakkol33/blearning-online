@@ -81,6 +81,8 @@ Signed numbers (`js/gen/int-muldiv.js`): `int-mul` (`ask`: `pos-neg`, `neg-neg`,
 
 Powers and square roots (`js/gen/powers.js`): `pow` (`ask`: `pos`, `special`, `neg`), `pow-missing` (missing base or exponent), `pow-sign` (sign without computing; `-bⁿ` vs `(-b)ⁿ`), `sqrt`, `sqrt-between` (choice) and `pow-mix` (two steps). Exponents are superscript digits, via `sup(n)`. Solutions: a `groups` array for squares and roots, plates built one power at a time for small `aⁿ`, and a number line for negative bases and estimates.
 
+Analytic geometry (`js/gen/analytic.js`): `seg-dist` (`ask`: `axis`, `pyth`, `root`: the number under `√`), `seg-mid` (`ask`: `mid`, a typed point; `end`, choice with misconception distractors) and `seg-use` (`ask`: `type`, the triangle type from squared sides; `perimeter`). Every solution writes the formula and the full substitution, with an `axes` scene. A typed answer that is a point uses `"answer": "(1, 2)", "point": true`.
+
 ## License
 
 Content: CC BY-SA 4.0. Code: MIT.

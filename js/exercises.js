@@ -12,9 +12,16 @@ import { sceneWidget } from './scene.js';
 
 const norm = (s) => String(s).replace(/[−–]/g, '-').replace(/,/g, '.').replace(/[\s°%]/g, '');
 
+// A point answer, "(3, 2.5)": the two numbers in order, however it was typed.
+const nums = (s) => (String(s).replace(/[−–]/g, '-').match(/-?\d+(?:\.\d+)?/g) || []).map(Number);
+
 function isRight(it, typed) {
   const t = norm(typed);
   if (t === '') return null;
+  if (it.point) {
+    const want = nums(it.answer), got = nums(typed);
+    return got.length === 2 && got.every((v, i) => Math.abs(v - want[i]) < 1e-9);
+  }
   const accepted = Array.isArray(it.answer) ? it.answer : [it.answer];
   return accepted.some((a) =>
     typeof a === 'number' ? t !== '' && !isNaN(Number(t)) && Math.abs(Number(t) - a) < 1e-9 : norm(a) === t,
@@ -139,7 +146,7 @@ function exerciseEl(it, n, onSolved, c) {
     ans.append(row);
   } else {
     const form = h('form', 'ex-form');
-    form.innerHTML = `<input type="text" inputmode="decimal" autocomplete="off" dir="ltr" aria-label="תשובה">
+    form.innerHTML = `<input type="text" inputmode="${it.point ? 'text' : 'decimal'}"${it.point ? ' placeholder="(x, y)"' : ''} autocomplete="off" dir="ltr" aria-label="תשובה">
       ${it.unit ? `<span class="unit">${esc(it.unit)}</span>` : ''}<button class="btn small">בדיקה</button>`;
     const input = form.querySelector('input');
     form.onsubmit = (e) => {

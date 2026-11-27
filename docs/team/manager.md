@@ -37,9 +37,9 @@ When the user says **"next"**, you are the first to act, and you run the whole c
 
 ### Research check-in log
 
-- Chapters since the last check-in: **2** (counting from 2026-11-27)
+- Chapters since the last check-in: **3** (counting from 2026-11-27). At 3: the next "next" starts with the researcher in challenge mode.
 - Check-ins: none yet
-- Chapters: 2026-11-27 `negative-mul-div` (no research; counter 0 → 1) · 2026-11-27 `powers` (no research; counter 1 → 2)
+- Chapters: 2026-11-27 `negative-mul-div` (no research; counter 0 → 1) · 2026-11-27 `powers` (no research; counter 1 → 2) · 2026-11-27 `analytic-points-segments` (first high-school course; research in question mode: grade-10 analytic geometry, misconceptions, a 35471 bagrut question; counter 2 → 3)
 
 ## Emphasis
 

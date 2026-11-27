@@ -92,7 +92,7 @@ export function axes(spec) {
         s('path', { d: `M${cx + sx},${cy} v${sy} h${-sx}`, class: 'aright' }, g);
       }
       const dx = o.dx ?? fx(Math.abs(b[0] - a[0])), dy = o.dy ?? fx(Math.abs(b[1] - a[1]));
-      const below = cy > by ? 22 : -10; // the horizontal leg's label goes outside the triangle
+      const below = cy > by ? -8 : 20; // the horizontal leg's label goes inside, away from the point names
       if (a[0] !== b[0]) s('text', { x: (ax2 + cx) / 2, y: cy + below, class: 'aleg-l h', 'text-anchor': 'middle' }, g).textContent = dx;
       if (a[1] !== b[1]) s('text', { x: cx + (cx > ax2 ? 10 : -10), y: (cy + by) / 2 + 5, class: 'aleg-l v', 'text-anchor': cx > ax2 ? 'start' : 'end' }, g).textContent = dy;
     }
@@ -100,12 +100,17 @@ export function axes(spec) {
     for (const k of list(st.proj)) {
       if (!P[k]) continue;
       const [x, y] = px(k);
-      s('line', { x1: x, y1: y, x2: x, y2: Y(ay), class: 'aproj' }, g);
-      s('line', { x1: x, y1: y, x2: X(ax), y2: y, class: 'aproj' }, g);
-      s('circle', { cx: x, cy: Y(ay), r: 3.5, class: 'aproj-pt' }, g);
-      s('circle', { cx: X(ax), cy: y, r: 3.5, class: 'aproj-pt' }, g);
-      s('text', { x, y: Y(ay) + 34, class: 'aproj-l', 'text-anchor': 'middle' }, g).textContent = fx(P[k][0]);
-      s('text', { x: X(ax) - 26, y: y + 5, class: 'aproj-l', 'text-anchor': 'end' }, g).textContent = fx(P[k][1]);
+      // Skip the part that would have no length (a point already on an axis).
+      if (P[k][1] !== ay) {
+        s('line', { x1: x, y1: y, x2: x, y2: Y(ay), class: 'aproj' }, g);
+        s('circle', { cx: x, cy: Y(ay), r: 3.5, class: 'aproj-pt' }, g);
+        s('text', { x, y: Y(ay) + 34, class: 'aproj-l', 'text-anchor': 'middle' }, g).textContent = fx(P[k][0]);
+      }
+      if (P[k][0] !== ax) {
+        s('line', { x1: x, y1: y, x2: X(ax), y2: y, class: 'aproj' }, g);
+        s('circle', { cx: X(ax), cy: y, r: 3.5, class: 'aproj-pt' }, g);
+        s('text', { x: X(ax) - 26, y: y + 5, class: 'aproj-l', 'text-anchor': 'end' }, g).textContent = fx(P[k][1]);
+      }
     }
     const hot = new Set(list(st.hot).flatMap((n) => [n, [...n].reverse().join('')]));
     const dash = new Set(list(st.dash));
@@ -134,7 +139,8 @@ export function axes(spec) {
       const mx = (ax3 + bx) / 2, my = (ay3 + by) / 2, d = Math.hypot(bx - ax3, by - ay3) || 1;
       const [nx, ny] = away(mx, my, -(by - ay3) / d, (bx - ax3) / d);
       const t = String(txt);
-      s('text', { x: mx + nx * (14 + t.length * 2.5), y: my + ny * 16 + 6, class: 'aside', 'text-anchor': 'middle' }, g).textContent = t;
+      const hw = t.length * 4.5 + 2; // keep the label inside the picture
+      s('text', { x: Math.min(Math.max(mx + nx * (14 + t.length * 2.5), hw), W - hw), y: my + ny * 16 + 6, class: 'aside', 'text-anchor': 'middle' }, g).textContent = t;
     }
     for (const a of list(st.right)) {
       if (!ok(a)) continue;
@@ -155,8 +161,13 @@ export function axes(spec) {
       if (Math.hypot(dx, dy) < 1) { dx = 0.6; dy = -1; }
       const d = Math.hypot(dx, dy);
       const txt = coords ? `${k}(${fx(P[k][0])}, ${fx(P[k][1])})` : k;
-      const tx = x + (dx / d) * 16, ty = y + (dy / d) * 16 + 6;
-      const anchor = Math.abs(dx / d) < 0.35 ? 'middle' : dx > 0 ? 'start' : 'end';
+      let tx = x + (dx / d) * 16, ty = y + (dy / d) * 16 + 6;
+      let anchor = Math.abs(dx / d) < 0.35 ? 'middle' : dx > 0 ? 'start' : 'end';
+      // Keep the name inside the picture: flip it to the other side near an edge.
+      const w = txt.length * 8.4;
+      if (anchor === 'end' && tx - w < 2) { anchor = 'start'; tx = x + 9; ty = y - 9; }
+      else if (anchor === 'start' && tx + w > W - 2) { anchor = 'end'; tx = x - 9; ty = y - 9; }
+      else if (anchor === 'middle') tx = Math.min(Math.max(tx, w / 2 + 2), W - w / 2 - 2);
       s('text', { x: tx, y: ty, class: 'apt-l', 'text-anchor': anchor }, g).textContent = txt;
     }
     label.textContent = st.label || '';

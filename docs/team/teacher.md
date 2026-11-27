@@ -154,6 +154,27 @@ Written by the [researcher](researcher.md), who runs only when the user asks. Ea
 - **Correction:** 5-unit math students *rose* about 80% after 2012 ([Taub](https://www.taubcenter.org.il/en/research/raising-the-bar-are-enough-israeli-students-taking-advanced-math-and-english/)). The teacher shortage is disputed ([Taub 2025](https://www.taubcenter.org.il/en/pr/snr-2025-education/)).
 - **Abroad:** US NAEP math is still below 2019 ([NPR](https://www.npr.org/2025/01/29/nx-s1-5270880/math-reading-covid-naep)). 65% of students are distracted by devices in math lessons ([OECD](https://www.oecd.org/en/about/news/press-releases/2023/12/decline-in-educational-performance-only-partly-attributable-to-the-covid-19-pandemic.html)), so the feed must feel like practice, not scrolling.
 
+### High school opener: how is analytic geometry (distance, midpoint) learned in grade 10? (question mode, 2026-11-27)
+
+**1. Where it sits in the new program: official, checked.**
+- The 4-unit recommendations for 2026–27 open grade 10 with two parallel topics: precalculus, and analytic geometry: "נקודות, קטעים, ישרים (כולל מקבילים ומאונכים)", combined with plane geometry as a review of junior-high triangles and quadrilaterals ([4 units, תשפ"ז](https://meyda.education.gov.il/files/Pop/0files/matmatika/Chativa-Elyona/mafmar/4-points-tashpaz.pdf)). The first 4- and 5-unit topics are aligned on purpose.
+- **For us:** points and segments are one short course, lines are the next one, and every analytic course reuses a junior-high fact (Pythagoras, quadrilateral properties) inside a coordinate problem.
+
+**2. What a bagrut question looks like: official, checked.**
+- Paper 35471, winter 2026 (new program), question 5: a kite `ABCD` with `B(0, 6)` and `A(-3, 2)`. Part א asks (1) the length of `AB`, then (2) the coordinates of `C`, using a fact from the figure (`BC` parallel to the x-axis, `AB = CB`). Later parts ask a diagonal's equation, a vertex, an angle, and the area of a triangle whose vertex `E` is "the midpoint of `DC`". Question 4 asks to *prove* two angles equal and two triangles similar on coordinate axes, then to find a length and a vertex ([paper 35471, winter 2026](https://meyda.education.gov.il/sheeloney_bagrut/2026/1/HEB/35471.PDF)).
+- So distance and midpoint are rarely a question on their own. They are **part א of a multi-part question**, and their result feeds the next part. Plane-geometry facts and proofs are mixed in. The numbers are often a Pythagorean triple (here 3-4-5).
+- **For us:** practice a multi-part question (א, ב, ג) where each answer is used later; find a vertex from a property (equal sides, a parallel side, a midpoint); write every substitution, as the exam requires full solutions.
+
+**3. Known mistakes: weak evidence, mostly teacher experience.**
+- No strong study on distance and midpoint errors was found in a few searches. Small error-analysis studies (an Indonesian study of first-year students; a Nepali master's thesis on grade 11 coordinate geometry, [TUCL](https://elibrary.tucl.edu.np/items/32c670d7-45de-42a1-9629-d8d7fad16707)) classify errors as conceptual, procedural and computational, without effect sizes: *weak*.
+- Teaching guides agree on the same mistakes: mixing up the midpoint and distance formulas, because both use the same two points; a sign error when subtracting a negative coordinate; and memorizing the distance formula without the Pythagoras picture ([Matrix Education](https://www.matrix.edu.au/midpoint-formula/)): *weak / teaching guides*.
+- **A related, stronger finding:** high-school algebra students often fail to use the link between a point's coordinates and its place on the graph. They pick a long algebraic route even when the picture gives the answer at once ([Knuth 2000, JRME 31(4)](https://nctm.org/Publications/Journal-for-Research-in-Mathematics-Education/2000/Vol31/Issue4/Student-Understanding-of-the-Cartesian-Connection_-An-Exploratory-Study)): *supported, exploratory study*.
+- **For us:**
+  - Derive the distance formula from a drawn right triangle every time (legs `Δx` and `Δy`), before the formula. A student who forgets the formula can redraw it.
+  - Name the mistakes and use them as distractors: `(-3)² = -9`; `x₂ - x₁` with a negative coordinate (`5 - (-2) = 3`); the order of subtraction (it doesn't matter after squaring, and say why); `|Δx| + |Δy|` instead of the root (walking along streets); the midpoint as half the *difference*; and finding an endpoint by averaging `A` and `M`.
+  - Show the midpoint as an average on each axis, with the picture, and always check: "is `M` really between `A` and `B`?"
+  - Keep the picture and the formula side by side in every worked solution.
+
 **"They have all the information, they're just lazy": partly true.** Access is no longer the bottleneck. What's missing is a clear next step, fast feedback, small wins, and a fair fight for attention. The answer is small, active steps with instant feedback, not more material.
 
 ## Template: `plan/1-teacher.md`
