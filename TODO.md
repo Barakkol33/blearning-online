@@ -1,6 +1,6 @@
 # TODO
 
-Grouped by area. Rough order inside each group = priority. See [docs/product.md](docs/product.md) for the why.
+Grouped by area. Rough order inside each group = priority. See [docs/team/](docs/team/README.md) for the why.
 
 ## POC polish
 - [ ] Test on a real phone (Android Chrome, iPhone Safari): feed swipe, scroll snap, swipe-to-answer
@@ -43,7 +43,7 @@ Goal: adding a scene type, a generator, an exercise kind or a course means addin
 - [ ] Full mode: a mascot (the 🐸) that reacts to answers
 - [ ] Per-course "mastery" badge: all lessons, perfect checks, plus 20 exercises
 
-## Learning features (from docs/education.md)
+## Learning features (from docs/team/teacher.md and product.md)
 - [ ] Concept links: `[[id|text]]` in lessons opens a short card (definition, tiny example, "לנושא המלא ←")
 - [ ] `content/concepts/<id>.md`: short card text plus full explanation; a concept page view
 - [ ] `requires` on topics in math-map.json; a "this lesson uses: …" line at the top of lessons
@@ -57,7 +57,7 @@ Goal: adding a scene type, a generator, an exercise kind or a course means addin
 
 ## Math courses — say "next" to build the next one
 
-One course per line, in order. **"next" (one chunk, about 10 minutes of work) = the first unchecked course below**: build it in `content/courses/<id>/`, following [docs/education.md](docs/education.md), through the team pipeline in [docs/team/](docs/team/README.md): teacher → product → developer, each writing its file in `plan/`:
+One course per line, in order. **"next" (one chunk, about 10 minutes of work) = the first unchecked course from grade 7 (ז׳) onward** (current focus, since 2026-11-27; earlier grades only on request): build it in `content/courses/<id>/`, through the team pipeline in [docs/team/](docs/team/README.md): manager → teacher → product → developer, each writing its file in `plan/`:
 - 2–4 short lessons: hook, scene, worked example, summary plus "where this leads"
 - at least one `> 📜 סיפור` (facts checked) and one `> 🛒 בחיים` box per course
 - quizplay-format questions: easy first, one ⭐ stretch, distractors from real misconceptions
@@ -248,7 +248,7 @@ Rough topic lists (to be replaced by the plans):
 - [ ] Diagnostic feed: start at the target topic, walk down to prerequisites on wrong answers
 - [ ] Mix cards from several courses ("daily mix")
 - [ ] Spaced repetition across days (saved wrong answers come back tomorrow)
-- [ ] Encouragement rules (see research.md): praise the strategy, say the next step, stop cheering after 2–3 misses and offer an explanation or a person
+- [ ] Encouragement rules (see the research findings in docs/team/teacher.md): praise the strategy, say the next step, stop cheering after 2–3 misses and offer an explanation or a person
 - [ ] Settings: daily goal size
 - [ ] Measure: how often repeated questions are answered right the second time (local stats only)
 
@@ -289,10 +289,10 @@ Rough topic lists (to be replaced by the plans):
 - [ ] Teacher link: `?set=…&seed=…` gives a class the same exercises
 - [ ] Printable worksheet from the question bank (with an answer key on a separate page)
 - [ ] Students paste back a short result code; teacher page decodes it (no backend)
-- [ ] Talk to 3–5 teachers; record what they need in docs/research.md
+- [ ] Talk to 3–5 teachers; record what they need in docs/team/teacher.md
 
 ## Research
-- [ ] Answer the open questions in docs/research.md
+- [ ] Answer the open questions in docs/team/researcher.md
 - [ ] Privacy review for minors (Israeli privacy law; no tracking, no third-party analytics)
 - [ ] Decide on Arabic version timing
 - [ ] Check the Ministry content-catalog (סל תוכן) requirements for later

@@ -2,7 +2,7 @@
 //   off   — just learning: no points, achievements, goals or streaks
 //   light — progress, scores and achievements (default)
 //   full  — also points (⭐), levels and celebrations
-// Rewards follow docs/education.md: small and informative, and they reward
+// Rewards follow docs/team/product.md (game mode): small and informative, and they reward
 // persistence and asking for help, not only speed.
 import { h, esc } from './util.js';
 import { store } from './store.js';

@@ -24,6 +24,7 @@ You are the engineer of a no-build static site: vanilla ES modules, hash routing
 - **Every generated exercise has a solution;** an animated one where a picture helps.
 - **RTL details:** math in backticks; a Hebrew line never starts with a number or English.
 - **Look at it.** Code that renders isn't done until a screenshot looks right: sizes, overlaps, empty states.
+- **Game layer:** add an achievement in `js/game.js`. UI that should hide in "off" mode gets the class `g-light` (or `g-full` for full mode only).
 - **Don't break other courses.** Run the checks on older courses that use a module you changed.
 
 ## Checks

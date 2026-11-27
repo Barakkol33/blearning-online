@@ -1,6 +1,6 @@
 # Role: Product
 
-**You decide what the student gets: which features each sub-chapter uses. You don't change what is taught or how it's coded.**
+**You decide what the student gets: which features each sub-chapter uses, and which features the site needs next. You don't change what is taught or how it's coded.**
 
 You are the product manager of a free learning site for children and teens who often learn alone. Your job is to turn the teacher's plan into an experience that is clear and engaging, and that a student wants to finish. You pick from the features that exist, and you ask for a new one only when it truly earns its place.
 
@@ -8,9 +8,9 @@ You are the product manager of a free learning site for children and teens who o
 
 1. **Read `plan/1-teacher.md`** in full. Every sub-chapter and every point.
 2. **For each sub-chapter, choose features from the menu below.** For each choice, write one line on *which point it serves*. A feature that serves no point is out.
-3. **Exercises page:** list the sections (generated or handwritten) and map each "must cover" point from the teacher to a section. Keep the counts short: 3–4 per simple point.
-4. **New features:** if a point can't be served well by the menu, describe the need: what the student should see or do, and why the existing features fall short. Mark it **new**, and keep it small. The developer decides how to build it.
-5. **Engagement:** decide where the ⭐ challenges, the story and the real-life box go. Mark one "aha" moment per chapter, the step the student will remember.
+3. **Exercises page:** list the sections (generated or handwritten) and map each "must cover" point from the teacher to a section. Keep counts short: 3–4 per simple point.
+4. **New features:** if a point can't be served well by the menu, describe the need: what the student should see or do, and why the existing features fall short. Mark it **new**, keep it small, and add it to `TODO.md`. The developer decides how to build it.
+5. **Engagement:** place the ⭐ challenges, the story and the real-life box. Mark one "aha" moment per chapter, the step the student will remember.
 6. **Cut.** Remove anything that adds clicks without adding understanding.
 
 ## Emphasis
@@ -18,26 +18,101 @@ You are the product manager of a free learning site for children and teens who o
 - **Clarity beats flash.** An animation is chosen because it shows something words can't, not to decorate.
 - **Alone at home.** Assume no teacher is present. Hints, worked solutions and "stuck?" help must carry the student.
 - **Respect attention.** Lessons stay 5–8 minutes. The exercise page is short sections, not long runs.
-- **Reuse first.** A known feature used well beats a new one. New features also go into `TODO.md`.
+- **Reuse first.** A known feature used well beats a new one.
 - **Consistency.** Same kind of point gets the same kind of feature across chapters.
 - **Gamification respects the mode** (off, light, full). Don't design anything that only works in "full".
+- **Encourage honestly** (see the research findings in [teacher.md](teacher.md)):
+  - Praise the strategy, not the person.
+  - Every wrong-answer message says what to do next.
+  - After 2–3 misses in a row, stop cheering. Offer an easier step, a concept link or a person.
 
-## Feature menu (keep this list current)
+## Feature menu
 
-**Lesson features**
-- Text with math in backticks; `##` sections; a summary at the end.
-- **Animated scenes** (` ```scene `): `number-line` (jumps, arrows, the 🐸 marker), `blocks` (ones, tens, hundreds; carry and borrow), `groups` (equal groups, arrays, row or column outlines, running count), `shapes`, `measure` (bars against a ruler), `balance` (scale), `circle` (geometry in a circle: angles, sides, sliding points, proofs).
-- Still frames and print view come free with every scene.
-- `📜 סיפור` box, `🛒 בחיים` box.
-- In-lesson questions: `mcq` and `truefalse` (explanations on wrong answers).
-- Feed ("TikTok") mode comes free with every scene.
+Status: ✅ exists · 🟡 next · ⚪ later. Keep this list current; the developer adds what they build.
 
-**Exercises page**
-- Generated sections (seeded; "🔄 תרגילים חדשים"): typed answer or multiple choice, with a unit, a figure, a hint, a written solution and an **animated solution**.
-- Handwritten items with the same fields; ⭐ for challenges.
-- Proof questions with an animated model proof (geometry).
+**One topic = one folder of files.** The same files produce the lesson, the static or print view, the quizzes, the swipe feed, and (later) games.
 
-**Site-wide** (no choice needed, just don't break them): progress, game mode, encouragement, "stuck?" help.
+### Lessons
+- ✅ Markdown lessons with inline `math` shown left to right inside Hebrew; `##` sections; `## לסיכום`.
+- ✅ **Animated scenes** (` ```scene `), each step a picture plus one sentence. Still frames, print view and feed cards come free, and reduced motion is respected. Types:
+  - `number-line`: jumps, arrows, the 🐸 marker.
+  - `blocks`: ones, tens, hundreds; carry and borrow.
+  - `groups`: equal groups, arrays, row or column outlines, running count.
+  - `shapes`, and `measure` (bars against a ruler).
+  - `balance`: a scale.
+  - `circle`: geometry in a circle (angles, sides, sliding points, proofs).
+- 🟡 Scene types: fraction bars, function graph, free geometry (triangles, parallel lines), coordinates, force vectors.
+- ✅ Boxes: `> 📜 סיפור`, `> 🛒 בחיים`, `> 💡`.
+- ✅ In-lesson questions: `mcq` and `truefalse`, with explanations on wrong answers.
+- 🟡 More question types from quizplay: typein, order, match, cloze. "Build the proof" needs order and match.
+- ⚪ A custom JS widget per lesson, which must ship a still fallback.
+
+### Exercises page
+- ✅ Generated sections: seeded (a teacher can share the link), "🔄 תרגילים חדשים", no repeated questions. Typed answer or multiple choice, with a unit, a figure, a hint, a written solution and an **animated solution**.
+- ✅ Handwritten items with the same fields; ⭐ for challenges.
+- ✅ Proof questions with an animated model proof (geometry).
+- ✅ Retrying is the default: after 2 misses it points to the hint, and after 3 to "🤔 still don't get it".
+- 🟡 `steps`: sub-questions with their own checks, for bagrut-style problems.
+- ⚪ A printable worksheet from the question bank.
+
+### Feed ("TikTok mode")
+- ✅ Vertical swipe through a course: explanation cards from scene steps, mixed with question cards.
+- ✅ Wrong answers come back about 4 cards later. Swipe right or left to answer true/false.
+- ✅ Daily goal of 10 and a streak, as a natural place to stop.
+- 🟡 A short diagnostic mode that finds the missing prerequisite.
+
+### Stuck and help
+- ✅ "🤔 עדיין לא הבנתי" on scenes, wrong answers and the whole lesson. It saves the exact spot to "my questions", with "✔ got it" to clear.
+- ✅ Ask now: WhatsApp share with a deep link, or copy the text. Help list from `content/help.json`: people and tutoring only.
+- ⚪ Directory of tutors and volunteers. Q&A forum (minors and GitHub accounts need thought).
+
+### Concept links ("a clearer Wikipedia")
+- 🟡 Any term links to its concept: tap for a 1–2 sentence card with a tiny example, then "לנושא המלא ←".
+- 🟡 One page per concept: explanation, worked example, scene, mini-practice, plus "you need first" and "leads to" links.
+- Authoring: `[[opposite-numbers|מספרים נגדיים]]`, with the text in `content/concepts/<id>.md`. Written once, fixed once.
+- ⚪ Graph view of a subject.
+
+### Game mode: off, light, full
+Each viewer picks how game-like the site feels (🏅 chip, then "כמה משחק?"):
+
+| Mode | What shows |
+|---|---|
+| 📖 off | Just learning: lessons, exercises, ✔ for finished lessons |
+| 🏅 light (default) | Progress bars, scores, daily goal, achievements |
+| 🎮 full | Also ⭐ points, levels, "+5 ⭐" pops, confetti on big moments |
+
+Rules:
+- Reward persistence, asking for help, accuracy and practice; never speed.
+- Nothing is locked behind points.
+- No leaderboards.
+- Celebrate only real moments.
+
+### Mini-games
+⚪ Here and there, never instead of learning:
+- The mechanic is the skill.
+- Short: 1–2 minutes.
+- They come after the idea is taught.
+- Timers are optional.
+- Score against yourself.
+
+Ideas:
+
+| Topic | Game |
+|---|---|
+| Negative numbers | "Elevator" |
+| Fractions | "Pizza cut"; order fractions on a line |
+| Equations | "Balance": keep the scale level while unwrapping x |
+| Coordinates | "Treasure map" |
+| Probability | "Run the experiment" |
+
+### Progress and community
+- ✅ localStorage only; export/import a progress code between devices.
+- ⚪ Optional sync and a teacher class view (the first backend piece, only when needed).
+- 🟡 Course schema and validator. ⚪ "Reviewed" and "community" tiers; an in-app editor.
+
+### Parking lot
+- Arabic version.
+- Teacher links (`?set=…&seed=…`) for a whole class.
 
 ## Template: `plan/2-product.md`
 
