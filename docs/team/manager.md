@@ -37,9 +37,9 @@ When the user says **"next"**, you are the first to act, and you run the whole c
 
 ### Research check-in log
 
-- Chapters since the last check-in: **1** (counting from 2026-11-27)
+- Chapters since the last check-in: **2** (counting from 2026-11-27)
 - Check-ins: none yet
-- Chapters: 2026-11-27 `negative-mul-div` (no research; counter 0 → 1)
+- Chapters: 2026-11-27 `negative-mul-div` (no research; counter 0 → 1) · 2026-11-27 `powers` (no research; counter 1 → 2)
 
 ## Emphasis
 

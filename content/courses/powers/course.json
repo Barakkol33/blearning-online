@@ -1,0 +1,40 @@
+{
+  "title": "חזקות ושורש ריבועי",
+  "subject": "math",
+  "grade": "כיתה ז׳",
+  "emoji": "🔺",
+  "color": "#c0582b",
+  "author": "לומדים",
+  "license": "CC BY-SA 4.0",
+  "description": "כמה שכבות יש בדף שקופל 5 פעמים? לומדים מה זו חזקה, למה (-3)² ו־-3² הם לא אותו דבר, ואיך מוצאים את הצלע של ריבוע בעזרת שורש.",
+  "outcomes": [
+    "לחשב חזקה עם מעריך טבעי, ולזהות בסיס ומעריך",
+    "לקבוע את הסימן של חזקה עם בסיס שלילי",
+    "להבדיל בין (-3)² ל־-3²",
+    "למצוא שורש ריבועי של ריבוע שלם, ולהעריך שורש בין שני שלמים"
+  ],
+  "exercises": "exercises.json",
+  "lessons": [
+    {
+      "id": "power",
+      "title": "מה זו חזקה",
+      "file": "lessons/01-power.md",
+      "minutes": 7,
+      "questions": ["questions/01-power.mcq.json", "questions/01-power.tf.json"]
+    },
+    {
+      "id": "negative-base",
+      "title": "חזקה של מספר שלילי",
+      "file": "lessons/02-negative-base.md",
+      "minutes": 7,
+      "questions": ["questions/02-negative-base.mcq.json", "questions/02-negative-base.tf.json"]
+    },
+    {
+      "id": "square-root",
+      "title": "השורש הריבועי",
+      "file": "lessons/03-square-root.md",
+      "minutes": 8,
+      "questions": ["questions/03-square-root.mcq.json", "questions/03-square-root.tf.json"]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "type": "truefalse",
+  "title": "נכון או לא נכון",
+  "questions": [
+    { "id": "swap", "statement": "‏`2³` שווה ל־`3²`.", "answer": false, "explanation": "‏`2³ = 8` ו־`3² = 9`. בחזקה, אסור להחליף בין הבסיס למעריך." },
+    { "id": "one", "statement": "‏`1⁵ = 5`.", "answer": false, "explanation": "‏`1⁵ = 1 · 1 · 1 · 1 · 1 = 1`. 1 כפול 1 תמיד 1." },
+    { "id": "ten", "statement": "‏`10³ = 1000`.", "answer": true, "explanation": "‏`10 · 10 · 10 = 1000`: אחת ואחריה 3 אפסים." }
+  ]
+}

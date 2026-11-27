@@ -1,0 +1,9 @@
+{
+  "type": "truefalse",
+  "title": "נכון או לא נכון",
+  "questions": [
+    { "id": "neg", "statement": "‏`√(-9) = -3`.", "answer": false, "explanation": "‏`(-3)² = 9`, לא `-9`. אין מספר שבריבוע נותן מספר שלילי, ולכן ל־`-9` אין שורש ריבועי." },
+    { "id": "zero", "statement": "‏`√0 = 0`.", "answer": true, "explanation": "‏`0² = 0`, ולכן `√0 = 0`." },
+    { "id": "check", "statement": "‏`√49 = 7`, ואפשר לבדוק את זה כי `7² = 49`.", "answer": true, "explanation": "בודקים שורש בריבוע: `7 · 7 = 49`." }
+  ]
+}

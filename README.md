@@ -77,6 +77,8 @@ Exercise generators live in `js/gen/` (one module per topic, merged into the reg
 
 Signed numbers (`js/gen/int-muldiv.js`): `int-mul` (`ask`: `pos-neg`, `neg-neg`, `special`), `int-sign` (sign of 3–5 factors), `int-div`, `int-missing` (`? × b = c`) and `int-chain` (`a × b ÷ c`). Each product and quotient gets a number-line solution of equal jumps from 0, built by `mulScene(x, y)`.
 
+Powers and square roots (`js/gen/powers.js`): `pow` (`ask`: `pos`, `special`, `neg`), `pow-missing` (missing base or exponent), `pow-sign` (sign without computing; `-bⁿ` vs `(-b)ⁿ`), `sqrt`, `sqrt-between` (choice) and `pow-mix` (two steps). Exponents are superscript digits, via `sup(n)`. Solutions: a `groups` array for squares and roots, plates built one power at a time for small `aⁿ`, and a number line for negative bases and estimates.
+
 ## License
 
 Content: CC BY-SA 4.0. Code: MIT.

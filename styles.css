@@ -140,7 +140,7 @@ a.card:hover { transform: translateY(-3px); }
 .lesson { max-width: 760px; }
 .lesson h1 { font-size: 2em; margin: 14px 0 8px; }
 .lesson h2 { margin-top: 1.6em; }
-.lesson table { border-collapse: collapse; margin: 14px 0; }
+.lesson table { border-collapse: collapse; margin: 14px 0; display: block; max-width: 100%; overflow-x: auto; }
 .lesson th, .lesson td { border: 1px solid var(--line); padding: 6px 14px; text-align: center; }
 .lesson th { background: var(--panel); }
 .lesson-stuck, .quiz, .lesson-nav { max-width: 760px; }

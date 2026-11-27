@@ -50,6 +50,7 @@ Status: ✅ exists · 🟡 next · ⚪ later. Keep this list current; the develo
 
 ### Exercises page
 - ✅ Signed-number generators: products, quotients, missing factor, sign of several factors, two-step chains; each with a number-line solution of equal jumps.
+- ✅ Power and square-root generators: powers (positive, special, negative base), missing base or exponent, sign of a power, square root, "between which whole numbers", two steps; with array, plate or number-line solutions.
 - ✅ Generated sections: seeded (a teacher can share the link), "🔄 תרגילים חדשים", no repeated questions. Typed answer or multiple choice, with a unit, a figure, a hint, a written solution and an **animated solution**.
 - ✅ Handwritten items with the same fields; ⭐ for challenges.
 - ✅ Proof questions with an animated model proof (geometry).

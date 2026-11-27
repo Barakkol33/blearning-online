@@ -42,6 +42,9 @@
     },
     {
       "id": "negative-mul-div"
+    },
+    {
+      "id": "powers"
     }
   ]
 }
