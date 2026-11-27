@@ -57,7 +57,7 @@ Goal: adding a scene type, a generator, an exercise kind or a course means addin
 
 ## Math courses — say "next" to build the next one
 
-One course per line, in order. **"next" (one chunk, about 10 minutes of work) = the first unchecked course below**: build it in `content/courses/<id>/`, following [docs/education.md](docs/education.md):
+One course per line, in order. **"next" (one chunk, about 10 minutes of work) = the first unchecked course below**: build it in `content/courses/<id>/`, following [docs/education.md](docs/education.md), through the team pipeline in [docs/team/](docs/team/README.md): teacher → product → developer, each writing its file in `plan/`:
 - 2–4 short lessons: hook, scene, worked example, summary plus "where this leads"
 - at least one `> 📜 סיפור` (facts checked) and one `> 🛒 בחיים` box per course
 - quizplay-format questions: easy first, one ⭐ stretch, distractors from real misconceptions

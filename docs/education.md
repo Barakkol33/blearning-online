@@ -9,14 +9,14 @@ The three goals, in order:
 
 ## 0. Plan first: the points list
 
-Before any lesson is written, the course gets a `plan.md` in its folder (the site doesn't load it). It lists what a student must see when learning the topic:
+Before any lesson is written, the teacher role writes `plan/1-teacher.md` in the course folder. The site doesn't load it. The full pipeline (teacher → product → developer) is in [team/README.md](team/README.md). The plan lists what a student must see when learning the topic:
 - **Key points:** the ideas themselves.
 - **Special cases:** 0, 1, edges, the cases that break a naive rule.
 - **Tricks:** shortcuts that make the work easier.
 - **Common mistakes:** each becomes a distractor or a true/false item.
 - **Bridge:** what this prepares for next.
 
-Each point is marked with the lesson that teaches it. A **coverage table** maps every point to a section or item on the exercises page. A point with no exercise isn't done. See [multiplication-intro/plan.md](../content/courses/multiplication-intro/plan.md).
+Each point is marked with the lesson that teaches it. A **coverage table** maps every point to a section or item on the exercises page. A point with no exercise isn't done. See [multiplication-intro/plan/1-teacher.md](../content/courses/multiplication-intro/plan/1-teacher.md).
 
 ## 1. Lesson shape
 
@@ -185,7 +185,7 @@ From research (praise and feedback studies):
 
 ## Checklist for every lesson
 
-- [ ] Per course, before writing: `plan.md` with key points, special cases, tricks, common mistakes; every point covered in a lesson **and** in the exercises
+- [ ] Per course, before writing: `plan/1-teacher.md`, `2-product.md` and `3-developer.md` ([team](team/README.md)); every teacher point covered in a lesson **and** in the exercises
 - [ ] Hook: a question, story or real problem
 - [ ] At least one scene; each step is one picture plus one sentence
 - [ ] A worked example
