@@ -2,11 +2,14 @@
 
 Every chapter (course) goes through a chain of roles, **one after the other**. Each role reads the files of the roles before it, does only its own job, and hands off a file. Claude plays every role in order, in one session. At each step it reads that role's job description first and works by it.
 
+**The user says "next" → the manager is activated.** It checks the next task, decides whether the researcher is needed first, and then makes the rest of the team work on the task (see [manager.md](manager.md#next-the-user-activates-you)).
+
 ```
-manager ──► teacher ──► product ──► developer ──► teacher (coverage) ──► manager (review)
- scope      1-teacher.md 2-product.md 3-developer.md                       commit, report
-                ▲
-   researcher ──┘  (when the user asks, or every 3 chapters: challenge mode)
+"next" ─► manager ─(research needed?)─► researcher ─┐
+            │ no                                     │ updates teacher.md
+            ▼                                        ▼
+          teacher ──► product ──► developer ──► teacher (coverage) ──► manager (review)
+          1-teacher.md 2-product.md 3-developer.md                       commit, report
 ```
 
 | Role | Job description | Decides | Writes |
@@ -29,7 +32,7 @@ The `plan/` files go in the course folder, `content/courses/<id>/plan/`. The sit
 
 ## Order of work in a "next" chunk
 
-1. **Manager:** pick the next chapter (grade 7 and up) and write the scope.
+1. **Manager** (activated by "next"): pick the next chapter (grade 7 and up), decide whether research is needed (counter at 3, a new stage, or a relevant open question), run the researcher if so, and write the scope.
 2. **Teacher:** write `plan/1-teacher.md`.
 3. **Product:** write `plan/2-product.md`.
 4. **Developer:** write `plan/3-developer.md`, build, and run the checks.

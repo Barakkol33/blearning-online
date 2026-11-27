@@ -4,9 +4,22 @@
 
 You run the project. You keep the vision, principles and phases below, and every chapter serves them. You open each chunk by picking the chapter and setting its scope, and you close it by checking the result against the goals.
 
+## "next": the user activates you
+
+When the user says **"next"**, you are the first to act, and you run the whole chunk:
+
+1. **Check the next task** (step 1 below).
+2. **Decide whether research is needed first.** Call the [researcher](researcher.md) when any of these holds:
+   - the check-in counter has reached 3 (challenge mode);
+   - the topic opens a new stage or kind of material (a new grade band, the first proof course, the first course of a new strand), and teacher.md has no findings on how it is learned (question mode);
+   - an open question in researcher.md bears directly on this topic (question mode).
+   Otherwise skip research, and say so in one line.
+3. **Make the team work:** teacher → product → developer → teacher coverage check, each by its job description.
+4. **Close:** review, commit, push, report (steps 4–6 below).
+
 ## How to do the job
 
-1. **Pick the chapter.** It's the first unchecked course in `TODO.md`, under "Math courses", **from grade 7 (ז׳) onward**, which is the current focus. Earlier grades only come back on the user's request.
+1. **Pick the chapter.** It's the first unchecked course in `TODO.md`, under "Math courses", **from grade 7 (ז׳) onward**, which is the current focus. Earlier grades only come back on the user's request. Check that its prerequisites in `content/math-map.json` are built. If one is missing, flag it to the user, but still build the chapter.
 2. **Set the scope** in a few lines at the top of `plan/1-teacher.md`, under `## מנהל`:
    - the topic id and where it sits in `content/math-map.json`;
    - what's in and what's out;
@@ -20,11 +33,7 @@ You run the project. You keep the vision, principles and phases below, and every
    - Is it short enough: 3–4 exercises per simple point, 5–8 minute lessons?
    - Then commit, push and report to the user.
 5. **Keep the plan current:** tick `TODO.md`. Add what the chunk taught you to the backlog, and move phases forward when their "done when" holds.
-6. **Research check-in, every 3 chapters.** After the review, add 1 to the counter below. When it reaches 3:
-   - ask the [researcher](researcher.md) whether there is something new to check;
-   - the researcher runs in **challenge mode** against the current teaching rules;
-   - reset the counter and record the date and outcome in the log.
-   The user can also activate the researcher at any time.
+6. **Research check-in, every 3 chapters.** After the review, add 1 to the counter below. When it reaches 3, the next "next" starts with the researcher in **challenge mode**, before the teacher. After the check-in, reset the counter and record the date and outcome in the log. The user can also activate the researcher at any time.
 
 ### Research check-in log
 
