@@ -134,40 +134,61 @@ Strands: 🔢 numbers · 🍕 fractions, decimals and percent · 🧮 algebra ·
 - [ ] `statistics-intro` ממוצע, שכיח, חציון ודיאגרמות 🎲
 - [ ] `probability-intro` הסתברות: מושגים ראשונים 🎲
 
+Grades 7–9 follow the Ministry of Education teaching order (פריסת הוראה) for the updated junior-high program, תשפ"ז (2026–27). The month in brackets is the Ministry's. Sources: [ז׳](https://meyda.education.gov.il/files/Pop/0files/matmatika/Chativat-Beynayim/tashpaz/prisaAmat_7.pdf) · [ח׳](https://meyda.education.gov.il/files/Pop/0files/matmatika/Chativat-Beynayim/tashpaz/prisaAmat_8.pdf) · [ט׳](https://meyda.education.gov.il/files/Pop/0files/matmatika/Chativat-Beynayim/tashpaz/prisaAmat_9.pdf) (reordered 2026-11-27, user request).
+
 ### כיתה ז׳
-- [x] `negative-numbers` מספרים שליליים 🔢
-- [x] `negative-mul-div` כפל וחילוק מספרים מכוונים 🔢
-- [ ] `powers` חזקות 🔢
-- [ ] `order-of-operations` סדר פעולות עם חזקות וסוגריים 🔢
-- [ ] `percent-applications` אחוזים: הנחה, התייקרות ושינוי 🍕
-- [ ] `algebraic-expressions` ביטויים אלגבריים והצבה 🧮
-- [ ] `distributive-law` חוק הפילוג וכינוס איברים דומים 🧮
-- [ ] `linear-equations` משוואות ממעלה ראשונה 🧮
-- [ ] `word-problems-equations` בעיות מילוליות עם משוואות 🧮
-- [ ] `coordinate-plane` מערכת צירים 📈
-- [ ] `angles-lines` זוויות בין ישרים: קודקודיות, צמודות, מתאימות, מתחלפות 📐
+- [x] `negative-numbers` מספרים שליליים: היכרות, נגדיים, חיבור וחיסור 🔢 (ספט׳–אוק׳)
+- [x] `negative-mul-div` כפל וחילוק מספרים מכוונים 🔢 (נוב׳)
+- [ ] `powers` חזקות עם מעריך טבעי ושורש ריבועי חיובי 🔢 (דצמ׳)
+- [ ] `coordinate-plane` מערכת צירים בארבעת הרביעים 📈 (ספט׳–נוב׳)
+- [ ] `angles-lines` זוויות: מדידה, אומדן, זווית שטוחה, צמודות וקודקודיות 📐 (ספט׳–אוק׳)
+- [ ] `triangle-angles` זוויות במשולש: סכום, שווה שוקיים, ישר זווית 📐 (נוב׳)
+- [ ] `transformations` צורות חופפות במישור והעתקות: הזזה, שיקוף, סיבוב 📐 (נוב׳–דצמ׳)
+- [ ] `algebraic-expressions` המשתנה, ביטויים אלגבריים והצבה 🧮 (דצמ׳–ינו׳)
+- [ ] `areas` שטחים: מלבן, משולש, מקבילית, טרפז וצורות מורכבות 📏 (דצמ׳–ינו׳, אפר׳)
+- [ ] `equivalent-expressions` שוויון בין ביטויים אלגבריים: זהות 🧮 (ינו׳)
+- [ ] `solids-box` גופים במרחב: קובייה ותיבה, פריסה, שטח פנים ונפח 📏 (ינו׳–פבר׳)
+- [ ] `data-frequency` איסוף, הצגה וקריאת מידע: שכיחות 🎲 (ינו׳–פבר׳)
+- [ ] `distributive-law` כינוס איברים דומים וחוק הפילוג 🧮 (פבר׳–מרץ)
+- [ ] `relative-frequency` שכיחות יחסית (עם אחוזים) והסתברות 🎲 (פבר׳)
+- [ ] `linear-equations` משוואות ממעלה ראשונה 🧮 (מרץ–אפר׳)
+- [ ] `pythagoras` משפט פיתגורס ושימושיו במערכת צירים, היקפים ומסלולים 📐 (מרץ; moved from ח׳ in the new program)
+- [ ] `word-problems-equations` בעיות מילוליות עם משוואות, כולל בעיות תנועה 🧮 (מאי)
+- [ ] `graph-points` נקודות על גרף ברביע הראשון: קריאת גרף של מצב 📈 (מאי)
+- [ ] `prism` גופים במרחב: מנסרה משולשת 📏 (מאי)
+- [ ] `order-of-operations` סדר פעולות עם חזקות וסוגריים 🔢 (not a separate Ministry topic: a short bridge, build when needed)
 
 ### כיתה ח׳
-- [ ] `scientific-notation` חזקות עם מעריך שלילי וכתיב מדעי 🔢
-- [ ] `short-multiplication` נוסחאות הכפל המקוצר 🧮
-- [ ] `factoring` פירוק לגורמים 🧮
-- [ ] `inequalities` אי־שוויונות 🧮
-- [ ] `systems-equations` מערכת משוואות בשני נעלמים 🧮
-- [ ] `algebraic-fractions` שברים אלגבריים 🧮
-- [ ] `function-concept` מהי פונקציה? 📈
-- [ ] `linear-function` הפונקציה הקווית: שיפוע ונקודת חיתוך 📈
-- [ ] `pythagoras` משפט פיתגורס 📐
-- [ ] `congruence` חפיפת משולשים 📐
-- [ ] `isosceles-triangle` משולש שווה שוקיים 📐
-- [ ] `quadrilateral-proofs` תכונות מרובעים והוכחות 📐
-- [ ] `probability-events` הסתברות: מאורעות ושכיחות יחסית 🎲
+- [ ] `ratio-proportion` יחס, פרופורציה וקנה מידה 🍕 (ספט׳–אוק׳)
+- [ ] `parallel-lines` זוויות בין ישרים מקבילים: מתאימות ומתחלפות 📐 (ספט׳)
+- [ ] `percent-applications` אחוזים: הנחה, התייקרות ושינוי 🍕 (אוק׳; moved from ז׳)
+- [ ] `circle-cylinder-cone` מעגל: היקף ושטח; גליל וחרוט 📏 (אוק׳–נוב׳)
+- [ ] `function-concept` מבוא לפונקציות: גרף, טבלה, ביטוי; עלייה וירידה 📈 (נוב׳)
+- [ ] `data-center` שכיחות, שכיחות יחסית, טווח ומדדי מרכז 🎲 (נוב׳–דצמ׳)
+- [ ] `linear-function` קצב שינוי, שיפוע והפונקציה הקווית 📈 (דצמ׳)
+- [ ] `word-problems-percent-motion` בעיות מילוליות: אחוזים ותנועה 🧮 (דצמ׳–ינו׳)
+- [ ] `data-two-sources` שני מקורות מידע, אינטרפולציה ואקסטרפולציה 🎲 (ינו׳)
+- [ ] `congruence` חפיפת משולשים 📐 (ינו׳–פבר׳)
+- [ ] `triangle-sides` צלעות במשולש: אי־שוויון המשולש 📐 (פבר׳)
+- [ ] `systems-equations` מערכת משוואות בשני נעלמים 🧮 (פבר׳–מאי)
+- [ ] `isosceles-triangle` משולש שווה שוקיים, משפטים הפוכים וזווית חיצונית 📐 (מרץ)
+- [ ] `probability-events` הסתברות 🎲 (מרץ)
+- [ ] `similarity` דמיון משולשים 📐 (מרץ–אפר׳; moved from ט׳)
+- [ ] `inequalities` אי־שוויונות 🧮 (אפר׳–מאי)
+- [ ] `pythagoras-3d` משפט פיתגורס במרחב 📐 (מאי)
 
 ### כיתה ט׳
-- [ ] `roots` שורשים 🔢
+The grade 9 PDF was only partly readable. The order up to the line below is the Ministry's; the rest were not seen there (check before building).
+- [ ] `short-multiplication` חוק הפילוג המורחב ונוסחאות הכפל המקוצר 🧮 (ספט׳)
+- [ ] `quadrilateral-proofs` דלתון, טרפז, מקבילית ומעוין: תכונות והוכחות 📐 (ספט׳–מרץ)
+- [ ] `factoring` פירוק לגורמים 🧮 (אוק׳)
+- [ ] `algebraic-fractions` שברים אלגבריים ומשוואות עם נעלם במכנה 🧮 (אוק׳–דצמ׳)
+- [ ] `quadratic-function` הפונקציה הריבועית: פרבולה 📈 (אוק׳–מרץ)
 - [ ] `quadratic-equations` משוואות ריבועיות ונוסחת השורשים 🧮
-- [ ] `word-problems-quadratic` בעיות מילוליות: משוואות ריבועיות 🧮
-- [ ] `quadratic-function` הפונקציה הריבועית: פרבולה 📈
-- [ ] `similarity` דמיון משולשים 📐
+- [ ] `word-problems-quadratic` בעיות מילוליות, כולל תנועה 🧮 (מאי)
+- not seen in the Ministry grade 9 plan:
+- [ ] `roots` שורשים 🔢
+- [ ] `scientific-notation` חזקות עם מעריך שלילי וכתיב מדעי 🔢
 - [ ] `trig-right-triangle` טריגונומטריה במשולש ישר זווית 📐
 - [ ] `circle-angles` מעגל: מיתרים, זוויות מרכזיות והיקפיות 📐
 - [ ] `solids-pyramid-cone` גופים: פירמידה, חרוט וכדור 📏
