@@ -6,7 +6,7 @@ A free, open Hebrew learning site: courses, animated explanations, quizzes and a
 
 Status: proof of concept. Math only: all of grade 1, the start of grade 2, negative numbers (grade 7), and one high-school sample (a triangle inscribed in a circle). See the course list in [TODO.md](TODO.md).
 
-Planning docs: [the team](docs/team/README.md) (manager, teacher, product, developer, researcher: how every chapter is made) · [market](docs/market.md)
+Planning docs: [the team](docs/team/README.md) (manager, teacher, product, developer, researcher: how every chapter is made) · [high school](docs/high-school.md) · [market](docs/market.md)
 
 Dev: `dev/scenes.html` renders every scene of every live course as still frames, to catch broken scenes.
 

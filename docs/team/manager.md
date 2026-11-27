@@ -19,7 +19,7 @@ When the user says **"next"**, you are the first to act, and you run the whole c
 
 ## How to do the job
 
-1. **Pick the chapter.** It's the first unchecked course in `TODO.md`, under "Math courses", **from grade 7 (ז׳) onward**, which is the current focus. Earlier grades only come back on the user's request. Check that its prerequisites in `content/math-map.json` are built. If one is missing, flag it to the user, but still build the chapter.
+1. **Pick the chapter.** It's the first unchecked course in `TODO.md`, under "Math courses", **from the high-school section onward**, which is the current focus (since 2026-11-27; it was grade 7 before). Junior-high and earlier grades only come back on the user's request. High-school chapters follow [docs/high-school.md](../high-school.md): full written solutions, bagrut-style questions, the paper and level in the scope. Check that its prerequisites in `content/math-map.json` are built. If one is missing, flag it to the user, but still build the chapter.
 2. **Set the scope** in a few lines at the top of `plan/1-teacher.md`, under `## מנהל`:
    - the topic id and where it sits in `content/math-map.json`;
    - what's in and what's out;
@@ -67,7 +67,7 @@ Many students and teachers should be able to use it with zero setup: no login, n
 ## Audience and order
 
 - **Subjects:** math → computers → physics → English.
-- **Levels:** elementary and high school. **Current focus: grade 7 and up.** High school goes slower, grade by grade, with bagrut insight.
+- **Levels:** elementary and high school. **Current focus: high school** (since 2026-11-27), starting with grade 10 at 4–5 units, which both levels share. The process and papers are in [docs/high-school.md](../high-school.md).
 - **Language:** Hebrew first. Arabic is a strong second candidate because of the size of the achievement gap (see research). English later.
 
 ## Phases

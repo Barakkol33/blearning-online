@@ -59,7 +59,7 @@ Goal: adding a scene type, a generator, an exercise kind or a course means addin
 
 ## Math courses — say "next" to build the next one
 
-One course per line, in order. **"next" (one chunk, about 10 minutes of work) = the first unchecked course from grade 7 (ז׳) onward** (current focus, since 2026-11-27; earlier grades only on request): build it in `content/courses/<id>/`, through the team pipeline in [docs/team/](docs/team/README.md): manager → teacher → product → developer, each writing its file in `plan/`:
+One course per line, in order. **"next" (one chunk, about 10 minutes of work) = the first unchecked course in the high-school section** (current focus since 2026-11-27, starting with grade 10 at 4–5 units; grades 1–9 only on request): build it in `content/courses/<id>/`, through the team pipeline in [docs/team/](docs/team/README.md): manager → teacher → product → developer, each writing its file in `plan/`:
 - 2–4 short lessons: hook, scene, worked example, summary plus "where this leads"
 - at least one `> 📜 סיפור` (facts checked) and one `> 🛒 בחיים` box per course
 - quizplay-format questions: easy first, one ⭐ stretch, distractors from real misconceptions
@@ -194,56 +194,88 @@ The grade 9 PDF was only partly readable. The order up to the line below is the 
 - [ ] `solids-pyramid-cone` גופים: פירמידה, חרוט וכדור 📏
 - [ ] `statistics-spread` סטטיסטיקה: פיזור ודיאגרמות 🎲
 
-### תיכון: slow down, plan grade by grade first
-High school is much bigger and is shaped by the bagrut process, so "next" stops here for a **planning chunk** per grade before building courses. Each planning chunk:
-- researches the current Ministry curriculum for that grade at each level (3 / 4 / 5 units), the bagrut questionnaires and when each is usually taken, and what schools typically teach when;
-- writes the insight into `docs/high-school.md`: the process, timeline and exam structure, and what students struggle with;
-- replaces the rough lists below with a grade-by-grade list of **small-bite** courses (a big topic becomes several courses), with ids added to math-map.json.
+High school follows the Ministry's new program: from תשפ"ז every student sits only the new papers. Order and placement come from the 2026–27 teaching recommendations ([3](https://meyda.education.gov.il/files/Pop/0files/matmatika/Chativa-Elyona/mafmar/3-points-tashpaz.pdf) · [4](https://meyda.education.gov.il/files/Pop/0files/matmatika/Chativa-Elyona/mafmar/4-points-tashpaz.pdf) · [5](https://meyda.education.gov.il/files/Pop/0files/matmatika/Chativa-Elyona/mafmar/5-points-tashpaz.pdf) יח״ל). The process, papers and timeline are in [docs/high-school.md](docs/high-school.md). Each course is a small bite; a course used by several levels is listed once, where it is first taught.
 
-- [ ] Plan grade 10 (כיתה י׳)
-- [ ] Plan grade 11 (כיתה י״א)
-- [ ] Plan grade 12 (כיתה י״ב)
+### כיתה י׳ · 4–5 יח״ל (the first topics are shared by 4 and 5 units; ⁵ = 5 units only in י׳)
+- [ ] `analytic-points-segments` נקודות וקטעים במערכת צירים: מרחק ואמצע קטע 📐
+- [ ] `function-graph-reading` קריאת גרף של פונקציה: חיתוך, חיוביות ושליליות, עלייה וירידה, קיצון 📈
+- [ ] `analytic-lines` משוואת הישר: שיפוע, ישרים מקבילים ומאונכים 📐
+- [ ] `linear-quadratic-functions` פונקציה קווית וריבועית: ייצוג גרפי ואלגברי 📈
+- [ ] `analytic-shapes` משולשים ומרובעים במערכת צירים 📐
+- [ ] `power-functions` פונקציית חזקה; פונקציה זוגית ואי־זוגית 📈
+- [ ] `midsegments` קטע אמצעים במשולש ובטרפז 📐
+- [ ] `function-transformations` פעולות על פונקציות: הזזה, מתיחה, כיווץ, שיקוף; ערך מוחלט 📈
+- [ ] `similarity-theorems` דמיון משולשים: שלושת משפטי הדמיון ויחס שטחים 📐
+- [ ] `derivative-concept` מושג הנגזרת: שיפוע המשיק וקצב שינוי 📈
+- [ ] `polynomial-derivative` נגזרת של פולינום ומשוואת משיק 📈
+- [ ] `polynomial-investigation` חקירת פולינום: גרף הפונקציה וגרף הנגזרת 📈
+- [ ] `trig-right-triangle-hs` טריגונומטריה במשולש ישר זווית; שיפוע כטנגנס 📐
+- [ ] `product-chain-rule` נגזרת של מכפלה ושל פונקציה מורכבת 📈
+- [ ] `optimization` בעיות קיצון עם פולינום 📈
+- [ ] `triangle-special-lines` מפגש התיכונים, זווית חיצונית ומשפט הפוך 📐
+- [ ] `root-function` פונקציית שורש: היכרות, נגזרת וקיצון 📈
+- [ ] `rational-functions-intro` פונקציה רציונלית: תחום הגדרה, אסימפטוטות ונגזרת 📈
+- [ ] `stats-variables-spread` סוגי משתנים, מדדי מרכז ופיזור, סטיית תקן 🎲 (4 יח״ל)
+- [ ] `probability-tables-trees` הסתברות: טבלה דו־ממדית, דיאגרמת עץ ומאורעות תלויים 🎲 (4 in י׳, 5 in י״א)
+- [ ] `polynomial-factors-inequalities` פולינום כמכפלת גורמים; אי־שוויונות בדרך גרפית 📈 (⁵)
+- [ ] `thales` משפט תאלס, המשפט ההפוך וההרחבות 📐 (⁵)
+- [x] `triangle-in-circle` משולש חסום במעגל: זווית מרכזית והיקפית 📐 (built early as a sample)
+- [ ] `circle-theorems` מעגל: קשתות, מיתרים וזוויות; מרובע חסום וחוסם 📐 (⁵; 4 in י״א)
+- [ ] `analytic-circle` משוואת המעגל 📐 (⁵; 4 in י״א)
+- [ ] `unit-circle` הפונקציות הטריגונומטריות במעגל היחידה; זהויות בסיסיות 📈 (⁵)
+- [ ] `law-of-sines-cosines` משפט הסינוסים והקוסינוסים; שטח משולש 📐 (⁵; 4 (sines only) in י״א)
 
-Rough topic lists (to be replaced by the plans):
+### כיתה י״א · 4 יח״ל · שאלון 35471 (plus circle-theorems, analytic-circle, law-of-sines-cosines above)
+- [ ] `rational-root-calculus` חשבון דיפרנציאלי של פונקציות רציונליות ושורש, כולל קיצון 📈
+- [ ] `integrals` אינטגרל: פונקציה קדומה, אינטגרל מסוים ושטחים 📈
+- [ ] `normal-distribution` התפלגות נורמלית וציון תקן 🎲
+- [ ] `linear-regression` מתאם ורגרסיה לינארית 🎲
 
-### תיכון: בסיס משותף (3–5 יח״ל)
-- [ ] `functions-properties` פונקציות: תחום, חיתוכים, עלייה וירידה 📈
-- [ ] `lines-parabolas` ישרים ופרבולות במערכת צירים 📈
-- [ ] `derivative-intro` נגזרת: קצב שינוי ושיפוע משיק 📈
-- [ ] `function-investigation` חקירת פונקציה (פולינומים) 📈
-- [ ] `optimization` בעיות קיצון 📈
-- [ ] `growth-decay` גדילה ודעיכה 🍕
+### כיתה י״ב · 4 יח״ל · שאלון 35472
+- [ ] `exponential-function` פונקציה מעריכית: חוקי חזקות, משוואות ואי־שוויונות 📈
+- [ ] `logarithms` לוגריתמים והפונקציה הלוגריתמית 📈
+- [ ] `growth-decay` גדילה ודעיכה; זמן מחצית חיים 📈
+- [ ] `exp-ln-calculus` נגזרות ואינטגרלים של eˣ ו־ln x 📈
+- [ ] `solid-geometry` גופים במרחב: מנסרה, פירמידה, זוויות ונפחים 📐
+- [ ] `vectors-geometric` וקטורים בגישה גאומטרית ומכפלה סקלרית 📐
+- [ ] `vectors-algebraic` וקטורים בהצגה אלגברית ומערכת צירים במרחב 📐
 - [ ] `arithmetic-sequences` סדרה חשבונית 🧮
-- [ ] `analytic-basics` גיאומטריה אנליטית: מרחק, אמצע, ישרים 📐
-- [ ] `trig-plane` טריגונומטריה במישור 📐
-- [ ] `probability-tree-table` הסתברות: דיאגרמת עץ וטבלה דו־ממדית 🎲
-- [ ] `normal-distribution` סטיית תקן והתפלגות נורמלית 🎲
+- [ ] `geometric-sequences` סדרה הנדסית, כולל סכום אינסופי 🧮 (5: in י״א)
 
-### תיכון: 4–5 יח״ל
-- [ ] `word-problems-motion-work` בעיות תנועה והספק 🧮
-- [ ] `geometric-sequences` סדרה הנדסית 🧮
-- [ ] `conditional-probability` הסתברות מותנית 🎲
-- [ ] `bernoulli` נוסחת ברנולי 🎲
-- [ ] `law-of-sines-cosines` משפט הסינוסים ומשפט הקוסינוסים 📐
-- [ ] `euclidean-proofs` גיאומטריה אוקלידית: הוכחות 📐
-- [x] `triangle-in-circle` משולש חסום במעגל: מרכזית והיקפית, תאלס, מרכז המעגל החוסם 📐 (built early, as a high-school sample)
-- [ ] `circle-theorems` משפטים במעגל 📐
-- [ ] `analytic-circle` המעגל במערכת צירים 📐
-- [ ] `rational-root-functions` פונקציות רציונליות ופונקציות שורש 📈
-- [ ] `integrals` אינטגרלים ושטחים 📈
-- [ ] `exponents-logs` חזקות, פונקציה מעריכית ולוגריתמים 📈
-- [ ] `exp-ln-calculus` נגזרות ואינטגרלים של e^x ו־ln x 📈
-
-### תיכון: 5 יח״ל
+### כיתה י״א · 5 יח״ל · שאלון 35571 (plus probability-tables-trees, integrals, geometric-sequences above)
+- [ ] `second-derivative` נגזרת שנייה, קעירות ונקודות פיתול 📈
+- [ ] `advanced-investigation` חקירה מתקדמת: פונקציות רציונליות ושורש, אסימפטוטות ואי־רציפות 📈
+- [ ] `trig-identities-equations` זהויות ומשוואות טריגונומטריות 📈
+- [ ] `trig-functions` נגזרות וחקירה של פונקציות טריגונומטריות 📈
+- [ ] `sequences-intro` מבוא לסדרות: סדרה כללית ורקורסיה 🧮
 - [ ] `induction` אינדוקציה מתמטית 🧮
-- [ ] `recursive-sequences` סדרות רקורסיביות 🧮
-- [ ] `trig-functions` פונקציות טריגונומטריות וחקירתן 📈
-- [ ] `volume-revolution` נפח גוף סיבוב 📈
-- [ ] `complex-numbers` מספרים מרוכבים 🔢
-- [ ] `vectors` וקטורים 📐
-- [ ] `solid-geometry` הנדסת המרחב 📐
-- [ ] `conics` פרבולה ואליפסה 📐
-- [ ] `loci` מקומות גיאומטריים 📐
+- [ ] `bernoulli` נוסחת ברנולי 🎲
+
+### כיתה י״ב · 5 יח״ל · שאלון 35572 (plus exponential-function, logarithms, growth-decay, exp-ln-calculus, vectors above)
+- [ ] `analytic-distance-division` חלוקת קטע ביחס ומרחק נקודה מישר 📐
+- [ ] `loci` מקומות גאומטריים 📐
+- [ ] `conics` פרבולה, אליפסה והיפרבולה 📐
+- [ ] `complex-numbers` מספרים מרוכבים: הצגה אלגברית וקוטבית, דה־מואבר 🔢
+- [ ] `vectors-space` וקטורים במרחב: ישרים ומישורים, מרחקים וזוויות 📐
+
+### תיכון · 3 יח״ל (topics taught inside clusters: science and society, space and shape, finance and economics)
+- [ ] `hs3-data-functions` קריאת מידע מגרפים ודיאגרמות; פונקציה בייצוגים שונים (י׳) 🎲
+- [ ] `hs3-statistics` טבלת שכיחויות ומדדי מרכז, כולל ממוצע משוקלל (י׳) 🎲
+- [ ] `hs3-probability` הסתברות כשכיחות יחסית, מאורעות דו־שלביים (י׳) 🎲
+- [ ] `hs3-perimeter-area` היקפים ושטחים של צורות מורכבות, פיתגורס (י׳) 📏
+- [ ] `hs3-distance-speed` דרך, מהירות וזמן (י׳) 🧮
+- [ ] `hs3-linear-models` מודל קווי: שיפוע כקצב שינוי, קנייה, מכירה ורווח (י׳) 📈
+- [ ] `hs3-growth-decay` גדילה ודעיכה (י״א) 📈
+- [ ] `hs3-spread` סטיית תקן ושילוב מדדי מרכז ופיזור (י״א) 🎲
+- [ ] `hs3-probability-2` הסתברות של שני מאורעות, תלויים ובלתי תלויים (י״א) 🎲
+- [ ] `hs3-ratio-scale` יחס, קנה מידה והמרת יחידות (י״א) 📏
+- [ ] `hs3-geometry` דמיון, משולשים ומרובעים מיוחדים (י״א) 📐
+- [ ] `hs3-trig` טריגונומטריה במשולש ישר זווית (י״א) 📐
+- [ ] `hs3-normal` התפלגות נורמלית וציון תקן (י״ב) 🎲
+- [ ] `hs3-quadratic-models` מודל ריבועי (י״ב) 📈
+- [ ] `hs3-linear-programming` תכנון לינארי (י״ב) 📈
+- [ ] `hs3-solids` גופים במרחב: נפח ושטח פנים (י״ב) 📏
+- [ ] `hs3-analytic-line` הקו הישר במערכת צירים (י״ב) 📐
 
 ### Across all math courses
 - [ ] Draft the prerequisite links between topics (`requires` in math-map.json)

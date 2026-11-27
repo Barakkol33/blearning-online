@@ -159,51 +159,102 @@
       ]
     },
     {
-      "id": "hs-core", "title": "תיכון: בסיס משותף (3–5 יח״ל)", "band": "תיכון",
+      "id": "hs-10-45", "title": "כיתה י׳: 4–5 יח״ל", "band": "תיכון",
       "topics": [
-        { "id": "functions-properties", "title": "פונקציות: תחום, חיתוכים, עלייה וירידה", "strand": "functions" },
-        { "id": "lines-parabolas", "title": "ישרים ופרבולות במערכת צירים", "strand": "functions" },
-        { "id": "derivative-intro", "title": "נגזרת: קצב שינוי ושיפוע משיק", "strand": "functions" },
-        { "id": "function-investigation", "title": "חקירת פונקציה (פולינומים)", "strand": "functions" },
-        { "id": "optimization", "title": "בעיות קיצון", "strand": "functions" },
-        { "id": "growth-decay", "title": "גדילה ודעיכה", "strand": "fractions" },
-        { "id": "arithmetic-sequences", "title": "סדרה חשבונית", "strand": "algebra" },
-        { "id": "analytic-basics", "title": "גיאומטריה אנליטית: מרחק, אמצע, ישרים", "strand": "geometry" },
-        { "id": "trig-plane", "title": "טריגונומטריה במישור", "strand": "geometry" },
-        { "id": "probability-tree-table", "title": "הסתברות: דיאגרמת עץ וטבלה דו־ממדית", "strand": "data" },
-        { "id": "normal-distribution", "title": "סטיית תקן והתפלגות נורמלית", "strand": "data" }
-      ]
-    },
-    {
-      "id": "hs-4-5", "title": "תיכון: 4–5 יח״ל", "band": "תיכון",
-      "topics": [
-        { "id": "word-problems-motion-work", "title": "בעיות תנועה והספק", "strand": "algebra" },
-        { "id": "geometric-sequences", "title": "סדרה הנדסית", "strand": "algebra" },
-        { "id": "conditional-probability", "title": "הסתברות מותנית", "strand": "data" },
-        { "id": "bernoulli", "title": "נוסחת ברנולי", "strand": "data" },
-        { "id": "law-of-sines-cosines", "title": "משפט הסינוסים ומשפט הקוסינוסים", "strand": "geometry" },
-        { "id": "euclidean-proofs", "title": "גיאומטריה אוקלידית: הוכחות", "strand": "geometry" },
+        { "id": "analytic-points-segments", "title": "נקודות וקטעים במערכת צירים: מרחק ואמצע קטע", "strand": "geometry" },
+        { "id": "function-graph-reading", "title": "קריאת גרף של פונקציה: חיתוך, חיוביות ושליליות, עלייה וירידה, קיצון", "strand": "functions" },
+        { "id": "analytic-lines", "title": "משוואת הישר: שיפוע, ישרים מקבילים ומאונכים", "strand": "geometry" },
+        { "id": "linear-quadratic-functions", "title": "פונקציה קווית וריבועית: ייצוג גרפי ואלגברי", "strand": "functions" },
+        { "id": "analytic-shapes", "title": "משולשים ומרובעים במערכת צירים", "strand": "geometry" },
+        { "id": "power-functions", "title": "פונקציית חזקה; פונקציה זוגית ואי־זוגית", "strand": "functions" },
+        { "id": "midsegments", "title": "קטע אמצעים במשולש ובטרפז", "strand": "geometry" },
+        { "id": "function-transformations", "title": "פעולות על פונקציות: הזזה, מתיחה, כיווץ, שיקוף; ערך מוחלט", "strand": "functions" },
+        { "id": "similarity-theorems", "title": "דמיון משולשים: שלושת משפטי הדמיון ויחס שטחים", "strand": "geometry" },
+        { "id": "derivative-concept", "title": "מושג הנגזרת: שיפוע המשיק וקצב שינוי", "strand": "functions" },
+        { "id": "polynomial-derivative", "title": "נגזרת של פולינום ומשוואת משיק", "strand": "functions" },
+        { "id": "polynomial-investigation", "title": "חקירת פולינום: גרף הפונקציה וגרף הנגזרת", "strand": "functions" },
+        { "id": "trig-right-triangle-hs", "title": "טריגונומטריה במשולש ישר זווית; שיפוע כטנגנס", "strand": "geometry" },
+        { "id": "product-chain-rule", "title": "נגזרת של מכפלה ושל פונקציה מורכבת", "strand": "functions" },
+        { "id": "optimization", "title": "בעיות קיצון עם פולינום", "strand": "functions" },
+        { "id": "triangle-special-lines", "title": "מפגש התיכונים, זווית חיצונית ומשפט הפוך", "strand": "geometry" },
+        { "id": "root-function", "title": "פונקציית שורש: היכרות, נגזרת וקיצון", "strand": "functions" },
+        { "id": "rational-functions-intro", "title": "פונקציה רציונלית: תחום הגדרה, אסימפטוטות ונגזרת", "strand": "functions" },
+        { "id": "stats-variables-spread", "title": "סוגי משתנים, מדדי מרכז ופיזור, סטיית תקן", "strand": "data" },
+        { "id": "probability-tables-trees", "title": "הסתברות: טבלה דו־ממדית, דיאגרמת עץ ומאורעות תלויים", "strand": "data" },
+        { "id": "polynomial-factors-inequalities", "title": "פולינום כמכפלת גורמים; אי־שוויונות בדרך גרפית", "strand": "functions" },
+        { "id": "thales", "title": "משפט תאלס, המשפט ההפוך וההרחבות", "strand": "geometry" },
         { "id": "triangle-in-circle", "title": "משולש חסום במעגל: זווית מרכזית והיקפית", "strand": "geometry" },
-        { "id": "circle-theorems", "title": "משפטים במעגל", "strand": "geometry" },
-        { "id": "analytic-circle", "title": "המעגל במערכת צירים", "strand": "geometry" },
-        { "id": "rational-root-functions", "title": "פונקציות רציונליות ופונקציות שורש", "strand": "functions" },
-        { "id": "integrals", "title": "אינטגרלים ושטחים", "strand": "functions" },
-        { "id": "exponents-logs", "title": "חזקות, פונקציה מעריכית ולוגריתמים", "strand": "functions" },
-        { "id": "exp-ln-calculus", "title": "נגזרות ואינטגרלים של e^x ו־ln x", "strand": "functions" }
+        { "id": "circle-theorems", "title": "מעגל: קשתות, מיתרים וזוויות; מרובע חסום וחוסם", "strand": "geometry" },
+        { "id": "analytic-circle", "title": "משוואת המעגל", "strand": "geometry" },
+        { "id": "unit-circle", "title": "הפונקציות הטריגונומטריות במעגל היחידה; זהויות בסיסיות", "strand": "functions" },
+        { "id": "law-of-sines-cosines", "title": "משפט הסינוסים והקוסינוסים; שטח משולש", "strand": "geometry" }
       ]
     },
     {
-      "id": "hs-5", "title": "תיכון: 5 יח״ל", "band": "תיכון",
+      "id": "hs-11-4", "title": "כיתה י״א: 4 יח״ל (שאלון 35471)", "band": "תיכון",
       "topics": [
+        { "id": "rational-root-calculus", "title": "חשבון דיפרנציאלי של פונקציות רציונליות ושורש, כולל קיצון", "strand": "functions" },
+        { "id": "integrals", "title": "אינטגרל: פונקציה קדומה, אינטגרל מסוים ושטחים", "strand": "functions" },
+        { "id": "normal-distribution", "title": "התפלגות נורמלית וציון תקן", "strand": "data" },
+        { "id": "linear-regression", "title": "מתאם ורגרסיה לינארית", "strand": "data" }
+      ]
+    },
+    {
+      "id": "hs-12-4", "title": "כיתה י״ב: 4 יח״ל (שאלון 35472)", "band": "תיכון",
+      "topics": [
+        { "id": "exponential-function", "title": "פונקציה מעריכית: חוקי חזקות, משוואות ואי־שוויונות", "strand": "functions" },
+        { "id": "logarithms", "title": "לוגריתמים והפונקציה הלוגריתמית", "strand": "functions" },
+        { "id": "growth-decay", "title": "גדילה ודעיכה; זמן מחצית חיים", "strand": "functions" },
+        { "id": "exp-ln-calculus", "title": "נגזרות ואינטגרלים של eˣ ו־ln x", "strand": "functions" },
+        { "id": "solid-geometry", "title": "גופים במרחב: מנסרה, פירמידה, זוויות ונפחים", "strand": "geometry" },
+        { "id": "vectors-geometric", "title": "וקטורים בגישה גאומטרית ומכפלה סקלרית", "strand": "geometry" },
+        { "id": "vectors-algebraic", "title": "וקטורים בהצגה אלגברית ומערכת צירים במרחב", "strand": "geometry" },
+        { "id": "arithmetic-sequences", "title": "סדרה חשבונית", "strand": "algebra" },
+        { "id": "geometric-sequences", "title": "סדרה הנדסית, כולל סכום אינסופי", "strand": "algebra" }
+      ]
+    },
+    {
+      "id": "hs-11-5", "title": "כיתה י״א: 5 יח״ל (שאלון 35571)", "band": "תיכון",
+      "topics": [
+        { "id": "second-derivative", "title": "נגזרת שנייה, קעירות ונקודות פיתול", "strand": "functions" },
+        { "id": "advanced-investigation", "title": "חקירה מתקדמת: פונקציות רציונליות ושורש, אסימפטוטות ואי־רציפות", "strand": "functions" },
+        { "id": "trig-identities-equations", "title": "זהויות ומשוואות טריגונומטריות", "strand": "functions" },
+        { "id": "trig-functions", "title": "נגזרות וחקירה של פונקציות טריגונומטריות", "strand": "functions" },
+        { "id": "sequences-intro", "title": "מבוא לסדרות: סדרה כללית ורקורסיה", "strand": "algebra" },
         { "id": "induction", "title": "אינדוקציה מתמטית", "strand": "algebra" },
-        { "id": "recursive-sequences", "title": "סדרות רקורסיביות", "strand": "algebra" },
-        { "id": "trig-functions", "title": "פונקציות טריגונומטריות וחקירתן", "strand": "functions" },
-        { "id": "volume-revolution", "title": "נפח גוף סיבוב", "strand": "functions" },
-        { "id": "complex-numbers", "title": "מספרים מרוכבים", "strand": "numbers" },
-        { "id": "vectors", "title": "וקטורים", "strand": "geometry" },
-        { "id": "solid-geometry", "title": "הנדסת המרחב", "strand": "geometry" },
-        { "id": "conics", "title": "פרבולה ואליפסה", "strand": "geometry" },
-        { "id": "loci", "title": "מקומות גיאומטריים", "strand": "geometry" }
+        { "id": "bernoulli", "title": "נוסחת ברנולי", "strand": "data" }
+      ]
+    },
+    {
+      "id": "hs-12-5", "title": "כיתה י״ב: 5 יח״ל (שאלון 35572)", "band": "תיכון",
+      "topics": [
+        { "id": "analytic-distance-division", "title": "חלוקת קטע ביחס ומרחק נקודה מישר", "strand": "geometry" },
+        { "id": "loci", "title": "מקומות גאומטריים", "strand": "geometry" },
+        { "id": "conics", "title": "פרבולה, אליפסה והיפרבולה", "strand": "geometry" },
+        { "id": "complex-numbers", "title": "מספרים מרוכבים: הצגה אלגברית וקוטבית, דה־מואבר", "strand": "numbers" },
+        { "id": "vectors-space", "title": "וקטורים במרחב: ישרים ומישורים, מרחקים וזוויות", "strand": "geometry" }
+      ]
+    },
+    {
+      "id": "hs-3", "title": "תיכון: 3 יח״ל (שאלונים 35173, 35371, 35372)", "band": "תיכון",
+      "topics": [
+        { "id": "hs3-data-functions", "title": "קריאת מידע מגרפים ודיאגרמות; פונקציה בייצוגים שונים (י׳)", "strand": "data" },
+        { "id": "hs3-statistics", "title": "טבלת שכיחויות ומדדי מרכז, כולל ממוצע משוקלל (י׳)", "strand": "data" },
+        { "id": "hs3-probability", "title": "הסתברות כשכיחות יחסית, מאורעות דו־שלביים (י׳)", "strand": "data" },
+        { "id": "hs3-perimeter-area", "title": "היקפים ושטחים של צורות מורכבות, פיתגורס (י׳)", "strand": "measurement" },
+        { "id": "hs3-distance-speed", "title": "דרך, מהירות וזמן (י׳)", "strand": "algebra" },
+        { "id": "hs3-linear-models", "title": "מודל קווי: שיפוע כקצב שינוי, קנייה, מכירה ורווח (י׳)", "strand": "functions" },
+        { "id": "hs3-growth-decay", "title": "גדילה ודעיכה (י״א)", "strand": "functions" },
+        { "id": "hs3-spread", "title": "סטיית תקן ושילוב מדדי מרכז ופיזור (י״א)", "strand": "data" },
+        { "id": "hs3-probability-2", "title": "הסתברות של שני מאורעות, תלויים ובלתי תלויים (י״א)", "strand": "data" },
+        { "id": "hs3-ratio-scale", "title": "יחס, קנה מידה והמרת יחידות (י״א)", "strand": "measurement" },
+        { "id": "hs3-geometry", "title": "דמיון, משולשים ומרובעים מיוחדים (י״א)", "strand": "geometry" },
+        { "id": "hs3-trig", "title": "טריגונומטריה במשולש ישר זווית (י״א)", "strand": "geometry" },
+        { "id": "hs3-normal", "title": "התפלגות נורמלית וציון תקן (י״ב)", "strand": "data" },
+        { "id": "hs3-quadratic-models", "title": "מודל ריבועי (י״ב)", "strand": "functions" },
+        { "id": "hs3-linear-programming", "title": "תכנון לינארי (י״ב)", "strand": "functions" },
+        { "id": "hs3-solids", "title": "גופים במרחב: נפח ושטח פנים (י״ב)", "strand": "measurement" },
+        { "id": "hs3-analytic-line", "title": "הקו הישר במערכת צירים (י״ב)", "strand": "geometry" }
       ]
     }
   ]
