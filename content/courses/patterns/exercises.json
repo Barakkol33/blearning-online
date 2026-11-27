@@ -10,9 +10,9 @@
         { "q": "מה חסר? 🌞 🌙 ☐ 🌙 🌞 🌙", "options": ["🌞", "🌙", "⭐"], "answer": 0, "hint": "השמש והירח מתחלפים." }
       ]
     },
-    { "title": "מה המספר הבא? (סדרות שגדלות)", "generate": { "type": "sequence", "steps": [1, 2, 5, 10], "max": 60, "count": 8 } },
-    { "title": "מה המספר הבא? (גדלות וקטנות)", "generate": { "type": "sequence", "steps": [2, 3, 5, 10], "down": true, "max": 60, "count": 6 } },
-    { "title": "איזה מספר חסר?", "generate": { "type": "sequence", "steps": [2, 3, 4, 5, 10], "down": true, "missing": true, "max": 60, "count": 6 } },
+    { "title": "מה המספר הבא? (סדרות שגדלות)", "generate": { "type": "sequence", "steps": [1, 2, 5, 10], "max": 60, "count": 4 } },
+    { "title": "מה המספר הבא? (גדלות וקטנות)", "generate": { "type": "sequence", "steps": [2, 3, 5, 10], "down": true, "max": 60, "count": 4 } },
+    { "title": "איזה מספר חסר?", "generate": { "type": "sequence", "steps": [2, 3, 4, 5, 10], "down": true, "missing": true, "max": 60, "count": 4 } },
     {
       "title": "חידות",
       "items": [

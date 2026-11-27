@@ -42,7 +42,9 @@ export function numberLine(spec) {
   s('line', { x1: PAD - 14, y1: Y, x2: W - PAD + 14, y2: Y, class: 'axis' }, svg);
   const span = b - a;
   const every = spec.labelEvery || (span > 60 ? 10 : span > 24 ? 5 : 1);
-  for (let v = Math.ceil(a); v <= b; v++) {
+  // Ticks every 1 by default; big ranges (0–1000) tick every 10 (`tickEvery`).
+  const te = spec.tickEvery || (span > 200 ? 10 : 1);
+  for (let v = Math.ceil(a / te) * te; v <= b; v += te) {
     const z = v === 0;
     s('line', { x1: x(v), y1: Y - (z ? 9 : 5), x2: x(v), y2: Y + (z ? 9 : 5), class: 'tick' + (z ? ' zero' : '') }, svg);
     if (v % every === 0) {
@@ -139,7 +141,8 @@ export function numberLine(spec) {
 
 // Base-ten blocks: rods of ten and single cubes (ones grouped in frames of 10).
 // Step keys: tens, ones, crossed (how many of the ones, from the end, are
-// crossed out — "taken away"), crossedTens (the same for the rods), label.
+// crossed out — "taken away"), crossedTens (the same for the rods),
+// hundreds (flats of 10×10), label. The picture widens to fit the flats.
 export function blocks(spec) {
   const S = 18, G = 4, W2 = 640, H2 = 262, TOP = 46, ROD_GAP = 9, FRAME_GAP = 16, MID = 48;
   const svg = s('svg', { viewBox: `0 0 ${W2} ${H2}`, class: 'nl blocks', direction: 'ltr', role: 'img' });
@@ -151,6 +154,7 @@ export function blocks(spec) {
 
   function draw(st, prev) {
     const anim = !!prev && !reduceMotion();
+    const hundreds = st.hundreds || 0, ph = anim ? prev.hundreds || 0 : hundreds;
     const tens = st.tens || 0, ones = st.ones || 0, crossed = Math.min(st.crossed || 0, ones);
     const crossedT = Math.min(st.crossedTens || 0, tens), pct = anim ? prev.crossedTens || 0 : crossedT;
     const pt = anim ? prev.tens || 0 : tens, po = anim ? prev.ones || 0 : ones, pc = anim ? prev.crossed || 0 : crossed;
@@ -158,8 +162,34 @@ export function blocks(spec) {
     const frames = Math.ceil(ones / 10);
     const tensW = tens ? tens * (S + ROD_GAP) - ROD_GAP : 0;
     const onesW = frames ? frames * (frameW + FRAME_GAP) - FRAME_GAP : 0;
-    const x0 = (W2 - (tensW + (tens && ones ? MID : 0) + onesW)) / 2;
+    const FLAT = 10 * S, FLAT_GAP = 14;
+    // Up to 3 flats side by side; more are stacked like a pile of cards, so
+    // 9 hundreds still fit without shrinking the whole picture.
+    const STEP = hundreds > 3 ? 30 : FLAT + FLAT_GAP;
+    const hundW = hundreds ? (hundreds - 1) * STEP + FLAT : 0;
+    const gap1 = hundreds && (tens || ones) ? MID : 0;
+    const total = hundW + gap1 + tensW + (tens && ones ? MID : 0) + onesW;
+    const VW = Math.max(W2, total + 40);
+    svg.setAttribute('viewBox', `0 0 ${VW} ${H2}`);
+    label.setAttribute('x', VW / 2);
+    const hx = (VW - total) / 2;
+    const x0 = hx + hundW + gap1;
     let delay = 0;
+
+    for (let i = 0; i < hundreds; i++) {
+      const x = hx + i * STEP;
+      const flat = s('g', {}, g);
+      s('rect', { x, y: TOP, width: FLAT, height: FLAT, rx: 3, class: 'flat' }, flat);
+      for (let k = 1; k < 10; k++) {
+        s('line', { x1: x, x2: x + FLAT, y1: TOP + k * S, y2: TOP + k * S, class: 'rod-line' }, flat);
+        s('line', { y1: TOP, y2: TOP + FLAT, x1: x + k * S, x2: x + k * S, class: 'rod-line' }, flat);
+      }
+      if (anim && i >= ph) {
+        flat.animate([{ opacity: 0, transform: 'translateY(-24px)' }, { opacity: 1, transform: 'none' }], { duration: 420, delay, fill: 'backwards' });
+        delay += 180;
+      }
+    }
+    if (hundreds) caption(hx + hundW / 2, hundreds === 1 ? 'מאה אחת' : `${hundreds} מאות`);
 
     for (let i = 0; i < tens; i++) {
       const x = x0 + i * (S + ROD_GAP);

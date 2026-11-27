@@ -1,0 +1,9 @@
+{
+  "type": "truefalse",
+  "title": "נכון או לא נכון",
+  "questions": [
+    { "id": "ones", "statement": "`299 > 301`, כי 9 גדול מ־1.", "answer": false, "explanation": "משווים קודם מאות: 2 מאות מול 3 מאות. לכן `299 < 301`." },
+    { "id": "less", "statement": "`530 - 100 = 430`", "answer": true },
+    { "id": "order", "statement": "כשמשווים מספרים תלת־ספרתיים, מתחילים מהמאות.", "answer": true }
+  ]
+}

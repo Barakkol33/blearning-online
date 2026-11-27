@@ -1,8 +1,8 @@
 {
   "title": "תרגול: צורות",
   "sections": [
-    { "title": "איך קוראים לצורה?", "generate": { "type": "shape", "ask": "name", "count": 8 } },
-    { "title": "סופרים פינות וצלעות", "generate": { "type": "shape", "ask": "count", "count": 10 } },
+    { "title": "איך קוראים לצורה?", "generate": { "type": "shape", "ask": "name", "count": 4 } },
+    { "title": "סופרים פינות וצלעות", "generate": { "type": "shape", "ask": "count", "count": 4 } },
     {
       "title": "חושבים",
       "items": [

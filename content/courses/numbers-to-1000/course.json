@@ -1,0 +1,22 @@
+{
+  "title": "מספרים עד 1,000",
+  "subject": "math",
+  "grade": "כיתה ב׳",
+  "emoji": "💯",
+  "color": "#5f3dc4",
+  "author": "לומדים",
+  "license": "CC BY-SA 4.0",
+  "description": "10 עשרות הן מאה. מאות, עשרות ויחידות, האפס ששומר מקום, ואיך משווים מספרים גדולים.",
+  "outcomes": [
+    "לדעת ש־10 עשרות הן מאה, ולספור במאות עד 1,000",
+    "לקרוא ולכתוב מספרים תלת־ספרתיים, גם עם אפס באמצע",
+    "לפרק מספר למאות, עשרות ויחידות (345 = 300 + 40 + 5)",
+    "למקם מספרים על הציר ולהשוות מספרים תלת־ספרתיים"
+  ],
+  "exercises": "exercises.json",
+  "lessons": [
+    { "id": "hundreds", "title": "מאות", "file": "lessons/01-hundreds.md", "minutes": 6, "questions": ["questions/01-hundreds.mcq.json", "questions/01-hundreds.tf.json"] },
+    { "id": "place-value", "title": "ערך המקום", "file": "lessons/02-place-value.md", "minutes": 8, "questions": ["questions/02-place-value.mcq.json", "questions/02-place-value.tf.json"] },
+    { "id": "compare", "title": "ציר המספרים עד 1,000 והשוואה", "file": "lessons/03-compare.md", "minutes": 7, "questions": ["questions/03-compare.mcq.json", "questions/03-compare.tf.json"] }
+  ]
+}

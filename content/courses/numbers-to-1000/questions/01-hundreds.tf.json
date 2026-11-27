@@ -1,0 +1,9 @@
+{
+  "type": "truefalse",
+  "title": "נכון או לא נכון",
+  "questions": [
+    { "id": "hundred", "statement": "10 עשרות הן מאה אחת.", "answer": true },
+    { "id": "ones", "statement": "במאה אחת יש 10 יחידות.", "answer": false, "explanation": "במאה יש 100 יחידות, או 10 עשרות." },
+    { "id": "shekel", "statement": "שטר של 100 ₪ שווה 10 מטבעות של 10 ₪.", "answer": true }
+  ]
+}

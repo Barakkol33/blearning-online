@@ -175,6 +175,7 @@ body.static .frames { display: grid; }
 .nl .nl-label { fill: var(--ink); font: 700 22px Rubik, system-ui, sans-serif; }
 .nl .marker text { font-size: 30px; }
 .blocks .rod { fill: color-mix(in srgb, var(--accent) 75%, var(--panel)); stroke: var(--accent); stroke-width: 1.5; }
+.blocks .flat { fill: color-mix(in srgb, #7048e8 60%, var(--panel)); stroke: #5f3dc4; stroke-width: 1.5; }
 .blocks .rod-line { stroke: var(--panel); stroke-width: 1; opacity: .7; }
 .blocks .one { fill: #e8a33d; stroke: #b7791f; stroke-width: 1.5; }
 .blocks .one.gone, .blocks g.gone { opacity: .25; }

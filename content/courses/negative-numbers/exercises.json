@@ -1,9 +1,9 @@
 {
   "title": "תרגול: מספרים שליליים",
   "sections": [
-    { "title": "מי גדול יותר?", "generate": { "type": "compare", "min": -10, "max": 10, "count": 6 } },
-    { "title": "חיבור", "generate": { "type": "int-add", "min": -10, "max": 10, "count": 10 } },
-    { "title": "חיסור", "generate": { "type": "int-sub", "min": -10, "max": 10, "count": 10 } },
+    { "title": "מי גדול יותר?", "generate": { "type": "compare", "min": -10, "max": 10, "count": 4 } },
+    { "title": "חיבור", "generate": { "type": "int-add", "min": -10, "max": 10, "count": 4 } },
+    { "title": "חיסור", "generate": { "type": "int-sub", "min": -10, "max": 10, "count": 4 } },
     {
       "title": "בעיות מהחיים",
       "items": [

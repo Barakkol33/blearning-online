@@ -2,10 +2,10 @@
   "title": "תרגול: חיבור וחיסור עד 100",
   "sections": [
     { "title": "עשרות שלמות", "generate": { "type": "add-100", "tens": true, "count": 4 } },
-    { "title": "חיבור בלי מעבר עשרת", "generate": { "type": "add-100", "regroup": false, "count": 5 } },
-    { "title": "חיבור עם מעבר עשרת", "generate": { "type": "add-100", "regroup": true, "count": 6 } },
-    { "title": "חיסור בלי פריטה", "generate": { "type": "sub-100", "regroup": false, "count": 5 } },
-    { "title": "חיסור עם פריטה", "generate": { "type": "sub-100", "regroup": true, "count": 6 } },
+    { "title": "חיבור בלי מעבר עשרת", "generate": { "type": "add-100", "regroup": false, "count": 4 } },
+    { "title": "חיבור עם מעבר עשרת", "generate": { "type": "add-100", "regroup": true, "count": 4 } },
+    { "title": "חיסור בלי פריטה", "generate": { "type": "sub-100", "regroup": false, "count": 4 } },
+    { "title": "חיסור עם פריטה", "generate": { "type": "sub-100", "regroup": true, "count": 4 } },
     {
       "title": "סיפורים",
       "items": [

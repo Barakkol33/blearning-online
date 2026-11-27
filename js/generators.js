@@ -9,6 +9,7 @@ import { SHAPES, shapeSvg, measure, circle } from './scene.js';
 import { int, p } from './gen/util.js';
 // New generators go in their own module under js/gen/ and are merged here.
 import { arith100 } from './gen/arith100.js';
+import { place1000 } from './gen/place1000.js';
 
 const measureFig = (bars, max = 12, units = true) => {
   const m = measure({ max });
@@ -226,7 +227,9 @@ export const GENERATORS = {
 // isosceles (given the inscribed angle, find the base angle of OAB).
 // The figure and the animated solution are both drawn from the same numbers.
 GENERATORS['circle-angle'] = (r, { ask = 'inscribed' }) => {
-  const kind = ask === 'mix' ? ['inscribed', 'central', 'thales', 'isosceles'][int(r, 0, 3)] : ask;
+  // ask: one kind, a list of kinds to mix, or "mix" for all of them.
+  const kinds = Array.isArray(ask) ? ask : ask === 'mix' ? ['inscribed', 'central', 'thales', 'isosceles'] : [ask];
+  const kind = kinds[int(r, 0, kinds.length - 1)];
   const off = int(r, -25, 25);
   if (kind === 'thales') {
     const a = int(r, 20, 70), rot = int(r, -15, 15);
@@ -320,4 +323,4 @@ function triangleSvg(A, B) {
   return `<svg viewBox="0 0 300 190" class="fig" direction="ltr" role="img"><polygon points="${P.map((q) => q.map((v) => v.toFixed(1)).join(',')).join(' ')}" class="tri"/>${labels.join('')}</svg>`;
 }
 
-Object.assign(GENERATORS, arith100);
+Object.assign(GENERATORS, arith100, place1000);

@@ -77,7 +77,7 @@ Strands: 🔢 numbers · 🍕 fractions, decimals and percent · 🧮 algebra ·
 
 ### כיתה ב׳
 - [x] `add-sub-to-100` חיבור וחיסור עד 100 🔢
-- [ ] `numbers-to-1000` מספרים עד 1,000 וערך המקום 🔢
+- [x] `numbers-to-1000` מספרים עד 1,000 וערך המקום 🔢
 - [ ] `multiplication-intro` מה זה כפל? קבוצות שוות 🔢
 - [ ] `division-intro` מה זה חילוק? חלוקה שווה 🔢
 - [ ] `polygons` מצולעים: צלעות וקודקודים 📐

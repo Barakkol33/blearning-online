@@ -1,0 +1,10 @@
+{
+  "type": "mcq",
+  "title": "מאות",
+  "questions": [
+    { "id": "ten-tens", "question": "כמה עשרות יש במאה אחת?", "options": ["10", "100", "1"], "answer": 0 },
+    { "id": "count", "question": "6 מאות הן:", "options": ["`600`", "`60`", "`106`"], "answer": 0 },
+    { "id": "thousand", "question": "כמה מאות יש ב־1,000?", "options": ["10", "100", "1,000"], "answer": 0 },
+    { "id": "next", "question": "⭐ איזה מספר בא אחרי 700, כשסופרים במאות?", "options": ["`800`", "`710`", "`701`"], "answer": 0 }
+  ]
+}

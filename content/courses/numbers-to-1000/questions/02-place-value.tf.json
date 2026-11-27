@@ -1,0 +1,9 @@
+{
+  "type": "truefalse",
+  "title": "נכון או לא נכון",
+  "questions": [
+    { "id": "same", "statement": "במספר `444` כל הספרות שוות אותו דבר.", "answer": false, "explanation": "`444 = 400 + 40 + 4`. כל 4 שווה משהו אחר, לפי המקום שלה." },
+    { "id": "zero", "statement": "`305` ו־`35` הם אותו מספר.", "answer": false, "explanation": "ב־305 יש 3 מאות. ב־35 יש רק 3 עשרות." },
+    { "id": "parts", "statement": "`700 + 5 = 705`", "answer": true }
+  ]
+}

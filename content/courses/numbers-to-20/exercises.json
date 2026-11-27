@@ -1,8 +1,8 @@
 {
   "title": "תרגול: מספרים עד 20",
   "sections": [
-    { "title": "עשרות ויחידות", "generate": { "type": "place-value", "min": 10, "max": 20, "count": 6 } },
-    { "title": "מי גדול יותר?", "generate": { "type": "compare", "min": 0, "max": 20, "count": 8 } },
+    { "title": "עשרות ויחידות", "generate": { "type": "place-value", "min": 10, "max": 20, "count": 4 } },
+    { "title": "מי גדול יותר?", "generate": { "type": "compare", "min": 0, "max": 20, "count": 4 } },
     {
       "title": "לפני ואחרי",
       "items": [

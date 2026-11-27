@@ -1,9 +1,9 @@
 {
   "title": "תרגול: השוואה ומדידה",
   "sections": [
-    { "title": "מה ארוך יותר?", "generate": { "type": "length", "ask": "longer", "max": 12, "count": 5 } },
-    { "title": "כמה אטבים?", "generate": { "type": "length", "ask": "length", "max": 12, "count": 6 } },
-    { "title": "בכמה ארוך יותר?", "generate": { "type": "length", "ask": "difference", "max": 12, "count": 6 } },
+    { "title": "מה ארוך יותר?", "generate": { "type": "length", "ask": "longer", "max": 12, "count": 4 } },
+    { "title": "כמה אטבים?", "generate": { "type": "length", "ask": "length", "max": 12, "count": 4 } },
+    { "title": "בכמה ארוך יותר?", "generate": { "type": "length", "ask": "difference", "max": 12, "count": 4 } },
     {
       "title": "כבד וקל",
       "items": [

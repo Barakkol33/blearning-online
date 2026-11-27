@@ -131,6 +131,7 @@ A situation the student actually meets:
 Math is learned by doing. Every course has a long exercises page (`exercises.json`):
 
 - **Generated sections:** fresh exercises every visit, from a seed in the URL, so a teacher can share "the same 30 exercises". Good for skills you practise many times.
+- **Short sections.** A simple one-step idea gets 3–4 exercises, not a long run of near-identical ones. Merge closely related one-step kinds into one section (e.g. central ↔ inscribed angle). Put the volume into multi-step and mixed problems. "🔄 תרגילים חדשים" gives more practice to anyone who wants it.
 - **Handwritten sections:** word problems, real-life problems and ⭐ challenges. Every one has a `hint` (a nudge, not the answer) and a `solution` (the full reasoning).
 - **Retrying is the default.** A wrong answer says "try again"; after 2 misses it points to the hint, and after 3 to "🤔 still don't get it".
 - **High school:** hard problems get `hint` and `solution` now. Later, `steps`: sub-questions that lead to the answer, each with its own check.

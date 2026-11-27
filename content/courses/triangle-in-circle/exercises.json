@@ -1,9 +1,8 @@
 {
   "title": "תרגול: משולש חסום במעגל",
   "sections": [
-    { "title": "מרכזית ← היקפית", "generate": { "type": "circle-angle", "ask": "inscribed", "count": 4 } },
-    { "title": "היקפית ← מרכזית", "generate": { "type": "circle-angle", "ask": "central", "count": 3 } },
-    { "title": "משולש על קוטר", "generate": { "type": "circle-angle", "ask": "thales", "count": 4 } },
+    { "title": "מרכזית והיקפית", "generate": { "type": "circle-angle", "ask": ["inscribed", "central"], "count": 4 } },
+    { "title": "משולש על קוטר", "generate": { "type": "circle-angle", "ask": "thales", "count": 3 } },
     { "title": "שני צעדים: היקפית ← מרכזית ← שווה שוקיים", "generate": { "type": "circle-angle", "ask": "isosceles", "count": 4 } },
     {
       "title": "איפה המרכז?",
