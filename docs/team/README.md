@@ -41,8 +41,27 @@ The `plan/` files go in the course folder, `content/courses/<id>/plan/`. The sit
 
 The user can stop the chain after any step ("stop after teacher") to review a file first.
 
-## Why not parallel subagents
+## Running it: one subagent per chapter
 
-The roles depend on each other: product needs the teacher's points, and the developer needs both. Running them in parallel would mean guessing. Separate subagents would also each start cold and re-read the whole project. One session that switches roles keeps the context and leaves a written handoff at each step.
+To save the main session's context, each "next" runs the chapter in **one subagent** (general-purpose). The main session acts only as the thin manager loop.
+
+1. **Main session (manager):**
+   - Read `TODO.md` and the check-in counter in [manager.md](manager.md).
+   - Pick the chapter and decide on research.
+   - Spawn one subagent with the prompt below.
+2. **The subagent:** runs the whole chain for that one chapter (researcher if asked → teacher → product → developer → coverage → review), commits and pushes. It returns a report of at most 15 lines:
+   - the chapter, and its commit hash;
+   - what each role decided, in one line each;
+   - the check results;
+   - what is still weak.
+3. **Main session:** relays the report to the user. Nothing else from the chapter enters its context.
+
+Prompt for the subagent:
+
+> Build the next blearning-online chapter: `<course-id>` (repo c:\projects\blearning-online). Follow docs/team/README.md: read each role's job description before playing it, and write `content/courses/<id>/plan/1-teacher.md`, `2-product.md` and `3-developer.md`. Research first: `<no | question mode: … | challenge mode>`. Run the developer checks, using small cropped screenshots. Commit and push (approved), and update the counter and log in manager.md. Reply with a report of at most 15 lines: chapter, commit, one line per role, checks, what is weak.
+
+**Why one subagent per chapter, not per role:** the roles depend on each other, so they run in order inside one agent that keeps its context between roles. One agent per role would start cold at every step. One agent per chapter starts cold only once, and that's cheap because everything it needs is in these files.
+
+**Looping:** the user can type `/loop next`. The main session then runs one chapter subagent after another, and the research check-in comes up by itself every 3 chapters. Each round is reported, committed and pushed separately.
 
 Other docs: [market.md](../market.md), set aside for now.
