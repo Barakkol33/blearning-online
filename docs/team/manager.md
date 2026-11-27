@@ -19,7 +19,7 @@ When the user says **"next"**, you are the first to act, and you run the whole c
 
 ## How to do the job
 
-1. **Pick the chapter.** It's the first unchecked course in `TODO.md`, under "Math courses", **from the high-school section onward**, which is the current focus (since 2026-11-27; it was grade 7 before). Junior-high and earlier grades only come back on the user's request. High-school chapters follow [docs/high-school.md](../high-school.md): full written solutions, bagrut-style questions, the paper and level in the scope. Check that its prerequisites in `content/math-map.json` are built. If one is missing, flag it to the user, but still build the chapter.
+1. **Pick the chapter.** In high school, pick two chapters, one per track: the first unchecked 4–5 units course and the first unchecked `hs3-*` course. They run in parallel, as described in [README.md](README.md#running-it-one-subagent-per-chapter). It's the first unchecked course in `TODO.md`, under "Math courses", **from the high-school section onward**, which is the current focus (since 2026-11-27; it was grade 7 before). Junior-high and earlier grades only come back on the user's request. High-school chapters follow [docs/high-school.md](../high-school.md): full written solutions, bagrut-style questions, the paper and level in the scope. Check that its prerequisites in `content/math-map.json` are built. If one is missing, flag it to the user, but still build the chapter.
 2. **Set the scope** in a few lines at the top of `plan/1-teacher.md`, under `## מנהל`:
    - the topic id and where it sits in `content/math-map.json`;
    - what's in and what's out;

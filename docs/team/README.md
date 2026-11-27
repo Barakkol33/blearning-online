@@ -56,12 +56,19 @@ To save the main session's context, each "next" runs the chapter in **one subage
    - what is still weak.
 3. **Main session:** relays the report to the user. Nothing else from the chapter enters its context.
 
+**Two tracks in parallel (high school, since 2026-11-27):** each "next" spawns **two** subagents at once. One builds the next unchecked 4–5 units course, the other the next unchecked `hs3-*` (3 units) course. They share one working tree, so each prompt adds these rules:
+
+- **Ports:** the 4–5 agent serves on 8765 and the 3-unit agent on 8766. Each agent stops only its own server, by its PID, and never kills every python.exe.
+- **Committing:** run `git pull --rebase` before committing, stage explicit paths only, and keep the other agent's lines in the shared files: TODO.md, the catalog, manager.md, js/generators.js and js/scene.js.
+- **Research check-in:** when it is due, only the 4–5 agent runs challenge mode, and it covers both tracks. The 3-unit agent gets "no" or question mode.
+- **The counter:** goes up by 1 per chapter, so a round adds 2.
+
 Prompt for the subagent:
 
 > Build the next blearning-online chapter: `<course-id>` (repo c:\projects\blearning-online). Follow docs/team/README.md: read each role's job description before playing it, and write `content/courses/<id>/plan/1-teacher.md`, `2-product.md` and `3-developer.md`. Research first: `<no | question mode: … | challenge mode>`. Run the developer checks, using small cropped screenshots. Commit and push (approved), and update the counter and log in manager.md. Reply with a report of at most 15 lines: chapter, commit, one line per role, checks, what is weak.
 
 **Why one subagent per chapter, not per role:** the roles depend on each other, so they run in order inside one agent that keeps its context between roles. One agent per role would start cold at every step. One agent per chapter starts cold only once, and that's cheap because everything it needs is in these files.
 
-**Looping:** the user can type `/loop next`. The main session then runs one chapter subagent after another, and the research check-in comes up by itself every 3 chapters. Each round is reported, committed and pushed separately.
+**Looping:** the user can type `/loop next`. The main session then runs one round after another (in high school, a round is the two parallel chapters), and the research check-in comes up by itself every 3 chapters. Each round is reported, committed and pushed separately.
 
 Other docs: [market.md](../market.md), set aside for now.
