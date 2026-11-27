@@ -175,6 +175,28 @@ Written by the [researcher](researcher.md), who runs only when the user asks. Ea
   - Show the midpoint as an average on each axis, with the picture, and always check: "is `M` really between `A` and `B`?"
   - Keep the picture and the formula side by side in every worked solution.
 
+### A new stage: who are 3-unit students, and what works for them? (question mode, 2026-11-27)
+
+**1. Who they are: supported (official and Israeli data).**
+- 3 units is the track for students who learned the reduced grade-9 track ([docs/high-school.md](../high-school.md)). Only about half of 3-unit graduates go on to academic studies, against 76% at 4 units ([Taub Center](https://www.taubcenter.org.il/en/research/the-importance-of-the-level-of-high-school-math-studies-to-the-academic-studies-and-future-careers-of-israeli-students/)). Math units strongly predict later earnings, and students outside the center take fewer units ([Ben-David & Kimhi, Shoresh](https://economics.agri.huji.ac.il/sites/default/files/agri_economics/files/research-paper-eng-ben-david-kimhi-educperiphcenter.pdf)). No Israeli breakdown of 3-unit students' gaps or anxiety was found: the "weaker, with junior-high gaps, often anxious" picture is *teacher experience*, consistent with the anxiety–achievement link above (Barroso 2021).
+- **For us:** assume gaps in percent, negative numbers and equation solving. Repair them inline in one line, not as a separate course. A pass at 3 units still matters: it is the line between "no math bagrut" and employment ([Taub](https://www.taubcenter.org.il/en/research/do-the-math-the-connection-between-math-bagrut-units-of-study-and-salary-levels/)).
+
+**2. What the program asks: official, checked.**
+- The 2026–27 recommendations for grade 10 (paper 35173, school assessment), cluster "מדע וחברה", topic "הסקת מסקנות ממידע": "קריאת מידע מייצוגים ויזואליים שונים (דיאגרמת עמודות, דיאגרמת עיגול, גרף). פונקציה בייצוגים שונים (אלגברי, מילולי, גרפי). תכנים נלווים: פתרון משוואות ממעלה ראשונה ושנייה, אחוזים." And: "נושאים בטכניקה אלגברית ילמדו לפי הקשר וצורך" ([3 units, תשפ"ז](https://meyda.education.gov.il/files/Pop/0files/matmatika/Chativa-Elyona/mafmar/3-points-tashpaz.pdf)). Paper 35371 (end of grade 11) includes all grade-10 topics.
+- **A real question.** Paper 35371, winter 2026: six questions of 22 points each, answer any, 2¼ hours, a non-graphing calculator, "יש להסביר את כל הפעולות, כולל חישובים". Question 1 ("אשכול חברה ומדע") is an orchard: a pie chart of four kinds of trees with two percents given and two equal ones missing. Parts: א fill in the missing percents; ב 700 trees, how many of each kind; ג fill a table; ד the mean fruit weight per tree; ה one kind grows 10% and another drops 10%: did the mean go up, down or stay? Explain ([paper 35371, winter 2026](https://meyda.education.gov.il/sheeloney_bagrut/2026/1/HEB/35371.PDF)).
+- So a data question is **one story, five short parts**, each using the answer before it, and it ends with "explain" (a conclusion from the data). Percent appears in almost every part.
+- **For us:** every course has one multi-part question of this shape; the last part asks for a reasoned conclusion, not a number.
+
+**3. Context first, low text load: mixed, with a limit.**
+- Simplifying the *language* of math items (same math, shorter sentences, familiar words) raised scores a little overall, and more for students in low-level math classes and low-SES students ([Abedi & Lord 2001](https://typeset.io/pdf/the-language-factor-in-mathematics-tests-1o16uxplej.pdf)): *supported, modest effect*.
+- Explicit word-problem instruction for students with math difficulties has a moderate-to-large effect (g ≈ 0.56–0.8 across meta-analyses; [Penn State meta-analysis](https://pure.psu.edu/en/publications/a-meta-analysis-of-mathematics-word-problem-solving-interventions/)): *supported*, mostly elementary samples.
+- **The limit:** realistic contexts can *add* difficulty, especially when the student must bring outside knowledge or chain several steps ([2024 meta-analysis, Educ. Psych. Review](https://link.springer.com/10.1007/s10648-024-09954-2)): *supported, elementary*. "Real context helps weak students" is weaker than it sounds; what helps is a context that is easy to read and that the student doesn't have to decode.
+- **For us:**
+  - One familiar context per lesson, introduced in 1–2 short sentences, then kept for the whole lesson.
+  - Plain words; one number per sentence; the question last, on its own line.
+  - Multi-step problems are split into parts (א, ב, ג), so no single part chains more than two steps.
+  - Data is either from a cited real source or labeled "נתונים לדוגמה".
+
 **"They have all the information, they're just lazy": partly true.** Access is no longer the bottleneck. What's missing is a clear next step, fast feedback, small wins, and a fair fight for attention. The answer is small, active steps with instant feedback, not more material.
 
 ## Template: `plan/1-teacher.md`

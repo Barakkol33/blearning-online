@@ -41,6 +41,7 @@ Status: ✅ exists · 🟡 next · ⚪ later. Keep this list current; the develo
   - `shapes`, and `measure` (bars against a ruler).
   - `balance`: a scale.
   - `circle`: geometry in a circle (angles, sides, sliding points, proofs).
+  - `chart`: a bar chart, pie chart or line graph built step by step: highlight, a reading line to the axis, a horizontal guide line, a cut axis. Hebrew labels read right.
   - `axes`: a coordinate plane (grid, points by coordinates, segments, fills, equal marks, side labels, the right triangle under a segment, projections to the axes; points slide). For all analytic geometry and, later, function points.
 - 🟡 Scene types: fraction bars, function graph, free geometry (triangles, parallel lines), force vectors.
 - ✅ Boxes: `> 📜 סיפור`, `> 🛒 בחיים`, `> 💡`.
@@ -52,6 +53,7 @@ Status: ✅ exists · 🟡 next · ⚪ later. Keep this list current; the develo
 ### Exercises page
 - ✅ Signed-number generators: products, quotients, missing factor, sign of several factors, two-step chains; each with a number-line solution of equal jumps.
 - ✅ Power and square-root generators: powers (positive, special, negative base), missing base or exponent, sign of a power, square root, "between which whole numbers", two steps; with array, plate or number-line solutions.
+- ✅ Data and function generators (3 units): read a bar chart (value, difference, how many times), pie chart percents (missing slice, amount, percent), percent change and biggest rise on a line graph, a linear rule in context (substitute or solve), and the ball's height (quadratic, two answers); each with a still chart and an animated solution.
 - ✅ Analytic-geometry generators (`axes` solutions): segment length (horizontal/vertical, Pythagorean, `√n`), midpoint, endpoint from the midpoint (choice with misconception distractors), triangle type from squared sides, perimeter on axes.
 - ✅ Typed point answers, `(x, y)` (`point: true`).
 - ✅ Generated sections: seeded (a teacher can share the link), "🔄 תרגילים חדשים", no repeated questions. Typed answer or multiple choice, with a unit, a figure, a hint, a written solution and an **animated solution**.
@@ -59,6 +61,7 @@ Status: ✅ exists · 🟡 next · ⚪ later. Keep this list current; the develo
 - ✅ Proof questions with an animated model proof (geometry).
 - ✅ Retrying is the default: after 2 misses it points to the hint, and after 3 to "🤔 still don't get it".
 - 🟡 `steps`: sub-questions with their own checks, for bagrut-style problems.
+- ✅ A multi-part question on one story: a section's `intro` and `figure` (a scene drawn still) show once, above parts א, ב, ג as ordinary items.
 - ⚪ A printable worksheet from the question bank.
 
 ### Feed ("TikTok mode")

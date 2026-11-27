@@ -81,6 +81,8 @@ Signed numbers (`js/gen/int-muldiv.js`): `int-mul` (`ask`: `pos-neg`, `neg-neg`,
 
 Powers and square roots (`js/gen/powers.js`): `pow` (`ask`: `pos`, `special`, `neg`), `pow-missing` (missing base or exponent), `pow-sign` (sign without computing; `-bⁿ` vs `(-b)ⁿ`), `sqrt`, `sqrt-between` (choice) and `pow-mix` (two steps). Exponents are superscript digits, via `sup(n)`. Solutions: a `groups` array for squares and roots, plates built one power at a time for small `aⁿ`, and a number line for negative bases and estimates.
 
+Data and functions, 3 units (`js/gen/data.js`): `bar-read` (`ask`: `value`, `diff`, `times`), `pie-pct` (`ask`: `missing`, `amount`, `percent`), `line-change` (`ask`: `pct`, `most`), `func-rule` (`ask`: `value`, `solve`) and `quad-height` (`ask`: `first`, `second`). Charts come from the `chart` scene (`kind: bar | pie | line`; step keys `show`, `hot`, `values`, `read`, `seg`, `guide`, `min`, `label`; listed in [js/scenes/chart.js](js/scenes/chart.js)). An exercise `figure` may be a scene spec, drawn still; an exercises section may have an `intro` and a `figure`, shown once above its items (a multi-part question on one story).
+
 Analytic geometry (`js/gen/analytic.js`): `seg-dist` (`ask`: `axis`, `pyth`, `root`: the number under `√`), `seg-mid` (`ask`: `mid`, a typed point; `end`, choice with misconception distractors) and `seg-use` (`ask`: `type`, the triangle type from squared sides; `perimeter`). Every solution writes the formula and the full substitution, with an `axes` scene. A typed answer that is a point uses `"answer": "(1, 2)", "point": true`.
 
 ## License

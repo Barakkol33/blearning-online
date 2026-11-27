@@ -8,7 +8,17 @@ import { GENERATORS, rng, generateSection } from './generators.js';
 import { store } from './store.js';
 import { stuckButton } from './help.js';
 import { award } from './game.js';
-import { sceneWidget } from './scene.js';
+import { sceneWidget, makeScene, resolveSteps } from './scene.js';
+
+// A figure is an SVG string, or a scene spec drawn still at its first step.
+function figHtml(f) {
+  if (!f || typeof f === 'string') return f || '';
+  const sc = makeScene(f);
+  if (!sc) return '';
+  sc.draw(resolveSteps(f)[0] || {}, null);
+  sc.svg.classList.add('fig', `${f.type}-fig`);
+  return sc.svg.outerHTML;
+}
 
 const norm = (s) => String(s).replace(/[−–]/g, '-').replace(/,/g, '.').replace(/[\s°%]/g, '');
 
@@ -68,6 +78,9 @@ export async function exercisesPage(app, c, seed) {
   let n = 0;
   for (const sec of sections) {
     list.append(h('h2', 'ex-sec', esc(sec.title)));
+    // A multi-part question: the shared story and figure, once, above its parts.
+    if (sec.intro) list.append(h('p', 'ex-intro', fmt(sec.intro)));
+    if (sec.figure) list.append(h('div', 'ex-intro', figHtml(sec.figure)));
     if (sec.error) list.append(h('div', 'notice', esc(sec.error)));
     for (const it of sec.items) {
       list.append(exerciseEl(it, ++n, () => { solved++; upd(); }, c));
@@ -89,7 +102,7 @@ function exerciseEl(it, n, onSolved, c) {
     <div class="ex-n">${n}</div>
     <div class="ex-body">
       <p class="q-prompt">${fmt(it.q)}</p>
-      ${it.figure || ''}
+      ${figHtml(it.figure)}
       <div class="ex-ans"></div>
       <p class="ex-fb" hidden></p>
       <div class="ex-tools"></div>

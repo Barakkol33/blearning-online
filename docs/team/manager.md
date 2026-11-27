@@ -37,9 +37,9 @@ When the user says **"next"**, you are the first to act, and you run the whole c
 
 ### Research check-in log
 
-- Chapters since the last check-in: **3** (counting from 2026-11-27). At 3: the next "next" starts with the researcher in challenge mode.
+- Chapters since the last check-in: **4** (counting from 2026-11-27). At 3: the next "next" starts with the researcher in challenge mode. (`hs3-data-functions` was built in parallel with `analytic-points-segments`, so the counter passed 3: the challenge check-in is due now.)
 - Check-ins: none yet
-- Chapters: 2026-11-27 `negative-mul-div` (no research; counter 0 → 1) · 2026-11-27 `powers` (no research; counter 1 → 2) · 2026-11-27 `analytic-points-segments` (first high-school course; research in question mode: grade-10 analytic geometry, misconceptions, a 35471 bagrut question; counter 2 → 3)
+- Chapters: 2026-11-27 `negative-mul-div` (no research; counter 0 → 1) · 2026-11-27 `powers` (no research; counter 1 → 2) · 2026-11-27 `analytic-points-segments` (first high-school course; research in question mode: grade-10 analytic geometry, misconceptions, a 35471 bagrut question; counter 2 → 3) · 2026-11-27 `hs3-data-functions` (first 3-unit course; research in question mode: who 3-unit students are, plain language and context, a 35371 data question; new `chart` scene; counter 3 → 4)
 
 ## Emphasis
 

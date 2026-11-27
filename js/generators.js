@@ -14,6 +14,7 @@ import { multIntro } from './gen/mult-intro.js';
 import { intMulDiv } from './gen/int-muldiv.js';
 import { powers } from './gen/powers.js';
 import { analytic } from './gen/analytic.js';
+import { data } from './gen/data.js';
 
 const measureFig = (bars, max = 12, units = true) => {
   const m = measure({ max });
@@ -327,7 +328,7 @@ function triangleSvg(A, B) {
   return `<svg viewBox="0 0 300 190" class="fig" direction="ltr" role="img"><polygon points="${P.map((q) => q.map((v) => v.toFixed(1)).join(',')).join(' ')}" class="tri"/>${labels.join('')}</svg>`;
 }
 
-Object.assign(GENERATORS, arith100, place1000, multIntro, intMulDiv, powers, analytic);
+Object.assign(GENERATORS, arith100, place1000, multIntro, intMulDiv, powers, analytic, data);
 
 // One section's exercises, without repeating a question (generators with few
 // number combinations would otherwise often show the same one twice).

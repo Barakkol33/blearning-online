@@ -261,7 +261,7 @@ High school follows the Ministry's new program: from תשפ"ז every student sit
 - [ ] `vectors-space` וקטורים במרחב: ישרים ומישורים, מרחקים וזוויות 📐
 
 ### תיכון · 3 יח״ל (topics taught inside clusters: science and society, space and shape, finance and economics)
-- [ ] `hs3-data-functions` קריאת מידע מגרפים ודיאגרמות; פונקציה בייצוגים שונים (י׳) 🎲
+- [x] `hs3-data-functions` קריאת מידע מגרפים ודיאגרמות; פונקציה בייצוגים שונים (י׳) 🎲
 - [ ] `hs3-statistics` טבלת שכיחויות ומדדי מרכז, כולל ממוצע משוקלל (י׳) 🎲
 - [ ] `hs3-probability` הסתברות כשכיחות יחסית, מאורעות דו־שלביים (י׳) 🎲
 - [ ] `hs3-perimeter-area` היקפים ושטחים של צורות מורכבות, פיתגורס (י׳) 📏

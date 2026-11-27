@@ -1,0 +1,47 @@
+{
+  "title": "מסקנות מנתונים: דיאגרמות, גרפים ופונקציות",
+  "subject": "math",
+  "grade": "תיכון, כיתה י׳, 3 יח״ל",
+  "emoji": "📊",
+  "color": "#2a78d6",
+  "author": "לומדים",
+  "license": "CC BY-SA 4.0",
+  "description": "האם רוב התלמידים מגיעים ברגל? לומדים לקרוא דיאגרמת עמודות, דיאגרמת עיגול וגרף קו, להסיק מהם מסקנות נכונות, ולעבור בין מילים, טבלה, גרף וכלל של פונקציה. אשכול \"מדע וחברה\".",
+  "outcomes": [
+    "לקרוא ערכים מדיאגרמת עמודות, ולהבדיל בין \"בכמה\" ל\"פי כמה\" ובין \"הכי הרבה\" ל\"רוב\"",
+    "לחשב גזרה חסרה בדיאגרמת עיגול, כמות מאחוז ואחוז מכמות",
+    "לחשב הפרש ושינוי באחוזים בגרף קו, ולזהות גרף מטעה",
+    "לעבור בין מילים, טבלה, גרף וכלל של פונקציה, להציב ולפתור משוואה ממעלה ראשונה ושנייה מתוך הקשר"
+  ],
+  "exercises": "exercises.json",
+  "lessons": [
+    {
+      "id": "bar",
+      "title": "דיאגרמת עמודות",
+      "file": "lessons/01-bar.md",
+      "minutes": 6,
+      "questions": ["questions/01-bar.mcq.json", "questions/01-bar.tf.json"]
+    },
+    {
+      "id": "pie",
+      "title": "דיאגרמת עיגול ואחוזים",
+      "file": "lessons/02-pie.md",
+      "minutes": 7,
+      "questions": ["questions/02-pie.mcq.json", "questions/02-pie.tf.json"]
+    },
+    {
+      "id": "line",
+      "title": "גרף קו: שינוי לאורך זמן",
+      "file": "lessons/03-line.md",
+      "minutes": 7,
+      "questions": ["questions/03-line.mcq.json", "questions/03-line.tf.json"]
+    },
+    {
+      "id": "function",
+      "title": "פונקציה במילים, בטבלה, בגרף ובכלל",
+      "file": "lessons/04-function.md",
+      "minutes": 8,
+      "questions": ["questions/04-function.mcq.json", "questions/04-function.tf.json"]
+    }
+  ]
+}
