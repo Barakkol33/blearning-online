@@ -10,6 +10,7 @@ import { int, p } from './gen/util.js';
 // New generators go in their own module under js/gen/ and are merged here.
 import { arith100 } from './gen/arith100.js';
 import { place1000 } from './gen/place1000.js';
+import { multIntro } from './gen/mult-intro.js';
 
 const measureFig = (bars, max = 12, units = true) => {
   const m = measure({ max });
@@ -323,4 +324,17 @@ function triangleSvg(A, B) {
   return `<svg viewBox="0 0 300 190" class="fig" direction="ltr" role="img"><polygon points="${P.map((q) => q.map((v) => v.toFixed(1)).join(',')).join(' ')}" class="tri"/>${labels.join('')}</svg>`;
 }
 
-Object.assign(GENERATORS, arith100, place1000);
+Object.assign(GENERATORS, arith100, place1000, multIntro);
+
+// One section's exercises, without repeating a question (generators with few
+// number combinations would otherwise often show the same one twice).
+export function generateSection(g, r, opts) {
+  const items = [], seen = new Set();
+  for (let tries = 0; items.length < (opts.count || 8) && tries < 50; tries++) {
+    const it = g(r, opts);
+    if (seen.has(it.q) && tries < 40) continue;
+    seen.add(it.q);
+    items.push(it);
+  }
+  return items;
+}

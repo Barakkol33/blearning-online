@@ -1,0 +1,22 @@
+{
+  "title": "מה זה כפל?",
+  "subject": "math",
+  "grade": "כיתה ב׳",
+  "emoji": "✖️",
+  "color": "#e8590c",
+  "author": "לומדים",
+  "license": "CC BY-SA 4.0",
+  "description": "קבוצות שוות, הסימן ×, ומערכים. למה 3 קבוצות של 4 הן 12, ולמה 3 × 5 שווה ל־5 × 3.",
+  "outcomes": [
+    "לזהות קבוצות שוות ולומר כמה קבוצות יש וכמה בכל אחת",
+    "לכתוב חיבור חוזר כתרגיל כפל ולקרוא אותו: 2 + 2 + 2 = 3 × 2",
+    "לחשב כפל בספירה בקפיצות ועל ציר המספרים",
+    "לקרוא מערך ככפל, ולדעת שסדר המספרים בכפל לא משנה"
+  ],
+  "exercises": "exercises.json",
+  "lessons": [
+    { "id": "groups", "title": "קבוצות שוות", "file": "lessons/01-groups.md", "minutes": 6, "questions": ["questions/01-groups.mcq.json", "questions/01-groups.tf.json"] },
+    { "id": "times", "title": "הסימן ×", "file": "lessons/02-times.md", "minutes": 7, "questions": ["questions/02-times.mcq.json", "questions/02-times.tf.json"] },
+    { "id": "arrays", "title": "מערכים", "file": "lessons/03-arrays.md", "minutes": 7, "questions": ["questions/03-arrays.mcq.json", "questions/03-arrays.tf.json"] }
+  ]
+}

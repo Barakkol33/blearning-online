@@ -179,6 +179,12 @@ body.static .frames { display: grid; }
 .blocks .rod-line { stroke: var(--panel); stroke-width: 1; opacity: .7; }
 .blocks .one { fill: #e8a33d; stroke: #b7791f; stroke-width: 1.5; }
 .blocks .one.gone, .blocks g.gone { opacity: .25; }
+.groups .g-plate { fill: color-mix(in srgb, #e8a33d 14%, var(--panel)); stroke: #e8a33d; stroke-width: 2; }
+.groups .g-band { fill: none; stroke: var(--accent); stroke-width: 2.5; stroke-dasharray: 6 4; }
+.groups .g-dot { fill: #e8a33d; stroke: #b7791f; stroke-width: 1.5; }
+.groups .g-item { font-size: 24px; }
+.groups .g-count { fill: var(--accent); font-size: 20px; font-weight: 700; font-family: Rubik, system-ui, sans-serif; }
+.fig.groups-fig { width: min(100%, 360px); }
 .shapes .shape, .shape-fig .shape { fill: color-mix(in srgb, #3b5bdb 16%, var(--panel)); stroke: #3b5bdb; stroke-width: 3; stroke-linejoin: round; }
 .shapes .corner { fill: var(--neg); }
 .shapes .side { stroke: var(--neg); stroke-width: 6; stroke-linecap: round; }

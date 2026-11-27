@@ -1,0 +1,9 @@
+{
+  "type": "truefalse",
+  "title": "נכון או לא נכון",
+  "questions": [
+    { "id": "comm", "statement": "`3 × 5 = 5 × 3`", "answer": true, "explanation": "זה אותו מערך: פעם סופרים לפי שורות ופעם לפי עמודות." },
+    { "id": "cols", "statement": "במערך של 2 שורות ו־4 עמודות יש 6 דברים.", "answer": false, "explanation": "`2 × 4 = 8`. 6 זה `2 + 4`." },
+    { "id": "rowgroup", "statement": "במערך, כל שורה היא קבוצה.", "answer": true }
+  ]
+}

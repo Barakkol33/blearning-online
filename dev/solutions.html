@@ -5,7 +5,7 @@
 <script type="module">
 // Dev check: every animated solution of a course's exercises, as still frames.
 // ?course=<id>&seed=N
-import { GENERATORS, rng } from '../js/generators.js';
+import { GENERATORS, rng, generateSection } from '../js/generators.js';
 import { sceneFrames } from '../js/scene.js';
 const q = new URLSearchParams(location.search);
 const id = q.get('course') || 'triangle-in-circle';
@@ -14,7 +14,7 @@ const r = rng(Number(q.get('seed')) || 7);
 const app = document.getElementById('app');
 let n = 0, bad = 0;
 for (const sec of ex.sections) {
-  const items = sec.generate ? Array.from({ length: sec.generate.count || 1 }, () => GENERATORS[sec.generate.type](r, sec.generate)) : sec.items;
+  const items = sec.generate ? generateSection(GENERATORS[sec.generate.type], r, sec.generate) : sec.items;
   for (const it of items) {
     if (!it.scene) continue;
     n++;

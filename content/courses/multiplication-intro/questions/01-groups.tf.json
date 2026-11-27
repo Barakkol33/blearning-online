@@ -1,0 +1,9 @@
+{
+  "type": "truefalse",
+  "title": "נכון או לא נכון",
+  "questions": [
+    { "id": "pairs", "statement": "6 זוגות גרביים הם 6 קבוצות של 2.", "answer": true },
+    { "id": "unequal", "statement": "בקבוצות של 3, 3 ו־4 כל הקבוצות שוות.", "answer": false, "explanation": "באחת הקבוצות יש 4, ולא 3." },
+    { "id": "total", "statement": "3 צלחות של 4 עוגיות הן 12 עוגיות.", "answer": true, "explanation": "4, 8, 12." }
+  ]
+}

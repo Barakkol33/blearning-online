@@ -4,7 +4,7 @@
 // Later: "steps" (guided sub-questions) for hard high-school problems.
 import { h, esc, fmt, fmtOpt, shuffle } from './util.js';
 import { getJSON } from './content.js';
-import { GENERATORS, rng } from './generators.js';
+import { GENERATORS, rng, generateSection } from './generators.js';
 import { store } from './store.js';
 import { stuckButton } from './help.js';
 import { award } from './game.js';
@@ -28,7 +28,7 @@ export async function exercisesPage(app, c, seed) {
     if (!sec.generate) return { ...sec, items: sec.items || [] };
     const g = GENERATORS[sec.generate.type];
     if (!g) return { ...sec, items: [], error: `מחולל לא מוכר: ${sec.generate.type}` };
-    return { ...sec, items: Array.from({ length: sec.generate.count || 8 }, () => g(r, sec.generate)) };
+    return { ...sec, items: generateSection(g, r, sec.generate) };
   });
   const total = sections.reduce((t, s) => t + s.items.length, 0);
 

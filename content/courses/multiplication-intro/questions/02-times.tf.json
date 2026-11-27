@@ -1,0 +1,10 @@
+{
+  "type": "truefalse",
+  "title": "נכון או לא נכון",
+  "questions": [
+    { "id": "rep", "statement": "`2 + 2 + 2 + 2 = 4 × 2`", "answer": true },
+    { "id": "plus", "statement": "`3 × 4` הוא אותו דבר כמו `3 + 4`.", "answer": false, "explanation": "`3 × 4` הוא 3 קבוצות של 4, כלומר 12. `3 + 4 = 7`." },
+    { "id": "one", "statement": "`5 × 1 = 5`, כי 5 קבוצות של אחד הן 5.", "answer": true },
+    { "id": "zero", "statement": "`4 × 0 = 4`", "answer": false, "explanation": "4 צלחות ריקות: אין בהן כלום. `4 × 0 = 0`." }
+  ]
+}
